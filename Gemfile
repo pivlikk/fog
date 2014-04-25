@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
@@ -14,17 +14,17 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem "rails-jquery-fileupload", git: 'git://github.com/DragosIorgulescu/rails-jquery-fileupload.git'
 gem 'devise'
-gem 'rest-client'
+#gem 'rest-client'
 gem 'bson_ext'
-gem 'mechanize'
+#gem 'mechanize'
 gem 'mongoid', git: 'git://github.com/mongoid/mongoid.git'
 gem 'mongoid_slug', '~> 3.2.0'
 gem 'mongoid-sadstory', :git => 'git://github.com/tih-ra/mongoid-sadstory.git'
 gem 'haml-rails'
 gem 'mongoid-grid_fs', github: 'ahoward/mongoid-grid_fs'
-gem 'puma', '~> 2.7.1'
+#gem 'puma', '~> 2.7.1'
 gem 'nprogress-rails'
-gem "letter_opener", :group => :development
+#gem "letter_opener", :group => :development
 gem 'jquery-ui-rails'
 
 gem 'rails_12factor', group: :production

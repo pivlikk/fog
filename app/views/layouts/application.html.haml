@@ -1,0 +1,12 @@
+!!!
+%html
+  %head
+    %title LetsMeet
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = yield :extra_js
+    = csrf_meta_tags
+  %body
+    = render "menu" unless params[:controller].include?("devise")
+    .container.main
+      = yield

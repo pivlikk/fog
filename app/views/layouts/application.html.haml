@@ -8,5 +8,5 @@
     = csrf_meta_tags
   %body
     = render "menu" unless params[:controller].include?("devise")
-    .container.main
-      = yield
+    
+    = yield

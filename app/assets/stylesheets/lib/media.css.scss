@@ -1,0 +1,8 @@
+@media (min-width: 1200px) {
+    .container {
+        width: 978px;
+        &.container-big {
+            width: 1180px;
+        }
+    }
+}

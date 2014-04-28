@@ -1,6 +1,7 @@
 @import "vars";
 @import "mixins";
 
+.clear {clear: both;font-size:0; line-height:0; display: block;}
 .wrap_style {
 	padding: 10px 0;
 }
@@ -18,6 +19,7 @@ ul, ol {
 
 
 .link_list {
+	float: left;
 	li {
 		float: left;
 		margin-left: 18px;
@@ -57,16 +59,594 @@ ul, ol {
 }
 .link_button {
 	display: inline-block;
-	line-height: (46px / 20px) + 0em;
-	font-size: (20px / $base-fontSize) + 0em;
+	line-height: (46px / 23px) + 0em;
+	font-size: (23px / $base-fontSize) + 0em;
 	font-family: 'pf_beausans_probold';
 	background-color: $color-yellow;
 	@include padding( '', 44px, '', 44px, 20px);
 	color: $color-white;
 	&:hover {
-		background-color: desaturate($color-yellow, 21);
+		background-color: #f9c45e;
+		color: $color-white;
+	}
+	&.active {
+		background-color: #e6a526;
 	}
 	&.link_button-blue {
 		background-color: $color-blue;
+		&:hover {
+			background-color: #4785c7;
+			&.active {
+				background-color: #1c5a9d;
+			}
+		}
+	}
+}
+.wrap_link-button {
+	position: relative;
+	left: -50px;
+	&.link-button-left {
+		float: left;
+		margin-left: 70px;
+	}
+	li {
+		margin: 10px 0 0 50px;
+	}
+}
+
+.wrap_ico {
+	background-color: #dfdfdf;
+	padding: 25px 0;
+}
+.ico_list-wrap {
+	> li {
+		margin-top: 30px;
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+}
+.ico_list {
+	position: relative;
+	left: -40px;
+	li {
+		float: left;
+		margin-left: 40px;
+	}
+}
+.ico-item {
+	color: $color-white;
+	display: inline-block;
+	text-align: center;
+	.ico-text {
+		font-size: (15px / $base-fontSize) + 0em;
+		line-height: (19px / 15px) + 0em;
+		text-align: center;
+		display: block;
+		text-decoration: underline;
+	}
+	&:hover {
+		color: $color-white;
+		.ico-text {
+			text-decoration: none;
+		}
+	}
+	&.active {
+
+	}
+	.ico-img {
+		display: inline-block;
+		min-height: 55px;
+	}
+	&.ico-yard {
+		.ico-img {
+			width: 47px;
+			height: 45px;
+			background: url(asset-path("sprite.png")) -40px 0 no-repeat;
+		}
+		&.active {
+			.ico-img {
+				background-position: -40px -160px;
+			}
+			&:hover {
+				.ico-img {
+					background-position: -40px -160px;
+				}
+			}
+		}
+		&:hover {
+			.ico-img {
+				background-position: -40px -80px;
+			}
+		}
+	}
+	&.ico-square {
+		.ico-img {
+			width: 56px;
+			height: 41px;
+			background: url(asset-path("sprite.png")) -120px 0 no-repeat;
+		}
+		&.active {
+			.ico-img {
+				background-position: -120px -160px;
+			}
+			&:hover {
+				.ico-img {
+					background-position: -120px -160px;
+				}
+			}
+		}
+		&:hover {
+			.ico-img {
+				background-position: -120px -80px;
+			}
+		}
+	}
+	&.ico-garbage{
+		.ico-img {
+			width: 43px;
+			height: 43px;
+			background: url(asset-path("sprite.png")) -200px 0 no-repeat;
+		}
+		&.active {
+			.ico-img {
+				background-position: -200px -160px;
+			}
+			&:hover {
+				.ico-img {
+					background-position: -200px -160px;
+				}
+			}
+		}
+		&:hover {
+			.ico-img {
+				background-position: -200px -80px;
+			}
+		}
+	}
+	&.ico-home {
+		.ico-img {
+			width: 60px;
+			height: 40px;
+			background: url(asset-path("sprite.png")) -280px 0 no-repeat;
+		}
+		&.active {
+			.ico-img {
+				background-position: -280px -160px;
+			}
+			&:hover {
+				.ico-img {
+					background-position: -280px -160px;
+				}
+			}
+		}
+		&:hover {
+			.ico-img {
+				background-position: -280px -80px;
+			}
+		}
+	}
+	&.ico-become_hero {
+		.ico-img {
+			width: 28px;
+			height: 45px;
+			background: url(asset-path("sprite.png")) -360px 0 no-repeat;
+		}
+		&.active {
+			.ico-img {
+				background-position: -360px -160px;
+			}
+			&:hover {
+				.ico-img {
+					background-position: -360px -160px;
+				}
+			}
+		}
+		&:hover {
+			.ico-img {
+				background-position: -360px -80px;
+			}
+		}
+	}
+	&.ico-small_business {
+		.ico-img {
+			width: 48px;
+			height: 43px;
+			background: url(asset-path("sprite.png")) -400px 0 no-repeat;
+		}
+		&.active {
+			.ico-img {
+				background-position: -400px -160px;
+			}
+			&:hover {
+				.ico-img {
+					background-position: -400px -160px;
+				}
+			}
+		}
+		&:hover {
+			.ico-img {
+				background-position: -400px -80px;
+			}
+		}
+	}
+	&.ico-bicycle {
+		.ico-img {
+			width: 59px;
+			height: 38px;
+			background: url(asset-path("sprite.png")) -480px 0 no-repeat;
+		}
+		&.active {
+			.ico-img {
+				background-position: -480px -160px;
+			}
+			&:hover {
+				.ico-img {
+					background-position: -480px -160px;
+				}
+			}
+		}
+		&:hover {
+			.ico-img {
+				background-position: -480px -80px;
+			}
+		}
+	}
+	&.ico-honesty_authorities {
+		.ico-img {
+			width: 35px;
+			height: 40px;
+			background: url(asset-path("sprite.png")) -560px 0 no-repeat;
+		}
+		&.active {
+			.ico-img {
+				background-position: -560px -160px;
+			}
+			&:hover {
+				.ico-img {
+					background-position: -560px -160px;
+				}
+			}
+		}
+		&:hover {
+			.ico-img {
+				background-position: -560px -80px;
+			}
+		}
+	}
+	&.ico-your_problem {
+		.ico-img {
+			width: 46px;
+			height: 45px;
+			background: url(asset-path("sprite.png")) -640px 0 no-repeat;
+		}
+		&.active {
+			.ico-img {
+				background-position: -640px -160px;
+			}
+			&:hover {
+				.ico-img {
+					background-position: -640px -160px;
+				}
+			}
+		}
+		&:hover {
+			.ico-img {
+				background-position: -640px -80px;
+			}
+		}
+	}
+}
+.arrow {
+	display: inline-block;
+	width: 20px;
+	height: 53px;
+	cursor: pointer;
+	&.arrow_prev {
+		background: url(asset-path("sprite.png")) -720px 0 no-repeat;
+		&:hover, &.active {
+			background-position: -720px -80px;
+		}
+	}
+	&.arrow_next {
+		background: url(asset-path("sprite.png")) -760px 0 no-repeat;
+		&:hover, &.active {
+			background-position: -760px -80px;
+		}
+	}
+}
+.title {
+	font-family: 'pf_beausans_prosemibold';
+	font-size: (36px / $base-fontSize) + 0em;
+	line-height: 1;
+	color: $color-black;
+	.title-relative {
+		display: inline-block;
+		color: $color-yellow;
+		position: relative;
+		border-bottom: 1px solid $color-yellow;
+		.title-relative-arrow {
+			position: absolute;
+			bottom: -8px;
+			left: 50%;
+			margin-left: -9px;
+			display: inline-block;
+			width: 18px;
+			height: 8px;
+			background: url(asset-path("sprite.png")) -800px 0 no-repeat;
+		}
+	}
+	.title-relative-none {
+		color: $color-black;
+		border-bottom: 1px dotted $color-black;
+		.title-relative-arrow {
+			display: none;
+		}
+	}
+	&:hover {
+		.title-relative-none {
+			border-bottom: none;
+			cursor: default;
+		}
+	}
+}
+.candidate-scale_wrap {
+	width: 308px;
+	float: left;
+}
+.candidate_head {
+	.candidate-ico {
+		display: inline-block;
+		width: 6px;
+		height: 15px;
+		background: url(asset-path("sprite.png")) -840px 0 no-repeat;
+		float: left;
+		&.candidate-ico_four {
+			float: right;
+			width: 33px;
+			background-position: -880px 0;
+		}
+	}
+	.candidate_head-text {
+		float: left;
+		margin-left: 50px;
+		font-family: 'Tahoma';
+		font-size: (14px / $base-fontSize) + 0em;
+		line-height: 15px;
+	}
+}
+.candidate_head-decor {
+	height: 15px;
+	background: #8eec7c; /* Old browsers */
+	background: -moz-linear-gradient(left, #8eec7c 0%, #7ff4ea 18%, #7aafff 39%, #ffffac 57%, #ffd847 79%, #ff6c00 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#8eec7c), color-stop(18%,#7ff4ea), color-stop(39%,#7aafff), color-stop(57%,#ffffac), color-stop(79%,#ffd847), color-stop(100%,#ff6c00)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left, #8eec7c 0%,#7ff4ea 18%,#7aafff 39%,#ffffac 57%,#ffd847 79%,#ff6c00 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left, #8eec7c 0%,#7ff4ea 18%,#7aafff 39%,#ffffac 57%,#ffd847 79%,#ff6c00 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left, #8eec7c 0%,#7ff4ea 18%,#7aafff 39%,#ffffac 57%,#ffd847 79%,#ff6c00 100%); /* IE10+ */
+	background: linear-gradient(to right, #8eec7c 0%,#7ff4ea 18%,#7aafff 39%,#ffffac 57%,#ffd847 79%,#ff6c00 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8eec7c', endColorstr='#ff6c00',GradientType=1 ); /* IE6-9 */
+	@include border-radius(7px);
+	-moz-box-shadow: 1px 1px 10px $color-black;
+	-webkit-box-shadow: 1px 1px 10px $color-black;
+	box-shadow: 1px 1px 10px $color-black;
+}
+.candidate_wrap {
+	width: 308px;
+	-moz-box-shadow: 3px 3px 10px $color-black;
+	-webkit-box-shadow: 3px 3px 10px $color-black;
+	box-shadow: 3px 3px 10px $color-black;
+	@include border-radius(2px);
+	padding: 10px 5px 5px 18px;
+	margin-top: 10px;
+	&.candidate_wrap-left {
+		float: left;
+	}
+}
+.candidate_body {
+	position: relative;
+	padding-bottom: 13px;
+	.link_button {
+		margin-top: 10px;
+	}
+}
+.candidate_body-title {
+	font-family: 'pf_beausans_proregular';
+	font-size: (18px / $base-fontSize) + 0em;
+	color: $color-black;
+	.candidate_list-count {
+		color: #a8a8a8;
+	}
+}
+.candidate_list {
+	position:relative;
+	left: -30px;
+	width: 300px;
+	li {
+		float: left;
+		margin: 20px -10px 0 30px;
+		.candidate_list-ico {
+			display: inline-block;
+			vertical-align: middle;
+			width: 32px;
+			height: 32px;
+			background: url(asset-path("sprite.png")) -880px -40px no-repeat;
+		}
+		.candidate_list-text {
+			display: inline-block;
+			vertical-align: middle;
+			margin-left: 8px;
+			width: 85px;
+			font-family: 'Tahoma';
+			font-size: (14px / $base-fontSize) + 0em;
+			line-height:1;
+			text-decoration: underline;
+			color: $color-blue;
+		}
+	}
+}
+.candidate_link {
+	margin-top: 10px;
+	display: inline-block;
+	font-family: 'pf_beausans_probold';
+	font-size: (23px / $base-fontSize) + 0em;
+	line-height: (46px / 20px) + 0em;
+	background-color: $color-blue;
+	color: $color-white;
+	padding: 0 42px;
+}
+.candidate-decor {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	display: inline-block;
+	width: 270px;
+	height: 1px;
+	background-color: #d6d6d6;
+}
+.candidate-arrow_wrap {
+	text-align: center;
+}
+.candidate-arrow_link {
+	display: inline-block;
+	width: 10px;
+	height: 6px;
+	background: url(asset-path("sprite.png")) -840px -80px no-repeat;
+	cursor: pointer;
+}
+.link_load-more-wrap {
+	float: left;
+	margin-left: 58px;
+	li {
+		float: left;
+		margin-left: 25px;
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+}
+.link_load-more {
+	display: inline-block;
+	width: 48px;
+	height: 41px;
+	background: url(asset-path("sprite.png")) -920px 0 no-repeat;
+	&:hover, &:focus {
+		background-position: -920px -80px;
+	}
+	&.active {
+		background-position: -920px -160px;
+	}
+}
+.info_wrap {
+	.info-ico {
+		display: inline-block;
+		vertical-align: middle;
+		width: 20px;
+		height: 20px;
+		background: url(asset-path("sprite.png")) -800px -80px no-repeat;
+	}
+	.info-text {
+		font-family: 'Tahoma';
+		font-size: (14px / $base-fontSize) + 0em;
+		line-height: 1;
+		color: $color-black;
+	}
+	.info-link {
+		color: $color-blue;
+		text-decoration: underline;
+	}
+	&:hover {
+		.info-link {
+			text-decoration: none;
+		}
+	}
+}
+.soc_list {
+	position:relative;
+	left: -19px;
+	li {
+		float: left;
+		margin-left: 19px;
+		.soc-link {
+			display: inline-block;
+			width: 45px;
+			height: 45px;
+			&.soc-fb {
+				background: url(asset-path("sprite.png")) 0px -240px no-repeat;
+				&:hover, &.active {
+					background-position: -240px -240px;
+				}
+			}
+			&.soc-tw {
+				background: url(asset-path("sprite.png")) -80px -240px no-repeat;
+				&:hover, &.active {
+					background-position: -320px -240px;
+				}
+			}
+			&.soc-vk {
+				background: url(asset-path("sprite.png")) -160px -240px no-repeat;
+				&:hover, &.active {
+					background-position: -400px -240px;
+				}
+			}
+		}
+	}
+}
+.style-left {
+	float: left;
+	padding: 0 40px;
+}
+.info_wrap-list {
+	margin-bottom: 40px;
+	li {
+		margin-top: 10px;
+	}
+}
+.compete-ico {
+	display: inline-block;
+	width: 68px;
+	height: 61px;
+	background: url(asset-path("sprite.png")) -720px -160px no-repeat;
+	&:hover {
+		background-position: -800px -160px;
+	}
+}
+.superman-ico {
+	display:inline-block;
+	width: 74px;
+	height: 93px;
+	background: url(asset-path("sprite.png")) -480px -240px no-repeat;
+	&:hover {
+		background-position: -720px -240px;
+	}
+	&.man {
+		background-position: -600px -240px;
+		width: 71px;
+		height: 111px;
+		&:hover {
+			background-position: -840px -240px;
+		}
+	}
+}
+.superman_list {
+	li {
+		float: left;
+		margin-left: 20px;
+		.superman-ico {
+			margin-top: 20px;
+			&.man {
+				margin-top: 0;
+			}
+		}
+	}
+}
+.help_proj {
+	font-family: 'pf_beausans_prosemibold';
+	font-size: (36px / $base-fontSize) + 0em;
+	text-align:center;
+	.help_proj-text {
+		
+	}
+	.help_proj-link {
+
 	}
 }

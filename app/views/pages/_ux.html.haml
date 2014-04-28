@@ -1,14 +1,228 @@
-.wrap_style
-	%ul.link_list.clearfix
+.container.main.clearfix
+	.wrap_style.clearfix
+		%ul.link_list.clearfix
+			%li
+				%span.link_ico
+				= link_to 'События', '#', class:"link"
+			%li
+				%span.link_ico
+				= link_to 'Проекты', '#', class:"link"
+			%li.active
+				%span.link_ico
+				= link_to 'О нас', '#', class:"link"
+		%ul.wrap_link-button.link-button-left
+			%li
+				= link_to 'Узнать больше', '#', class:"link_button"
+				= link_to 'Стать кандидатом', '#', class:"link_button link_button-blue"
+			%li
+				= link_to 'Узнать больше', '#', class:"link_button active"
+				= link_to 'Стать кандидатом', '#', class:"link_button link_button-blue active"
+.wrap_ico
+	.container.container-big
+		%ul.ico_list-wrap
+			%li
+				%ul.ico_list.clearfix
+					%li
+						%a.ico-item.ico-yard{href: "#"}
+							%span.ico-img
+							%br
+							%span.ico-text Двор
+					%li
+						%a.ico-item.ico-square{href: "#"}
+							%span.ico-img
+							%br
+							%span.ico-text Сквер
+					%li
+						%a.ico-item.ico-garbage{href: "#"}
+							%span.ico-img
+							%br
+							%span.ico-text Мусор
+					%li
+						%a.ico-item.ico-home{href: "#"}
+							%span.ico-img
+							%br
+							%span.ico-text Дом
+					%li
+						%a.ico-item.ico-become_hero{href: "#"}
+							%span.ico-img
+							%br
+							%span.ico-text Стань Героем
+					%li
+						%a.ico-item.ico-small_business{href: "#"}
+							%span.ico-img
+							%br
+							%span.ico-text Малый бизнес
+					%li
+						%a.ico-item.ico-bicycle{href: "#"}
+							%span.ico-img
+							%br
+							%span.ico-text Велосипедизация
+					%li
+						%a.ico-item.ico-honesty_authorities{href: "#"}
+							%span.ico-img
+							%br
+							%span.ico-text Честность властей
+					%li
+						%a.ico-item.ico-your_problem{href: "#"}
+							%span.ico-img
+							%br
+							%span.ico-text Твоя проблема
+					%li
+						%a.arrow.arrow_prev
+						%a.arrow.arrow_next
+			%li
+				%ul.ico_list.clearfix
+					%li
+						%a.ico-item.ico-yard.active{href: "#"}
+							%span.ico-img
+							%br
+							%span.ico-text Двор
+					%li
+						%a.ico-item.ico-square.active{href: "#"}
+							%span.ico-img
+							%br
+							%span.ico-text Сквер
+					%li
+						%a.ico-item.ico-garbage.active{href: "#"}
+							%span.ico-img
+							%br
+							%span.ico-text Мусор
+					%li
+						%a.ico-item.ico-home.active{href: "#"}
+							%span.ico-img
+							%br
+							%span.ico-text Дом
+					%li
+						%a.ico-item.ico-become_hero.active{href: "#"}
+							%span.ico-img
+							%br
+							%span.ico-text Стань Героем
+					%li
+						%a.ico-item.ico-small_business.active{href: "#"}
+							%span.ico-img
+							%br
+							%span.ico-text Малый бизнес
+					%li
+						%a.ico-item.ico-bicycle.active{href: "#"}
+							%span.ico-img
+							%br
+							%span.ico-text Велосипедизация
+					%li
+						%a.ico-item.ico-honesty_authorities.active{href: "#"}
+							%span.ico-img
+							%br
+							%span.ico-text Честность властей
+					%li
+						%a.ico-item.ico-your_problem.active{href: "#"}
+							%span.ico-img
+							%br
+							%span.ico-text Твоя проблема
+					%li
+						%a.arrow.arrow_prev.active
+						%a.arrow.arrow_next.active
+.container.container-big
+	%h2.title
+		Местное самоуправление
+		%span.title-relative
+			сейчас
+			%span.title-relative-arrow
+		и как
+		%span.title-relative.title-relative-none
+			может быть
+			%span.title-relative-arrow
+	%h2.title.active
+		Местное самоуправление
+		%span.title-relative.title-relative-none
+			сейчас
+			%span.title-relative-arrow
+		и как
+		%span.title-relative
+			может быть
+			%span.title-relative-arrow
+	.candidate-scale_wrap
+		.candidate_head.clearfix
+			%span.candidate-ico
+			%p.candidate_head-text Шкала количества кандидатов
+			%span.candidate-ico.candidate-ico_four
+		.candidate_head-decor
+	%ul.link_load-more-wrap.clearfix
 		%li
-			%span.link_ico
-			= link_to 'События', '#', class:"link"
+			%a.link_load-more{href: "#"}
 		%li
-			%span.link_ico
-			= link_to 'Проекты', '#', class:"link"
-		%li.active
-			%span.link_ico
-			= link_to 'О нас', '#', class:"link"
-	%div.wrap_link-button
-		= link_to 'Узнать больше', '#', class:"link_button"
-		= link_to 'Стать кандидатом', '#', class:"link_button link_button-blue"
+			%a.link_load-more.active{href: "#"}
+	.clear
+	.candidate_wrap.candidate_wrap-left
+		.candidate_body
+			%h5.candidate_body-title
+				Кандидаты в депутаты  муниципального собрания 
+				%span.candidate_list-count (17)
+			%ul.candidate_list.clearfix
+				%li.clearfix
+					%span.candidate_list-ico
+					%span.candidate_list-text Партия «Зеленые»
+				%li.clearfix
+					%span.candidate_list-ico
+					%span.candidate_list-text Общественное движение «Светофор»
+				%li.clearfix
+					%span.candidate_list-ico
+					%span.candidate_list-text Независимый кандидат
+				%li.clearfix
+					%span.candidate_list-ico
+					%span.candidate_list-text Партия «Сёстры»
+				%li.clearfix
+					%span.candidate_list-ico
+					%span.candidate_list-text Партия «Синие  ведерки»
+				%li.clearfix
+					%span.candidate_list-ico
+					%span.candidate_list-text Общественное движение «Мусоровывоз»
+				%li.clearfix
+					%span.candidate_list-ico
+					%span.candidate_list-text Независимый кандидат
+				%li.clearfix
+					%span.candidate_list-ico
+					%span.candidate_list-text Партия «Лунные дети»
+				%li.clearfix
+					%span.candidate_list-ico
+					%span.candidate_list-text Независимый кандидат
+				%li.clearfix
+					%span.candidate_list-ico
+					%span.candidate_list-text Партия «Одномандат- ный округ»
+			%a.link_button.link_button-blue{href: "#"} Стать кандидатом
+			%span.candidate-decor
+		.candidate-arrow_wrap
+			%span.candidate-arrow_link
+	.style-left
+		%ul.info_wrap-list.clearfix
+			%li
+				.info_wrap
+					%span.info-ico
+					%span.info-text Знаете событие, которого тут нет? Напишите нам на 
+					%a.info-link{href: "#"} info@forceofgoodness.ru
+			%li
+				.info_wrap
+					%span.info-ico
+					%span.info-text Знаете событие, которого тут нет? Напишите нам на 
+					%a.info-link{href: "#"} info@forceofgoodness.ru
+		.clear
+		%ul.soc_list.clearfix
+			%li
+				%a.soc-link.soc-fb{href: "#"}
+			%li
+				%a.soc-link.soc-tw{href: "#"}
+			%li
+				%a.soc-link.soc-vk{href: "#"}
+			%li
+				%a.compete-ico{href: "#"}
+		%ul.superman_list.clearfix
+			%li
+				%a.superman-ico{href: "#"}
+			%li
+				%a.superman-ico.man{href: "#"}
+	.clear
+	%h2.help_proj
+		%span.help_proj-text Хочешь помочь нашему проекту, но не знаешь как?
+		%br
+		%a.help_proj-link{href: "#"} Заполни минианкету
+	%form.form_login{action: "#"} 
+
+

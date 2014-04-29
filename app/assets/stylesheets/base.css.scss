@@ -5,16 +5,38 @@
 .wrap_style {
 	padding: 10px 0;
 }
+body {
+	font-size: $base-fontSize;
+}
+.col-md-6 {
+	padding: 0;
+}
 a {
 	text-decoration: none;
 	&:hover, &:focus {
 		text-decoration: none;
 	}
 }
+input {
+	outline: none;
+}
 ul, ol {
 	list-style: none;
 	padding: 0;
 	margin: 0;
+}
+.nav {
+	position: relative;
+	> li {
+		margin-left: 20px;
+		> a {
+			padding:0;
+			display: inline-block;
+			&:hover, &:focus {
+				background-color: transparent;
+			}
+		}
+	}
 }
 
 
@@ -59,7 +81,7 @@ ul, ol {
 }
 .link_button {
 	display: inline-block;
-	line-height: (46px / 23px) + 0em;
+	line-height: (46px / 20px) + 0em;
 	font-size: (23px / $base-fontSize) + 0em;
 	font-family: 'pf_beausans_probold';
 	background-color: $color-yellow;
@@ -124,6 +146,9 @@ ul, ol {
 		text-align: center;
 		display: block;
 		text-decoration: underline;
+		&.ico-text_small {
+			width: 72px;
+		}
 	}
 	&:hover {
 		color: $color-white;
@@ -343,15 +368,15 @@ ul, ol {
 	height: 53px;
 	cursor: pointer;
 	&.arrow_prev {
-		background: url(asset-path("sprite.png")) -720px 0 no-repeat;
+		background: url(asset-path("sprite.png")) -720px -80px no-repeat;
 		&:hover, &.active {
-			background-position: -720px -80px;
+			background-position: -720px -0px;
 		}
 	}
 	&.arrow_next {
-		background: url(asset-path("sprite.png")) -760px 0 no-repeat;
+		background: url(asset-path("sprite.png")) -760px -80px no-repeat;
 		&:hover, &.active {
-			background-position: -760px -80px;
+			background-position: -760px 0px;
 		}
 	}
 }
@@ -642,11 +667,379 @@ ul, ol {
 .help_proj {
 	font-family: 'pf_beausans_prosemibold';
 	font-size: (36px / $base-fontSize) + 0em;
+	line-height: 1;
 	text-align:center;
-	.help_proj-text {
-		
-	}
 	.help_proj-link {
-
+		border-bottom: 1px dashed $color-blue;
+		color: $color-blue;
+		&:hover {
+			border-bottom: none;
+			color: $color-blue;
+		}
 	}
 }
+.form-style_list {
+	li {
+		margin-top: 10px;
+	}
+}
+.form-pos {
+	padding: 20px 0;
+}
+.form_inp {
+	display:inline-block;
+	width: 375px;
+	line-height: 1;
+	height: (47px / 16px) + 0em;
+	font-family: 'Tahoma';
+	font-size: (18px / $base-fontSize) + 0em;
+	color: $color-black;
+	background-color: #f8f8f8;
+	border: 1px solid transparent;
+	border-top: 1px solid #dfdfdf;
+	border-left: 1px solid #dfdfdf;
+	padding: 0 16px;
+}
+.form-hint_text {
+	display: block;
+	font-family: 'Tahome';
+	font-size: (15px / $base-fontSize) + 0em;
+	color: #ce0000;
+}
+.input_wrap {
+	position: relative;
+	.form_inp-text {
+		position: absolute;
+		top: 50%;
+		left: 16px;
+		margin-top: -6px;
+		display: inline-block;
+		color: $color-black;
+		font-family: 'Tahoma';
+		font-size: (18px / $base-fontSize) + 0em;
+		line-height: 1;
+	}
+	.form-hint_text {
+		display: none;
+		margin-left: 20px;
+		font-family: 'Tahome';
+		font-size: (15px / $base-fontSize) + 0em;
+		color: #ce0000;
+	}
+	.form_inp-star {
+		display: inline-block;
+		width: 5px;
+		height: 5px;
+		background: url(asset-path("sprite.png")) -880px -80px no-repeat;
+		vertical-align: 6px;
+	}
+	&.input_locked {
+		.form_inp-text {
+			color: #c4c4c4;
+		}
+	}
+	&.input_completed {
+		.form_inp {
+			border: 1px solid $color-blue;
+		}
+		.form_inp-star{
+			display: none;
+		}
+	}
+	&.input_error {
+		.form-hint_text {
+			display: inline-block;
+		}
+		.form_inp {
+			background-color: #fff3f3;
+			border: 1px solid #d15a5a;
+		}
+		.form_inp-star {
+			display: none;
+		}
+	}
+	&.input_send {
+		float: left;
+		.form-hint_text {
+			display: block;
+			margin: 7px 0 0 0;
+		}
+	}
+}
+.block_news {
+	width: 232px;
+	position: relative;
+	padding: 161px 11px 17px 17px;
+	-moz-box-shadow: 2px 2px 10px #727272;
+	-webkit-box-shadow: 2px 2px 10px #727272;
+	box-shadow: 2px 2px 10px #727272;
+	&.block_news-left {
+		float: left;
+	}
+	.block_news-img {
+		display: inline-block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 146px;
+		width: 232px;
+	}
+	.block_news-title {
+		font-size: (18px / $base-fontSize) + 0em;
+		color: $color-black;
+		line-height: 1;
+		font-family: 'pf_beausans_prosemibold';
+		.block_news-title_ico {
+			display: inline-block;
+			width: 18px;
+			height: 18px;
+			background: url(asset-path("sprite.png")) -0px -320px no-repeat;
+			vertical-align: middle;
+			&:hover, &:focus {
+				background-position: -40px -320px;
+			}
+		}
+		&:hover, &:focus {
+			.block_news-title_text {
+				cursor: default;
+				border-bottom: 1px solid $color-black;
+			}
+		}
+	}
+	.block_news-data_link {
+		font-family: 'Tahoma';
+		font-size: (13px / $base-fontSize) + 0em;
+		line-height: 1;
+		color: $color-blue;
+		&:hover, &:focus {
+			text-decoration: underline;
+		}
+	}
+	.block_news-text {
+		font-family: 'Tahoma';
+		font-size: (13px / $base-fontSize) + 0em;
+		line-height: (20px / 13px) + 0em;
+	}
+}
+.form_login-send {
+	float: left;
+	.inp_submit {
+		display: none;
+	}
+	.link_button {
+		cursor: pointer;
+		margin-left: 20px;
+		@include padding( '', 34px, '', 34px, 20px);
+	}
+}
+.find-block_wrap {
+	height: 43px;
+	width: 406px;
+	position: relative;
+	.find-block {
+		width: 406px;
+		height: 43px;
+		border: 1px solid transparent;
+		background-color: $color-white;
+		padding: 0 80px 0 21px;
+		-webkit-box-shadow: 0.1em 0.1em 1px rgba(122,122,122,0.5);
+		-moz-box-shadow:    0.1em 0.1em 1px rgba(122,122,122,0.5);
+		box-shadow: 0.1em 0.1em 1px rgba(122,122,122,0.5);
+		@include border-radius(1px);
+		&:focus {
+			border-color: $color-yellow;
+		}
+	}
+	.find-block_finder {
+		position: absolute;
+		right: 0;
+		top: 0;
+		display: inline-block;
+		line-height: 43px;
+		background-color: $color-yellow;
+		color: $color-white;
+		font-family: 'pf_beausans_probold';
+		font-size: (16px / $base-fontSize) + 0em;
+		padding: 0 14px;
+	}
+	.find-block-ico_close {
+		display: none;
+		width: 11px;
+		height: 11px;
+		background: url(asset-path("sprite.png")) -80px -320px no-repeat;
+		position: absolute;
+		top: 17px;
+		right: 86px;
+		cursor: pointer;
+		&.active {
+			display: inline-block;
+		}
+	}
+}
+.block_popup-wrap {
+	&.block_popup-wrap_left {
+		float: left;
+		margin-left: 40px;
+	}
+	.popup_hint {
+		-webkit-box-shadow: 0.2em 0.2em 2px rgba(122,122,122,0.5);
+		-moz-box-shadow:    0.2em 0.2em 2px rgba(122,122,122,0.5);
+		box-shadow: 		0.2em 0.2em 2px rgba(122,122,122,0.5);
+		background-color: $color-white;
+		@include padding( 21px, 21px, 21px, 21px, 16px);
+		width: 406px;
+		.popup_hint-title {
+			font-family: 'pf_beausans_prosemibold';
+			font-size: (20px / $base-fontSize) + 0em;
+			line-height: 1;
+			color: $color-black;
+		}
+		.popup_hint-text {
+			font-family: 'Tahoma';
+			font-size: (15px / $base-fontSize) + 0em;
+			line-height: (20px / 13px) + 0em;
+		}
+	}
+}
+// start home
+.header {
+	padding: 35px 0 31px 0;
+}
+.logo-wrap {
+	float: left;
+}
+.text-decor {
+	display: inline-block;
+	width: 170px;
+	padding-left: 20px;
+	font-family: 'pf_beausans_probbook';
+	font-size: (13px / $base-fontSize) + 0em;
+	line-height: (14px / 13px) + 0em;
+	border-left: 1px solid #a3a3a3;
+	color: $color-black;
+	vertical-align: middle;
+	margin-left: 17px;
+}
+.slider {
+	position: relative;
+	text-align: center;
+	background: url(asset-path("slider-bg.jpg")) no-repeat;
+	background-size: cover;
+	width: 100%;
+	padding: 55px 0 68px 0;
+	.slider-button_decor {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		display: inline-block;
+		width: 100%;
+		height: 4px;
+		background: url(asset-path("sprite-bot_decor.png")) repeat-x;
+	}
+}
+.container-pos {
+	position: relative;
+	.arrow {
+		position: absolute;
+		top: 50%;
+		margin-top: -27px;
+		&.arrow_prev {
+			left: 0;
+		}
+		&.arrow_next {
+			right: 0;
+		}
+	}
+	.ico_list {
+		width: 998px;
+		margin-top: 50px;
+	}
+}
+.slider-title {
+	color: $color-white;
+	font-size: (70px / $base-fontSize) + 0em;
+	line-height: 1;
+	text-shadow: 1px 1px 2px $color-black, 0 0 1em $color-black;
+}
+.slider-text {
+	color: $color-white;
+	text-shadow: 1px 1px 2px $color-black, 0 0 1em $color-black;
+	width: 610px;
+	font-size: (19px / $base-fontSize) + 0em;
+	line-height: (30px / 19px) + 0em;
+	margin: 35px auto;
+}
+.about-title {
+	display: inline-block;
+	font-family: 'pf_beausans_prosemibold';
+	font-size: (36px / $base-fontSize) + 0em;
+	line-height: 1;
+	color: $color-blue;
+	border-bottom: 1px solid $color-blue;
+	margin-top: 47px;
+}
+.about-text {
+	margin-top: 22px;
+	font-family: 'Tahoma';
+	font-size: (14px / $base-fontSize) + 0em;
+	line-height: (23px / 14px) + 0em;
+}
+.block-about_hint {
+	float: right;
+	width: 397px;
+	margin-top: 47px;
+	background-color: #fff8e9;
+	padding: 35px 37px 24px 35px;
+	position: relative;
+}
+.about_hint-decor {
+	position: absolute;
+	left: 0;
+	display: inline-block;
+	width: 100%;
+	height: 3px;
+	&.about_hint-decor_top {
+		top: 0;
+		background: url(asset-path("block-about_hint-decor_top.png")) repeat-x;
+	}
+	&.about_hint-decor_bottom {
+		bottom: 0;
+		background: url(asset-path("block-about_hint-decor.png")) repeat-x;
+	}
+}
+.about-price {
+	display: block;
+	text-align: center;
+	// font-family: 'pf_beausans_probold';
+	font-size: (80px / $base-fontSize) + 0em;
+	line-height: 1;
+	color: $color-blue;
+	.about-price_text {
+		font-family: 'pf_beausans_prolight';
+		font-size: (18px / 80px) + 0em;
+		line-height: 1;
+	}
+}
+.about_hint-text {
+	position: relative;
+	margin-top: 20px;
+	text-align: center;
+	font-family: 'Tahoma';
+	font-size: (13px / $base-fontSize) + 0em;
+	line-height: (24px / 13px) + 0em;
+	padding: 38px 0 83px 0;
+	border-top: 1px solid #e5e1d7;
+	border-bottom: 1px solid #e5e1d7;
+	.about_hint-ico_more {
+		position: absolute;
+		bottom: -20px;
+		left: 50%;
+		margin-left: -24px;
+		display: inline-block;
+		width: 48px;
+		height: 41px;
+		background: url(asset-path("sprite.png")) -920px -0px no-repeat;
+		background-color: #fff8e9;
+	}
+}
+// end home

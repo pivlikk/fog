@@ -1,0 +1,89 @@
+%header.header
+	.container
+		.logo-wrap.clearfix
+			%a.logo-link{href: "#"}
+				= image_tag "logo.png", :class => "logo"
+			%span.text-decor Объединение гражданских  проектов с политическими  партиями
+		%ul.nav.navbar-nav.navbar-right
+			%li
+				= link_to 'События', '#', class:"link"
+			%li
+				= link_to 'О Коалиции', '#', class:"link"
+			%li.active
+				= link_to 'Вопросы и ответы', '#', class:"link"
+.slider
+	%span.slider-button_decor
+	.container.container-pos
+		%h2.slider-title Миру нужны герои
+		%p.slider-text Город накрыла тьма. Влюбленным негде целоваться все лавочки сломаны. Для велосипедистов не осталось дорожек и они вынуждены передвигаться по поребрикам. Спасти город можешь только ты!  
+		%p.slider-text Победить зло городе очень просто, достаточно начать со своего двора. Силам добра нужна твоя помощь! Регистрируйся и становись волонтером.
+		= link_to 'Узнать больше', '#', class:"link_button"
+		%a.arrow.arrow_prev
+		%a.arrow.arrow_next
+		%ul.ico_list.clearfix
+			%li
+				%a.ico-item.ico-yard{href: "#"}
+					%span.ico-img
+					%br
+					%span.ico-text Двор
+			%li
+				%a.ico-item.ico-square{href: "#"}
+					%span.ico-img
+					%br
+					%span.ico-text Сквер
+			%li
+				%a.ico-item.ico-garbage{href: "#"}
+					%span.ico-img
+					%br
+					%span.ico-text Мусор
+			%li
+				%a.ico-item.ico-home{href: "#"}
+					%span.ico-img
+					%br
+					%span.ico-text Дом
+			%li
+				%a.ico-item.ico-become_hero.active{href: "#"}
+					%span.ico-img
+					%br
+					%span.ico-text.ico-text_small Стань Героем
+			%li
+				%a.ico-item.ico-small_business{href: "#"}
+					%span.ico-img
+					%br
+					%span.ico-text.ico-text_small Малый бизнес
+			%li
+				%a.ico-item.ico-bicycle{href: "#"}
+					%span.ico-img
+					%br
+					%span.ico-text Велосипедизация
+			%li
+				%a.ico-item.ico-honesty_authorities{href: "#"}
+					%span.ico-img
+					%br
+					%span.ico-text.ico-text_small Честность властей
+			%li
+				%a.ico-item.ico-your_problem{href: "#"}
+					%span.ico-img
+					%br
+					%span.ico-text.ico-text_small Твоя проблема
+.block-about
+	.container
+		.col-md-6
+			%h3.about-title О коалиции
+			%p.about-text 
+				Он вспомнил и сообразил всё о Дунечке, и сердце его замерло. Он сорвался с места и побежал. Человек остановился на пороге, посмотрел молча на Раскольникова и ступил шаг в комнату. 
+			%p.about-text 
+				Она крепко пожала руку князю, приветливо и ласково улыбнулась ему и вышла. На Ганю она не посмотрела. Но только это и успел выговорить, онемев под ужасным взглядом Аглаи. В этом взгляде выразилось столько страдания и в то же время бесконечной ненависти, что он всплеснул руками, вскрикнул и бросился к ней, но уже было поздно! Она не перенесла даже и мгновения его колебания, закрыла руками лицо, вскрикнула: «Ах, боже мой!» — и бросилась вон из комнаты, за ней Рогожин, чтоб отомкнуть ей задвижку у дверей на улицу.
+		.col-md-6.clearfix
+			.block-about_hint
+				%div.about-price 
+					$44,4
+					%div.about-price_text млрд
+				%p.about_hint-text
+					Такую сумму потеряли за один день 300 богатейших людей планеты из-за обвала котировок на мировых биржах, произошедшего на фоне обострения политической ситуации в Крыму.
+					%span.about_hint-ico_more
+				%span.about_hint-decor.about_hint-decor_top
+				%span.about_hint-decor.about_hint-decor_bottom
+			
+
+

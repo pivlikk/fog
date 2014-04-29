@@ -223,6 +223,63 @@
 		%span.help_proj-text Хочешь помочь нашему проекту, но не знаешь как?
 		%br
 		%a.help_proj-link{href: "#"} Заполни минианкету
-	%form.form_login{action: "#"} 
+	%form.form_login.form-pos{action: "#"}
+		%div
+			%ul.form-style_list
+				%li
+					%div.input_wrap.input_locked
+						%input.form_inp{type: "text"}
+						%span.form_inp-text 
+							Имя
+							%span.form_inp-star
+						%span.form-hint_text Имя состоит из букв
+				%li
+					%div.input_wrap.input_completed
+						%input.form_inp{type: "text"}
+						%span.form_inp-text 
+							Василий
+							%span.form_inp-star
+						%span.form-hint_text Имя состоит из букв
+				%li
+					%div.input_wrap.input_error
+						%input.form_inp{type: "text"}
+						%span.form_inp-text 
+							111
+							%span.form_inp-star
+						%span.form-hint_text Имя состоит из букв
+				%li.clearfix
+					%div.input_wrap.input_error.input_send
+						%input.form_inp{type: "text"}
+						%span.form_inp-text 
+							dfv
+							%span.form_inp-star
+					%label.form_login-send
+						%input.inp_submit{type: "submit"}
+						%span.link_button Отправить
+					.clear
+					.form-hint_text Введите e-mail
+				%li
+					.find-block_wrap
+						%input.find-block{placeholder: "Введите адрес, чтобы найти муниципалитет", type: "text"}
+						%span.find-block_finder Найти
+				%li
+					.find-block_wrap
+						%input.find-block{placeholder: "Введите адрес, чтобы найти муниципалитет", value: "Димитрова ул. 65", type: "text"}
+							%span.find-block-ico_close.active
+						%span.find-block_finder Найти
+	.block_news.block_news-left
+		= image_tag "styles-inf.jpg", :class => "block_news-img"
+		%h4.block_news-title
+			%span.block_news-title_text Весенний субботник
+			%span.block_news-title_ico
+		%a.block_news-data_link{href: "#"} 24 апреля 2014
+		%p.block_news-text Принято постановление о проведении месячника чистоты на территории всех муниципальных образований
+	.block_popup-wrap.block_popup-wrap_left
+		.popup_hint
+			%h3.popup_hint-title Муниципальное образование № 71
+			%p.popup_hint-text Если в данном муниципалитете появятся независимые кандидаты, будут отремонтированы дороги и очищены залежи мусора во дворах. Переулки наполнятся светом и добром. Заброшенный пустырь будет преобразован в многопрофильную спортивную площадку.
+	.clear
+
+
 
 

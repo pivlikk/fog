@@ -1,0 +1,13 @@
+%header.header
+	.container
+		.logo-wrap.clearfix
+			%a.logo-link{href: "#"}
+				= image_tag "logo.png", :class => "logo"
+			%span.text-decor Объединение гражданских  проектов с политическими  партиями
+		%ul.nav.navbar-nav.navbar-right
+			%li
+				= link_to 'События', '#', class:"link"
+			%li
+				= link_to 'О Коалиции', '#', class:"link"
+			%li.active
+				= link_to 'Вопросы и ответы', '#', class:"link"

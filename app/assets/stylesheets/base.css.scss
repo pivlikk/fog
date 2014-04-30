@@ -1282,6 +1282,13 @@ ul, ol {
 	}
 }
 .footer {
-	
+	background-color: #f8f8f8;
+	padding: 28px 0 18px 0;
+	.copyright {
+		text-align: left;
+	}
+	.autor, .col-right {
+		text-align: right;
+	}
 }
 // end home

@@ -1,0 +1,49 @@
+%header#header.header-bg
+	.container
+		.logo-wrap.clearfix
+			%a.logo-link.logo-link-white{href: "#"}
+			%span.text-decor Объединение гражданских  проектов с политическими  партиями
+		%ul.nav.navbar-nav.navbar-right.navbar-inverse
+			%li.active
+				= link_to 'События', '#', class:"link"
+			%li
+				= link_to 'О Коалиции', '#', class:"link"
+			%li
+				= link_to 'Вопросы и ответы', '#', class:"link"
+%body#body
+	.about-wrap
+		.container
+			.row.events-wrap
+				.col-md-4
+					%h3.about-title.about-title_black События
+				.col-md-8
+					.info_wrap.info_wrap-indent
+						%span.info-text 
+							%span.info-text-ico
+							Чтобы узнать о событиях в своем округе, выберите район и муниципалитет на карте или введите адрес в поле поиска
+		%span.about_wrap-decor
+	.sub_nav-wrap
+		.map-header-bottom_decor
+		.container
+			%ul.sub_nav.clearfix
+				%li
+					= link_to 'Все события', '#', class:"sub_nav-link"
+				%li
+					= link_to 'Помощь бездомным', '#', class:"sub_nav-link"
+				%li.active
+					= link_to 'Велосипедизация', '#', class:"sub_nav-link"
+				%li
+					= link_to 'Помощь природе', '#', class:"sub_nav-link"
+				%li
+					= link_to 'Уборка мусора', '#', class:"sub_nav-link"
+
+	
+.footer
+	.container
+		.row
+			.col-xs-6
+				%span.copyright © 2014 Общественное объединение «Силы Добра»
+			.col-xs-6.col-right
+				%span.autor 
+					Дизайн — 
+					%a.autor-name{href: "#"}Friday

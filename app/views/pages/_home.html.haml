@@ -1,8 +1,7 @@
-%header.header
+%header#header
 	.container
 		.logo-wrap.clearfix
 			%a.logo-link{href: "#"}
-				= image_tag "logo.png", :class => "logo"
 			%span.text-decor Объединение гражданских  проектов с политическими  партиями
 		%ul.nav.navbar-nav.navbar-right
 			%li
@@ -242,7 +241,7 @@
 				Но только что он вступил в столовую (еще через одну комнату от гостиной), с ним в дверях почти столкнулась выходившая Аглая. Она была одна.	Пристальный и беспокойный ее взгляд нетерпеливо устремился на Аглаю. Обе сели поодаль одна от другой: Аглая на диване в углу комнаты, Настасья Филипповна у окна. Князь и Рогожин не садились, да их и не пригласили садиться. Князь с недоумением и как бы с болью опять поглядел на Рогожина, но тот улыбался всё прежнею своею улыбкой. Молчание продолжалось еще несколько мгновений.
 			%span.map-header_decor
 		.row
-			.col-xs-6
+			.col-xs-6.col-center
 				%ul.soc_list.clearfix
 					%li
 						%a.soc-link.soc-fb{href: "#"}
@@ -251,26 +250,36 @@
 					%li
 						%a.soc-link.soc-vk{href: "#"}
 				.soc_list-text Рассказать о нас своим друзьям
-			.col-xs-6
+			.col-xs-6.col-center
 				%a.compete-ico{href: "#"}
 				.soc_list-text 
 					Можно выбрать свое событие 
 					%a.block_news-data_link{href: "#"} тут
-		.row
-			.col-xs-6
+		.row.superman-wrap
+			.col-xs-6.col-center
 				%a.superman-ico{href: "#"}
-				%span.superman-text Готов сам менять города — становись депутатом
+				%br
+				%div.soc_list-text 
+					Готов сам менять города — 
+					%br становись депутатом
 				= link_to 'Стать кандидатом', '#', class:"link_button link_button-blue"
-				%span.soc-info_hint-text 
+				%div.soc-info_hint-text 
 					Не знаешь как это сделать – иди в 
 					%a.soc-info_hint-link{href: "#{}"} Школу депутатов
 					, там тебя научат
-			.col-xs-6
+			.col-xs-6.col-center
 				%a.superman-ico.man{href: "#"}
-				%span.superman-text Так и не понял кто такие муниципальные депутаты —
+				%br
+				%div.soc_list-text 
+					Так и не понял кто такие 
+					%br
+					муниципальные депутаты —
 				%a.superman-link{href: "#"} почитай ответы на основные вопросы
 		%form.form_login.form-pos.form-center{action: "#"}
 			%div
+				%h3.subscription-title Каждый может стать героем
+				%h3.subscription-title.title-blue Заполни минианкету
+				%br
 				%ul.form-style_list
 					%li
 						%div.input_wrap.input_disabled
@@ -313,6 +322,39 @@
 							%span.form_inp-text 
 								Логин Вконтакте
 							%span.form-hint_text Имя состоит из букв
+				%dl.check-box_list
+					%dt.title-form_small Я готов:
+					%dd.check-box_item
+						%label.check-box_item_wrap
+							%input.check-box_item_checkbox{:type => "checkbox"}
+							%span.check-box_item_ico_wrap
+								%span.check-box_item_ico
+							%span.check-box_item_text Поддержать материально
+							%span.clear
+					%dd.check-box_item
+						%label.check-box_item_wrap
+							%input.check-box_item_checkbox{:type => "checkbox"}
+							%span.check-box_item_ico_wrap
+								%span.check-box_item_ico
+							%span.check-box_item_text Стать волонтером
+							%span.clear
+					%dd.check-box_item
+						%label.check-box_item_wrap
+							%input.check-box_item_checkbox{:type => "checkbox"}
+							%span.check-box_item_ico_wrap
+								%span.check-box_item_ico
+							%span.check-box_item_text Продвигать проект в интернете
+							%span.clear
+					%dd.check-box_item
+						%label.check-box_item_wrap
+							%input.check-box_item_checkbox{:type => "checkbox"}
+							%span.check-box_item_ico_wrap
+								%span.check-box_item_ico
+							%span.check-box_item_text Участвовать в мероприятиях
+							%span.clear
+				.submit-wrap
+					%input.submit-input{:type => "submit"}
+					%a.submit-link.link_button{:href => "#"} Отправить
 .footer
 	.container
 		.row

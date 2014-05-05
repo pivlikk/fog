@@ -1,13 +1,69 @@
-%header.header
+%header#header.header-bg
 	.container
 		.logo-wrap.clearfix
-			%a.logo-link{href: "#"}
-				= image_tag "logo.png", :class => "logo"
+			%a.logo-link.logo-link-white{href: "#"}
 			%span.text-decor Объединение гражданских  проектов с политическими  партиями
-		%ul.nav.navbar-nav.navbar-right
+		%ul.nav.navbar-nav.navbar-right.navbar-inverse
 			%li
 				= link_to 'События', '#', class:"link"
-			%li
-				= link_to 'О Коалиции', '#', class:"link"
 			%li.active
+				= link_to 'О Коалиции', '#', class:"link"
+			%li
 				= link_to 'Вопросы и ответы', '#', class:"link"
+%body#body
+	.about-wrap
+		.container
+			%h3.about-title.about-title_black О коалиции
+		%span.about_wrap-decor
+	.container
+		.row.about-wrapper
+			.col-md-8
+				%p.about-words.about-words_bold
+					Он вспомнил и сообразил всё о Дунечке, и сердце его замерло. Он сорвался с места и побежал. Человек остановился на пороге, посмотрел молча на Раскольникова и ступил шаг в комнату. 
+				%p.about-words
+					Она крепко пожала руку князю, приветливо и ласково улыбнулась ему и вышла. На Ганю она не посмотрела. Но только это и успел выговорить, онемев под ужасным взглядом Аглаи. В этом взгляде выразилось столько страдания и в то же время бесконечной ненависти, что он всплеснул руками, вскрикнул и бросился к ней, но уже было поздно! Она не перенесла даже и мгновения его колебания, закрыла руками лицо, вскрикнула: «Ах, боже мой!» — и бросилась вон из комнаты, за ней Рогожин, чтоб отомкнуть ей задвижку у дверей на улицу.
+				.about_list
+					.row.clearfix
+						.col-md-6
+							%a.about_list-link{:href => "#"}
+								= image_tag "about-list-1.jpg", :class => "about_list-img"
+							%span.about_list-text Муниципальное образование № 71
+						.col-md-6
+							%a.about_list-link{:href => "#"}
+								= image_tag "about-list-2.jpg", :class => "about_list-img"
+							%span.about_list-text Cанкт-Петербург. Съезд общественных огранизаций
+				%p.about-words
+					Поскольку Собакевич сам был человек здоровый и крепкий, то он хотел, чтобы его окружали такие же крепкие предметы. Манилов, приглашая Чичикова к себе, сообщил ему, что его деревня находится в пятнадцати верстах от города, но уже минула и шестнадцатая верста, а деревни никакой не было. Павел Иванович был человек сообразительный, и вспомнил, если тебя приглашают в дом за пятнадцать верст, стало быть, ехать придется все тридцать.
+				%h3.title-medium Члены коалиции
+				%ul.logo-list.clearfix
+					%li
+						%a.logo-list-link{:href => "#"}
+							= image_tag "about-ico-1.jpg", :class => "logo-list-img"
+					%li
+						%a.logo-list-link{:href => "#"}
+							= image_tag "about-ico-2.jpg", :class => "logo-list-img"
+					%li
+						%a.logo-list-link.active{:href => "#"}
+							= image_tag "about-ico-3.jpg", :class => "logo-list-img"
+					%li
+						%a.logo-list-link{:href => "#"}
+							= image_tag "about-ico-4.jpg", :class => "logo-list-img"
+					%li
+						%a.logo-list-link{:href => "#"}
+							= image_tag "about-ico-5.jpg", :class => "logo-list-img"
+					%li
+						%a.logo-list-link{:href => "#"}
+							= image_tag "about-ico-6.jpg", :class => "logo-list-img"
+					%li
+						%a.logo-list-link{:href => "#"}
+							= image_tag "about-ico-7.jpg", :class => "logo-list-img"
+			.col-md-4
+.footer
+	.container
+		.row
+			.col-xs-6
+				%span.copyright © 2014 Общественное объединение «Силы Добра»
+			.col-xs-6.col-right
+				%span.autor 
+					Дизайн — 
+					%a.autor-name{href: "#"}Friday

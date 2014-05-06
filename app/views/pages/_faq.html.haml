@@ -1,0 +1,71 @@
+#mainarea
+	%header#header.header-bg
+		.container
+			.logo-wrap.clearfix
+				%a.logo-link.logo-link-white{href: "#"}
+				%span.text-decor Объединение гражданских  проектов с политическими  партиями
+			%ul.nav.navbar-nav.navbar-right.navbar-inverse
+				%li
+					= link_to 'События', '#', class:"link"
+				%li
+					= link_to 'О Коалиции', '#', class:"link"
+				%li.active
+					= link_to 'Вопросы и ответы', '#', class:"link"
+	%body#body
+		.about-wrap
+			.container
+				.row.events-wrap
+					.col-md-4.col-indent
+						%h3.about-title.about-title_black Вопросы и ответы
+					
+						
+			%span.about_wrap-decor
+		.accordion
+			.container
+				.row
+					.col-md-8
+						.accordion-title_wrap.active
+							%h3.accordion-title
+								%span.accordion-title_text Кто такой муниципальный депутат?
+								%span.accordion-title_ico
+						.accordion-body.active
+							%p.accordion-body_text
+								Муниципальный депутат — это депутат муниципального совета одного их округов Санкт-Петербурга. Им должен быть ответственный и инициативный житель, небезразличный к своему городу, району и двору. Муниципальный депутат безвозмездно тратит свое время, чтобы сделать город гораздо дружелюбнее к своим жителям. Он знает проблемы своего муниципалитета, не меньше других заинтересован в их решении и постоянно ищет способ сделать округ лучше.
+
+						.accordion-title_wrap
+							%h3.accordion-title
+								%span.accordion-title_text Что такое муниципальный совет в Санкт-Петербурге?
+								%span.accordion-title_ico
+						.accordion-body
+							%p.accordion-body_text
+
+						.accordion-title_wrap
+							%h3.accordion-title
+								%span.accordion-title_text Что такое муниципальный фильтр?
+								%span.accordion-title_ico
+						.accordion-body
+							%p.accordion-body_text
+
+						.accordion-title_wrap
+							%h3.accordion-title
+								%span.accordion-title_text Что входит в полномочия депутатов  муниципального совета?
+								%span.accordion-title_ico
+						.accordion-body
+							%p.accordion-body_text
+
+						.accordion-title_wrap
+							%h3.accordion-title
+								%span.accordion-title_text Сколько муниципальных депутатов работает  в одном районе?
+								%span.accordion-title_ico
+						.accordion-body
+							%p.accordion-body_text
+
+	%footer#footer
+		.container
+			.row
+				.col-xs-6
+					%span.copyright © 2014 Общественное объединение «Силы Добра»
+				.col-xs-6.col-right
+					%span.autor 
+						Дизайн — 
+						%a.autor-name{href: "#"}Friday

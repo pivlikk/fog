@@ -172,11 +172,12 @@
 								%span.candidate-decor
 							.candidate-arrow_wrap
 								%span.candidate-arrow_link
-			.popup_hint-arrow.popup_hint-arrow-position
+			.popover.popup_hint-arrow-position.top
 				%span.popup_hint-arrow_close
-				%span.popup_hint-arrow_img
-				%h5.popup_hint-arrow_title ФРУНЗЕНСКИЙ РАЙОН
-				%span.popup_hint-arrow_text Муниципальное образование № 71
+				.arrow
+				%h3.popover-title ФРУНЗЕНСКИЙ РАЙОН
+				.popover-content
+					%p Муниципальное образование № 71
 	.subscription
 		.container
 			%h2.subscription-title
@@ -194,7 +195,7 @@
 				%span.developments-title_ico
 				%span.developments-title_text События муниципалитета
 			.row.developments-list
-				.col-xs-6.col-sm-3
+				.col-xs-6.col-md-3.col-sm-6
 					.block_news
 						= image_tag "styles-inf.jpg", :class => "block_news-img"
 						%h4.block_news-title
@@ -202,7 +203,7 @@
 							%span.block_news-title_ico
 						%a.block_news-data_link{href: "#"} 24 апреля 2014
 						%p.block_news-text Принято постановление о проведении месячника чистоты на территории всех муниципальных образований
-				.col-xs-6.col-sm-3
+				.col-xs-6.col-md-3.col-sm-6
 					.block_news
 						= image_tag "styles-inf-1.jpg", :class => "block_news-img"
 						%h4.block_news-title
@@ -213,7 +214,7 @@
 							%span.block_news-title_ico
 						%a.block_news-data_link{href: "#"} 1 мая 2014
 						%p.block_news-text Ежегодный велопробег по улицам Питера.
-				.col-xs-6.col-sm-3
+				.col-xs-6.col-md-3.col-sm-6
 					.block_news
 						= image_tag "styles-inf-2.jpg", :class => "block_news-img"
 						%h4.block_news-title
@@ -221,7 +222,7 @@
 							%span.block_news-title_ico
 						%a.block_news-data_link{href: "#"} 1 апреля 2014
 						%p.block_news-text Раздачи еды и тёплой одежды  в Санкт-Петербурге! Присоединяйтесь!
-				.col-xs-6.col-sm-3
+				.col-xs-6.col-md-3.col-sm-6
 					.block_news
 						= image_tag "styles-inf-3.jpg", :class => "block_news-img"
 						%h4.block_news-title
@@ -369,6 +370,59 @@
 #popup_block.show_popup
 	#popup_fone
 	.popup_window.candidate_profile
+		%span.candidate-close.glyphicon.glyphicon-remove
+		%form.candidate-form{action: "#"}
+			%h3.popup-title Анкета кандидата
+			%ul.candidate-list.form-style_list
+				%li.input_wrap.input_disabled
+					%input.form_inp{type: "text"}
+					%span.form_inp-text 
+						Имя
+						%span.form_inp-star
+					%span.form-hint_text Имя состоит из букв
+				%li.input_wrap.input_disabled
+					%input.form_inp{type: "text"}
+					%span.form_inp-text 
+						Фамилия
+						%span.form_inp-star
+					%span.form-hint_text Имя состоит из букв
+				%li.input_wrap.input_disabled
+					%input.form_inp{type: "text"}
+					%span.form_inp-text 
+						Дата рождения
+						%span.form_inp-star
+					%span.form-hint_text Имя состоит из букв
+				%li.input_wrap.input_disabled
+					%input.form_inp{type: "text"}
+					%span.form_inp-text 
+						E-mail
+						%span.form_inp-star
+					%span.form-hint_text Имя состоит из букв
+				%li.input_wrap.input_disabled
+					%input.form_inp{type: "text"}
+					%span.form_inp-text 
+						Телефон
+						%span.form_inp-star
+					%span.form-hint_text Имя состоит из букв
+				%li.input_wrap.input_disabled
+					%input.form_inp{type: "text"}
+					%span.form_inp-text 
+						Район
+						%span.form_inp-star
+					%span.form-hint_text Имя состоит из букв
+					%span.form_inp-select_ico.glyphicon.glyphicon-chevron-down
+				%li.input_wrap.input_disabled
+					%input.form_inp{type: "text"}
+					%span.form_inp-text 
+						Округ
+						%span.form_inp-star
+					%span.form-hint_text Имя состоит из букв
+					%span.form_inp-select_ico.glyphicon.glyphicon-chevron-down
+				%li.input_wrap.input_disabled
+					%input.form_inp{type: "text", placeholder: "Ваша партия/движение"}
+			.candidate-submit-wrap
+				%input.candidate-submit{type: "submit"}
+				%a.link_button{href: "#"} Отправить
 
 
 

@@ -41,3 +41,17 @@ $base-fontSize: 16px !default;
 		left: $left;
 	}
 }
+
+@mixin placeholder {
+	::-webkit-input-placeholder {@content}
+	:-moz-placeholder           {@content}
+	::-moz-placeholder          {@content}
+	:-ms-input-placeholder      {@content}  
+}
+
+@mixin box-shadow-ext($top, $left, $blur, $distance, $color, $inset:"") {
+	-webkit-box-shadow:$top $left $blur $distance $color #{$inset};
+	-moz-box-shadow:$top $left $blur $distance $color #{$inset};
+	box-shadow:$top $left $blur $distance $color #{$inset};
+}
+

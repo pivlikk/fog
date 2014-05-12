@@ -123,8 +123,7 @@ ul, ol {
 	}
 }
 .wrap_link-button {
-	position: relative;
-	left: -50px;
+	@include position-coord(absolute, '', '', '', -50%);
 	&.link-button-left {
 		float: left;
 		margin-left: 70px;
@@ -147,11 +146,11 @@ ul, ol {
 	}
 }
 .ico_list {
-	position: relative;
-	left: -40px;
+	@include position-coord(relative, '', '', '', -40px);
 	li {
 		float: left;
 		margin-left: 40px;
+		min-height: 100px;
 	}
 }
 .ico-item {
@@ -409,9 +408,7 @@ ul, ol {
 		position: relative;
 		border-bottom: 1px solid $color-yellow;
 		.title-relative-arrow {
-			position: absolute;
-			bottom: -8px;
-			left: 50%;
+			@include position-coord(absolute, '', '', -8px, 50%);
 			margin-left: -9px;
 			display: inline-block;
 			width: 18px;
@@ -471,16 +468,12 @@ ul, ol {
 	background: linear-gradient(to right, #8eec7c 0%,#7ff4ea 18%,#7aafff 39%,#ffffac 57%,#ffd847 79%,#ff6c00 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8eec7c', endColorstr='#ff6c00',GradientType=1 ); /* IE6-9 */
 	@include border-radius(7px);
-	-moz-box-shadow: 1px 1px 10px $color-black;
-	-webkit-box-shadow: 1px 1px 10px $color-black;
-	box-shadow: 1px 1px 10px $color-black;
+	@include box-shadow-ext(1px, 1px, 10px, 0, rgba(0, 0, 0, 1));
 }
 .candidate_wrap {
 	background-color: $color-white;
 	width: 308px;
-	-moz-box-shadow: 3px 3px 10px $color-black;
-	-webkit-box-shadow: 3px 3px 10px $color-black;
-	box-shadow: 3px 3px 10px $color-black;
+	@include box-shadow-ext(3px, 3px, 10px, 0, rgba(0, 0, 0, 1));
 	@include border-radius(2px);
 	padding: 10px 5px 5px 18px;
 	margin-top: 10px;
@@ -504,8 +497,7 @@ ul, ol {
 	}
 }
 .candidate_list {
-	position:relative;
-	left: -25px;
+	@include position-coord(relative, '', '', '', -25px);
 	width: 300px;
 	li {
 		float: left;
@@ -541,9 +533,7 @@ ul, ol {
 	padding: 0 42px;
 }
 .candidate-decor {
-	position: absolute;
-	bottom: 0;
-	left: 0;
+	@include position-coord(absolute, '', '', 0, 0);
 	display: inline-block;
 	width: 270px;
 	height: 1px;
@@ -605,8 +595,7 @@ ul, ol {
 			background: url("/assets/sprite.png") -800px -80px no-repeat;
 			content: "";
 			display: block;
-			position: absolute;
-			left: -40px;
+			@include position-coord(absolute, '', '', '', -40px);
 			margin-top: 3px;
 		}
 	}
@@ -621,8 +610,7 @@ ul, ol {
 	}
 }
 .soc_list {
-	position:relative;
-	left: -19px;
+	@include position-coord(relative, '', '', '', -19px);
 	display:inline-block;
 	height: 61px;
 	li {
@@ -757,9 +745,7 @@ ul, ol {
 .input_wrap {
 	position: relative;
 	.form_inp-text {
-		position: absolute;
-		top: 50%;
-		left: 16px;
+		@include position-coord(absolute, 50%, '', '', 16px);
 		margin-top: -6px;
 		display: inline-block;
 		color: $color-black;
@@ -770,9 +756,6 @@ ul, ol {
 	.form-hint_text {
 		display: none;
 		margin-left: 20px;
-		font-family: 'Tahome';
-		font-size: (15px / $base-fontSize) + 0em;
-		color: #ce0000;
 	}
 	.form_inp-star {
 		display: inline-block;
@@ -820,17 +803,13 @@ ul, ol {
 	position: relative;
 	background-color: $color-white;
 	padding: 158px 11px 5px 17px;
-	-moz-box-shadow: 2px 2px 10px #727272;
-	-webkit-box-shadow: 2px 2px 10px #727272;
-	box-shadow: 2px 2px 10px #727272;
+	@include box-shadow-ext(4px, 4px, 5px, 0, rgba(0, 0, 0, 0.1));
 	&.block_news-left {
 		float: left;
 	}
 	.block_news-img {
 		display: inline-block;
-		position: absolute;
-		top: 0;
-		left: 0;
+		@include position-coord(absolute, 0, '', '', 0);
 		height: 146px;
 		width: 232px;
 	}
@@ -900,18 +879,14 @@ ul, ol {
 		border: 1px solid transparent;
 		background-color: $color-white;
 		padding: 0 80px 0 21px;
-		-webkit-box-shadow: 0.1em 0.1em 1px rgba(122,122,122,0.5);
-		-moz-box-shadow:    0.1em 0.1em 1px rgba(122,122,122,0.5);
-		box-shadow: 0.1em 0.1em 1px rgba(122,122,122,0.5);
+		@include box-shadow-ext(0.1em, 0.1em, 1px, 0, rgba(122, 122, 122, 0.5));
 		@include border-radius(1px);
 		&:focus {
 			border-color: $color-yellow;
 		}
 	}
 	.find-block_finder {
-		position: absolute;
-		right: 0;
-		top: 0;
+		@include position-coord(absolute, 0, 0, '', '');
 		display: inline-block;
 		line-height: 43px;
 		background-color: $color-yellow;
@@ -925,9 +900,7 @@ ul, ol {
 		width: 11px;
 		height: 11px;
 		background: url(asset-path("sprite.png")) -80px -320px no-repeat;
-		position: absolute;
-		top: 17px;
-		right: 86px;
+		@include position-coord(absolute, 17px, 86px, '', '');
 		cursor: pointer;
 		&.active {
 			display: inline-block;
@@ -935,6 +908,7 @@ ul, ol {
 	}
 }
 .block_popup-wrap {
+	position: relative;
 	&.block_popup-wrap_left {
 		float: left;
 		margin-left: 40px;
@@ -942,9 +916,7 @@ ul, ol {
 }
 .popup_hint {
 	display: none;
-	-webkit-box-shadow: 0.2em 0.2em 2px rgba(122,122,122,0.5);
-	-moz-box-shadow:    0.2em 0.2em 2px rgba(122,122,122,0.5);
-	box-shadow: 		0.2em 0.2em 2px rgba(122,122,122,0.5);
+	@include box-shadow-ext(0.2em, 0.2em, 2px, 0, rgba(122, 122, 122, 0.5));
 	background-color: $color-white;
 	@include padding( 21px, 21px, 21px, 21px, 16px);
 	width: 406px;
@@ -953,6 +925,7 @@ ul, ol {
 		font-size: (20px / $base-fontSize) + 0em;
 		line-height: 1;
 		color: $color-black;
+		margin-top: 0;
 	}
 	.popup_hint-text {
 		font-family: 'Tahoma';
@@ -960,11 +933,17 @@ ul, ol {
 		line-height: (20px / 13px) + 0em;
 	}
 }
+.popup_hint-arrow_close {
+	@include position-coord(absolute, 6px, 6px, '', '');
+	display: inline-block;
+	width: 7px;
+	height: 6px;
+	background: url(asset-path("sprite.png")) -800px -40px no-repeat;
+	cursor: pointer;
+}
 .popup_hint-arrow {
 	position: relative;
-	-webkit-box-shadow: 0.2em 0.2em 2px rgba(122,122,122,0.5);
-	-moz-box-shadow:    0.2em 0.2em 2px rgba(122,122,122,0.5);
-	box-shadow: 		0.2em 0.2em 2px rgba(122,122,122,0.5);
+	@include box-shadow-ext(0.2em, 0.2em, 2px, 0, rgba(122, 122, 122, 0.5));
 	background-color: $color-white;
 	width: 267px;
 	@include border-radius(1px);
@@ -974,25 +953,11 @@ ul, ol {
 		margin-top: 10px;
 	}
 	&.popup_hint-arrow-position {
-		position: absolute;
-		top: 450px;
-		left: 350px;
+		@include position-coord(absolute, 450px, '', '', 350px);
 		margin-left: -175px;
 	}
-	.popup_hint-arrow_close {
-		position: absolute;
-		top: 6px;
-		right: 6px;
-		display: inline-block;
-		width: 7px;
-		height: 6px;
-		background: url(asset-path("sprite.png")) -800px -40px no-repeat;
-		cursor: pointer;
-	}
 	.popup_hint-arrow_img {
-		position: absolute;
-		bottom: -19px;
-		left: 50%;
+		@include position-coord(absolute, '', '', -19px, 50%);
 		margin-left: -9px;
 		display: inline-block;
 		width: 27px;
@@ -1059,9 +1024,7 @@ ul, ol {
 	width: 100%;
 	padding: 55px 0 68px 0;
 	.slider-button_decor {
-		position: absolute;
-		bottom: 0;
-		left: 0;
+		@include position-coord(absolute, '', '', 0, 0);
 		display: inline-block;
 		width: 100%;
 		height: 4px;
@@ -1071,9 +1034,8 @@ ul, ol {
 .container-pos {
 	position: relative;
 	.arrow {
-		position: absolute;
-		top: 50%;
 		margin-top: -27px;
+		@include position-coord(absolute, 50%, '', '', '');
 		&.arrow_prev {
 			left: 0;
 		}
@@ -1082,7 +1044,7 @@ ul, ol {
 		}
 	}
 	.ico_list {
-		width: 998px;
+		width: 104%;
 		margin-top: 50px;
 	}
 }
@@ -1096,6 +1058,7 @@ ul, ol {
 	color: $color-white;
 	text-shadow: 1px 1px 2px $color-black, 0 0 1em $color-black;
 	width: 610px;
+	width: (610px / 978px) * 100%;
 	font-size: (19px / $base-fontSize) + 0em;
 	line-height: (30px / 19px) + 0em;
 	margin: 35px auto;
@@ -1128,10 +1091,10 @@ ul, ol {
 	background-color: #fff8e9;
 	padding: 35px 37px 24px 35px;
 	position: relative;
+	@include position-coord(relative, '', '', '', '');
 }
 .about_hint-decor {
-	position: absolute;
-	left: 0;
+	@include position-coord(absolute, '', '', '', 0);
 	display: inline-block;
 	width: 100%;
 	height: 3px;
@@ -1168,9 +1131,7 @@ ul, ol {
 	border-top: 1px solid #e5e1d7;
 	border-bottom: 1px solid #e5e1d7;
 	.about_hint-ico_more-wrap {
-		position: absolute;
-		bottom: -20px;
-		left: 50%;
+		@include position-coord(absolute, '', '', -20px, 50%);
 		margin-left: -34px;
 		display: inline-block;
 		width: 68px;
@@ -1194,12 +1155,11 @@ ul, ol {
 	width: 100%;
 	min-height:341px;
 	.outlook-text-wrap {
-		position: absolute;
-		top: 101px;
-		left: 502px;
+		@include position-coord(absolute, 101px, '', '', 502px);
+		left: (502px / 978px) *100%;
 		background-color: $color-yellow;
 		padding: 30px 39px;
-		width: 475px;
+		width: (475px / 978px) *100%;
 		opacity: 0.95;
 		filter: alpha(opacity=95);
 		.outlook-text {
@@ -1213,9 +1173,7 @@ ul, ol {
 		display: inline-block;
 		width: 45px;
 		height: 45px;
-		position: absolute;
-		top: 50%;
-		left: -22px;
+		@include position-coord(absolute, 50%, '', '', -22px);
 		margin-top: -22px;
 		background: url(asset-path("sprite.png")) -920px -240px no-repeat;
 		z-index: 15;
@@ -1224,9 +1182,7 @@ ul, ol {
 		display: inline-block;
 		width: 86px;
 		height: 100%;
-		position: absolute;
-		top: 0;
-		left: -43px;
+		@include position-coord(absolute, 0, '', '', -43px);
 		background: url(asset-path("outlook-decor.png")) repeat-y;
 		z-index: 10;
 	}
@@ -1264,7 +1220,7 @@ ul, ol {
 		color: $color-black;
 		display: inline-block;
 		&.map-text-wrap {
-			width: 746px;
+			width: (746px / 978px) * 100%;
 		}
 	}
 	.map-header_decor {
@@ -1272,9 +1228,7 @@ ul, ol {
 		width: 100%;
 		height: 1px;
 		background: url(asset-path("map-header-decor.png")) repeat-x;
-		position: absolute;
-		top: 84px;
-		left: 0;
+		@include position-coord(absolute, 84px, '', '', 0);
 		z-index: 10;
 	}
 }
@@ -1282,9 +1236,7 @@ ul, ol {
 	display: inline-block;
 	height: 20px;
 	width: 100%;
-	position: absolute;
-	top: -11px;
-	left: 0;
+	@include position-coord(absolute, -11px, '', '', 0);
 	background: url(asset-path("map-header_bot-decor.png")) repeat-x;
 }
 .map-body-wrap {
@@ -1295,9 +1247,7 @@ ul, ol {
 	width: 100%;
 	min-height:647px;
 	.map-body-wrap_bg {
-		position: absolute;
-		top: 0;
-		left: 0;
+		@include position-coord(absolute, 0, '', '', 0);
 		background-color: $color-white;
 		opacity: 0.5;
 		filter: alpha(opacity=50);
@@ -1332,16 +1282,17 @@ ul, ol {
 	text-align:center;
 }
 .developments-list {
-	margin-top: 25px;
+	.col-xs-6 {
+		margin-top: 25px;
+		padding: 0;
+	}
 }
 .developments {
 	position: relative;
 	background: url(asset-path("developments-bg.png")) repeat;
 	padding: 30px 0 35px 0;
 	.developments-decor {
-		position: absolute;
-		bottom: 0;
-		left: 0;
+		@include position-coord(absolute, '', '', 0, 0);
 		display: inline-block;
 		width: 100%;
 		height: 4px;
@@ -1405,7 +1356,7 @@ ul, ol {
 }
 .check-box_list {
 	.title-form_small {
-		width: 655px;
+		width: (655px / 978px) * 100%;
 		font-size: (14px / $base-fontSize) + 0em;
 		line-height: 1;
 		margin: 24px 0 -5px 0;
@@ -1440,9 +1391,7 @@ ul, ol {
 	background-color: $color-yellow;
 }
 .check-box_item_checkbox:checked + .check-box_item_ico_wrap .check-box_item_ico {
-	position: absolute;
-	top: 50%;
-	left: 50%;
+	@include position-coord(absolute, 50%, '', '', 50%);
 	width: 14px;
 	height: 10px;
 	margin-left: -8px;
@@ -1494,9 +1443,7 @@ ul, ol {
 	position: relative;
 	background: url("/assets/developments-bg.png") repeat;
 	.about_wrap-decor {
-		position: absolute;
-		bottom: -4px;
-		left: 0;
+		@include position-coord(absolute, '', '', -4px, 0);
 		display: inline-block;
 		width: 100%;
 		height: 4px;
@@ -1535,8 +1482,7 @@ ul, ol {
 }
 .logo-list {
 	margin-bottom: 40px;
-	position: relative;
-	left: -35px;
+	@include position-coord(relative, '', '', '', -35px);
 	li {
 		float: left;
 		margin: 28px 0 0 35px;
@@ -1547,8 +1493,7 @@ ul, ol {
 	height: 91px;
 	overflow: hidden;
 	.logo-list-img {
-		position: relative;
-		top: -100%;
+		@include position-coord(relative, -100%, '', '', '');
 	}
 	&:hover, &.active {
 		.logo-list-img {
@@ -1575,6 +1520,11 @@ ul, ol {
 .about-wrapper {
 	margin-top: 20px;
 }
+.about_list {
+	.col-md-6 {
+		margin-top: 10px;
+	}
+}
 // end about
 // start events
 .events-wrap {
@@ -1582,11 +1532,12 @@ ul, ol {
 }
 .sub_nav-wrap {
 	position: relative;
-	left: -27px;
 	background-color: $color-white;
 	padding: 35px 0 31px 0;
 }
 .sub_nav {
+	position: relative;
+	left: -27px;
 	li {
 		float: left;
 		margin-left: 27px;
@@ -1619,9 +1570,7 @@ ul, ol {
 	display: inline-block;
 	height: 20px;
 	width: 100%;
-	position: absolute;
-	bottom: -11px;
-	left: 0;
+	@include position-coord(absolute, '', '', -11px, 0);
 	z-index:10;
 	background: url(asset-path("map-header_top-decor.png")) repeat-x;
 }
@@ -1632,6 +1581,9 @@ ul, ol {
 	height: 18px;
 	background: url(asset-path("sprite.png")) -120px -320px no-repeat;
 	vertical-align: middle;
+	&.events-arrow-close {
+		background-position: -160px -320px;
+	}
 }
 .past_events {
 	margin-top: -25px;
@@ -1645,9 +1597,7 @@ ul, ol {
 	margin-top: 12px;
 	position: relative;
 	.accordion-title_ico {
-		position: absolute;
-		top: 14px;
-		right: 24px;
+		@include position-coord(absolute, 14px, 24px, '', '');
 		display: inline-block;
 		width: 18px;
 		height: 18px;
@@ -1687,9 +1637,7 @@ ul, ol {
 // start popups
 #popup_block {
 	display: none;
-	position: absolute;
-	top: 0;
-	left: 0;
+	@include position-coord(absolute, 0, '', '', 0);
 	width: 100%;
 	height: 100%;
 	z-index: 1000;
@@ -1698,9 +1646,7 @@ ul, ol {
 	}
 }
 #popup_fone {
-	position: fixed;
-	top: 0;
-	left: 0;
+	@include position-coord(fixed, 0, 0, '', '');
 	z-index: 100;
 	width: 100%;
 	height: 100%;
@@ -1710,13 +1656,113 @@ ul, ol {
 }
 .popup_window {
 	display: inline-block;
-	position: fixed;
 	z-index: 1000;
-	left: 50%;
+	@include position-coord(fixed, '', '', '', 50%);
+	@include box-shadow-ext(4px, 4px, 5px, 0, rgba(0, 0, 0, 0.1));
 	&.candidate_profile {
+		top: 50%;
 		width: 490px;
+		margin-left: -245px;
+		background-color: $color-white;
+		padding: 30px 46px;
+	}
+	.popup-title {
+		font-family: 'pf_beausans_prosemibold';
+		font-size: (36px / $base-fontSize) + 0em;
+		line-height: (42px / 36px) + 0em;
+		color: $color-black;
+		margin: 0;
+	}
+}
+.form_inp-select_ico {
+	display: inline-block;
+	@include position-coord(absolute, 50%, 0px, '', '');
+	margin: -8px 18px 0 0;
+	font-size: 15px;
+	line-height: 22px;
+	color: #a7a7a7;
+	cursor: pointer;
+}
+.candidate-submit {
+	display: none;
+}
+.candidate-submit-wrap {
+	margin-top: 28px;
+	.link_button {
+		width: 100%;
+		text-align: center;
+	}
+}
+.candidate-form {
+	.form_inp {
+		width: 398px;
+	}
+	.form-style_list {
+		margin-top: 0;
+		li {
+			margin-top: 25px;
+		}
+	}
+	.form-hint_text {
+		@include position-coord(absolute, '', '', -20px, '');
+	}
+}
+.candidate-close {
+	@include position-coord(absolute, 15px, 15px, '', '');
+	color: #d5d5d5;
+	font-size: (14px / $base-fontSize) + 0em;
+	display: inline-block;
+	cursor: pointer;
+}
+.popover {
+	border: none;
+	display: inline-block;
+	top: 140px;
+	@include box-shadow-ext(0.2em, 0.2em, 2px, 0, rgba(122, 122, 122, 0.5));
+	background-color: $color-white;
+	width: 267px;
+	@include border-radius(1px);
+	@include padding( 4px, 25px, 13px, 29px, 16px);
+	text-align: center;
+	z-index: 10;
+	.popover-title {
+		@include border-radius(0px);
+		font-family: 'pf_beausans_prosemibold';
+		font-size: (14px / $base-fontSize) + 0em;
+		line-height: (23px / 14px) + 0em;
+		color: $color-black;
+		margin-bottom: 0;
+		background-color: $color-white;
+		border-bottom: none;
+		padding: 0;
+	}
+	.popover-content {
+		padding: 0;
+		p {
+			font-family: 'Tahoma';
+			font-size: (13px / $base-fontSize) + 0em;
+			line-height: (23px / 13px) + 0em;
+			color: $color-black;
+			margin-bottom: 0;
+		}
+	}
+	.arrow {
+		@include position-coord(absolute, '', '', -19px !important, 50%);
+		margin-left: -9px;
 		display: inline-block;
-		margin-left: 245px;
+		width: 27px;
+		height: 20px;
+		background: url(asset-path("sprite.png")) -840px -40px no-repeat;
+		border: none;
+		margin-top: 0;
+		top: auto;
+		&:after {
+			display: none;
+		}
+	}
+	&.popup_hint-arrow-position {
+		@include position-coord(absolute, 460px, '', '', 350px);
+		margin-left: -175px;
 	}
 }
 // end popups

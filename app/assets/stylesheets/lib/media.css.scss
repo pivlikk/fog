@@ -6,3 +6,41 @@
         }
     }
 }
+@media (max-width: 500px) {
+    .developments-list {
+        .col-xs-6 {
+            width: 100%;
+        }
+    }
+}
+@media (max-width: 796px) {
+    .nav {
+        clear: both;
+        width: 100%;
+        li {
+            display: inline-block;
+        }
+    }
+}
+@media (max-width: 458px) {
+    .popover {
+        &.popup_hint-arrow-position {
+            left: 300px;
+        }
+    }
+}
+@media (max-width: 991px) {
+    .ico_list {
+        li {
+            margin-top: 10px;
+        }
+    }
+}
+@media (max-width: 1020px) {
+    .nav {
+        > li {
+            float: none;
+            margin-right: 13px;
+        }
+    }
+}

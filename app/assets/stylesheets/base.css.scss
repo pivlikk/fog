@@ -124,6 +124,9 @@ ul, ol {
 }
 .wrap_link-button {
 	@include position-coord(absolute, '', '', '', -50%);
+	&.link-button-pos {
+		position: static;
+	}
 	&.link-button-left {
 		float: left;
 		margin-left: 70px;
@@ -711,13 +714,12 @@ ul, ol {
 }
 .form-style_list {
 	display: inline-block;
-	margin-top: 25px;
 	li {
 		margin-top: 10px;
 	}
 }
 .form-pos {
-	padding: 20px 0;
+	padding: 20px 0 0 0;
 	&.form-center {
 		text-align: center;
 	}
@@ -744,6 +746,7 @@ ul, ol {
 }
 .input_wrap {
 	position: relative;
+	width: 375px;
 	.form_inp-text {
 		@include position-coord(absolute, 50%, '', '', 16px);
 		margin-top: -6px;
@@ -752,6 +755,9 @@ ul, ol {
 		font-family: 'Tahoma';
 		font-size: (16px / $base-fontSize) + 0em;
 		line-height: 1;
+		&.form_inp-default {
+			color: #c4c4c4;
+		}
 	}
 	.form-hint_text {
 		display: none;
@@ -902,6 +908,7 @@ ul, ol {
 		background: url(asset-path("sprite.png")) -80px -320px no-repeat;
 		@include position-coord(absolute, 17px, 86px, '', '');
 		cursor: pointer;
+		z-index: 10;
 		&.active {
 			display: inline-block;
 		}
@@ -915,6 +922,9 @@ ul, ol {
 	}
 }
 .popup_hint {
+	&.popup_hint-show {
+		display: block;
+	}
 	display: none;
 	@include box-shadow-ext(0.2em, 0.2em, 2px, 0, rgba(122, 122, 122, 0.5));
 	background-color: $color-white;
@@ -931,6 +941,13 @@ ul, ol {
 		font-family: 'Tahoma';
 		font-size: (15px / $base-fontSize) + 0em;
 		line-height: (20px / 13px) + 0em;
+	}
+	.popup_hint-link {
+		color: $color-blue;
+		text-decoration: underline;
+		&:hover, &:focus {
+			text-decoration: none;
+		}
 	}
 }
 .popup_hint-arrow_close {
@@ -1028,7 +1045,7 @@ ul, ol {
 		display: inline-block;
 		width: 100%;
 		height: 4px;
-		background: url(asset-path("sprite-bot_decor.png")) repeat-x;
+		background: url(asset-path("sprite-bot_decor1.png")) repeat-x;
 	}
 }
 .container-pos {
@@ -1150,10 +1167,33 @@ ul, ol {
 .block-outlook {
 	position: relative;
 	margin-top: 9px;
-	background: url(asset-path("outlook.jpg")) no-repeat;
+	// background: url(asset-path("outlook.jpg")) no-repeat;
 	background-size: cover;
 	width: 100%;
 	min-height:341px;
+	overflow: hidden;
+	&.block-outlook_blue {
+		.container-outlook {
+			right: 0;
+		}
+		.block-outlook-slider {
+			margin-left: 0;
+		}
+		.outlook-arrows {
+			right: -22px;
+			left: auto;
+		}
+		.outlook-line_decor {
+			left: auto;
+			right: -43px;
+		}
+		.outlook-text-wrap {
+			background-color: $color-blue;
+			left: 0;
+			opacity: 0.8;
+			filter: alpha(opacity=80);
+		}
+	}
 	.outlook-text-wrap {
 		@include position-coord(absolute, 101px, '', '', 502px);
 		left: (502px / 978px) *100%;
@@ -1170,7 +1210,7 @@ ul, ol {
 		}
 	}
 	.outlook-arrows {
-		display: inline-block;
+		display: none;
 		width: 45px;
 		height: 45px;
 		@include position-coord(absolute, 50%, '', '', -22px);
@@ -1179,13 +1219,59 @@ ul, ol {
 		z-index: 15;
 	}
 	.outlook-line_decor {
-		display: inline-block;
+		display: none;
 		width: 86px;
 		height: 100%;
 		@include position-coord(absolute, 0, '', '', -43px);
 		background: url(asset-path("outlook-decor.png")) repeat-y;
 		z-index: 10;
 	}
+}
+.block-outlook-slider {
+	width: 100%;
+	li {
+		width: 16%;
+		float: left;
+		position: relative;
+		.outlook-item-fone {
+			background-color: $color-black;
+			opacity: 0.5;
+			filter: alpha(opacity=50);
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		&.active {
+			width: 84%;
+			&:after {
+				position: relative;
+				width: 100%;
+				display: block;
+				height: 1px;
+				content: '';
+			}
+			.outlook-item-fone {
+				display: none;
+			}
+			.container-outlook {
+				display: block;
+			}
+			.outlook-arrows, .outlook-line_decor {
+				display: inline-block;
+			}
+		}
+	}
+}
+.block-outlook-img {
+	height: 100%;
+	min-width: 100%;
+}
+.container-outlook {
+	display: none;
+	position: absolute;
+	top: 0;
 }
 .map-header-wrap {
 	position: relative;
@@ -1260,6 +1346,10 @@ ul, ol {
 	.map-block-wrap {
 		margin-top: 45px;
 	}
+}
+.subscription-title_wrap {
+	text-align: center;
+	margin-bottom: 25px;
 }
 .subscription-title {
 	margin: 27px 0 0 0;
@@ -1415,6 +1505,18 @@ ul, ol {
 		width: 376px;
 	}
 }
+html {
+		height: 100%;
+	}
+body {
+	position: relative;
+	min-height: 100%;
+	padding-top: 1px;
+	margin-top: -1px;
+}
+#mainarea{
+	padding-bottom: 79px;
+}
 #footer {
 	background-color: #f8f8f8;
 	padding: 28px 0 18px 0;
@@ -1422,6 +1524,12 @@ ul, ol {
 	font-size: (13px / $base-fontSize) + 0em;
 	line-height:1;
 	color: lighten($color-black, 48%);
+	margin-top: 20px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 10;
+	width: 100%;
 	.copyright {
 		text-align: left;
 	}
@@ -1484,8 +1592,12 @@ ul, ol {
 	margin-bottom: 40px;
 	@include position-coord(relative, '', '', '', -35px);
 	li {
-		float: left;
 		margin: 28px 0 0 35px;
+	}
+}
+.list-inline {
+	> li {
+		padding: 0;
 	}
 }
 .logo-list-link {
@@ -1539,7 +1651,6 @@ ul, ol {
 	position: relative;
 	left: -27px;
 	li {
-		float: left;
 		margin-left: 27px;
 		padding: 0 8px;
 		background-color: transparent;
@@ -1715,6 +1826,9 @@ ul, ol {
 	cursor: pointer;
 }
 .popover {
+	&.popover-pos {
+		top: 350px;
+	}
 	border: none;
 	display: inline-block;
 	top: 140px;
@@ -1766,3 +1880,102 @@ ul, ol {
 	}
 }
 // end popups
+.form-group {
+	position: relative;
+	margin-bottom: 30px;
+	&.form-center {
+		text-align: center;
+		margin-top: 40px;
+	}
+	.form-control {
+		@include border-radius(1px);
+		height: (47px / 16px) + 0em;
+		border: 1px solid transparent;
+		border-top: 1px solid #dfdfdf;
+		border-left: 1px solid #dfdfdf;
+		background-color: #f8f8f8;
+		font-family: 'Tahoma';
+		font-size: (16px / $base-fontSize) + 0em;
+		line-height: 1;
+		color: $color-black;
+	}
+	&.has-success {
+		.form-control {
+			border: 1px solid #2368b2;
+		}
+	}
+	&.has-error {
+		.form-control {
+			background-color: #fff3f3;
+			border: 1px solid #d15a5a;
+		}
+	}
+	&.submit-group {
+		.control-label {
+			display: block;
+			margin: 5px 0 0 0;
+		}
+	}
+	.control-label {
+		display: inline-block;
+		font-family: 'Tahome';
+		font-size: (15px / $base-fontSize) + 0em;
+		color: #ce0000;
+		font-weight: normal;
+		margin-left: 20px;
+	}
+	.input_wrap {
+		display: inline-block;
+	}
+}
+.btn {
+	margin: -4px 0 0 20px;
+	border: none;
+	padding-top: 0;
+	padding-bottom: 0;
+	@include border-radius(1px);
+	&.link_button {
+		@include padding( '', 34px, '', 34px, 20px);
+	}
+}
+.input-group {
+	.input-group-btn {
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 10;
+		display: inline-block;
+		height: 100%;
+		text-align: center;
+		padding: 0 14px;
+		background-color: #f9b32a;
+		padding: 0;
+	}
+	.btn {
+		margin: 0;
+		padding: 0;
+		background: none;
+		color: #fff !important;
+		font-family: 'pf_beausans_probold';
+		display: inline-block;
+		line-height: 43px;
+		background-color: $color-yellow;
+		color: $color-white;
+		font-size: (16px / $base-fontSize) + 0em;
+		padding: 0 14px;
+	}
+}
+.input-group-btn {
+	font-size: (16px / $base-fontSize) + 0em;
+	width: auto;
+}
+.form-style_list {
+	.form-group {
+		margin-bottom: 22px;
+	}
+}
+.candidate-form {
+	.input_wrap {
+		width: 398px;
+	}
+}

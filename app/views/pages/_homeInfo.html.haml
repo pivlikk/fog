@@ -95,9 +95,9 @@
 				%span.title-relative.title-relative-none
 					может быть
 					%span.title-relative-arrow
-	.block-outlook
+	.block-outlook.block-outlook_blue
 		%ul.block-outlook-slider
-			%li
+			%li.active
 				.block-outlook-slider-item_wrap
 					= image_tag "info-slide-2.jpg", :class => "block-outlook-img"
 					%span.outlook-arrows
@@ -107,7 +107,7 @@
 						.outlook-text-wrap
 							%p.outlook-text
 								А может быть свет, депутаты, которых волнуют проблемы горожан мусор, рассортированный по контейнерам. Счастье, добро и мир.
-			%li.active
+			%li
 				.block-outlook-slider-item_wrap
 					= image_tag "info-slide-1.jpg", :class => "block-outlook-img"
 					%span.outlook-arrows
@@ -390,77 +390,6 @@
 					%span.autor 
 						Дизайн — 
 						%a.autor-name{href: "#"}Friday
-#popup_block.show_popup
-	#popup_fone
-	.popup_window.candidate_profile
-		%span.candidate-close.glyphicon.glyphicon-remove
-		%form.candidate-form{action: "#"}
-			%h3.popup-title Анкета кандидата
-			%ul.candidate-list.form-style_list
-				%li
-					.form-group
-						.input_wrap
-							%input#disabledTextInput.form-control{type: "text"}
-							%span.form_inp-text.form_inp-default
-								Имя
-								%span.form_inp-star
-							%span.form-hint_text Имя состоит из букв
-				%li
-					.form-group
-						.input_wrap
-							%input#disabledTextInput.form-control{type: "text"}
-							%span.form_inp-text.form_inp-default
-								Фамилия
-								%span.form_inp-star
-							%span.form-hint_text Имя состоит из букв
-				%li
-					.form-group
-						.input_wrap
-							%input#disabledTextInput.form-control{type: "text"}
-							%span.form_inp-text.form_inp-default
-								Дата рождения
-								%span.form_inp-star
-							%span.form-hint_text Имя состоит из букв
-				%li
-					.form-group
-						.input_wrap
-							%input#disabledTextInput.form-control{type: "text"}
-							%span.form_inp-text.form_inp-default
-								E-mail
-								%span.form_inp-star
-							%span.form-hint_text Имя состоит из букв
-				%li
-					.form-group
-						.input_wrap
-							%input#disabledTextInput.form-control{type: "text"}
-							%span.form_inp-text.form_inp-default
-								Телефон
-								%span.form_inp-star
-							%span.form-hint_text Имя состоит из букв
-				%li.input_wrap.input_disabled
-					%input.form_inp{type: "text"}
-					%span.form_inp-text 
-						Район
-						%span.form_inp-star
-					%span.form-hint_text Имя состоит из букв
-					%span.form_inp-select_ico.glyphicon.glyphicon-chevron-down
-				%li.input_wrap.input_disabled
-					%input.form_inp{type: "text"}
-					%span.form_inp-text 
-						Округ
-						%span.form_inp-star
-					%span.form-hint_text Имя состоит из букв
-					%span.form_inp-select_ico.glyphicon.glyphicon-chevron-down
-				%li
-					.form-group
-						.input_wrap
-							%input#disabledTextInput.form-control{placeholder: "Ваша партия/движение",type: "text"}
-							%span.form_inp-text.form_inp-default
-								
-							%span.form-hint_text Имя состоит из букв
-			.candidate-submit-wrap
-				%input.candidate-submit{type: "submit"}
-				%a.link_button{href: "#"} Отправить
 
 
 

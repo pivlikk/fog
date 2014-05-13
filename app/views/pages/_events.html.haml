@@ -25,7 +25,7 @@
 			%span.about_wrap-decor
 		.sub_nav-wrap
 			.container
-				%ul.sub_nav.clearfix
+				%ul.sub_nav.list-inline
 					%li
 						= link_to 'Все события', '#', class:"sub_nav-link"
 					%li
@@ -43,10 +43,12 @@
 				.row
 					.col-md-6
 						.map-block-wrap
-							.find-block_wrap
-								%input.find-block{placeholder: "Введите адрес, чтобы найти муниципалитет", value: "улица Димитровская, 6", type: "text"}
-									%span.find-block-ico_close.active
-								%span.find-block_finder Найти
+							.input-group.find-block_wrap
+								%input.form-control.find-block{placeholder: "Введите адрес, чтобы найти муниципалитет", value: "улица Димитровская, 6", type: "text"}
+								%span.find-block-ico_close.active
+								%span.input-group-btn
+									%button.btn.btn-default{type: "button"} Найти
+
 							.popup_hint
 								%h3.popup_hint-title Муниципальное образование № 71
 								%p.popup_hint-text Если в данном муниципалитете появятся независимые кандидаты, будут отремонтированы дороги и очищены залежи мусора во дворах. Переулки наполнятся светом и добром. Заброшенный пустырь будет преобразован в многопрофильную спортивную площадку.

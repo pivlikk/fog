@@ -96,12 +96,27 @@
 					может быть
 					%span.title-relative-arrow
 	.block-outlook
-		.container.container-pos.container-outlook
-			%span.outlook-arrows
-			%span.outlook-line_decor
-			.outlook-text-wrap
-				%p.outlook-text
-					А может быть свет, депутаты, которых волнуют проблемы горожан мусор, рассортированный по контейнерам. Счастье, добро и мир.
+		%ul.block-outlook-slider
+			%li
+				.block-outlook-slider-item_wrap
+					= image_tag "info-slide-2.jpg", :class => "block-outlook-img"
+					%span.outlook-arrows
+					%span.outlook-line_decor
+					.outlook-item-fone
+					.container.container-outlook
+						.outlook-text-wrap
+							%p.outlook-text
+								А может быть свет, депутаты, которых волнуют проблемы горожан мусор, рассортированный по контейнерам. Счастье, добро и мир.
+			%li.active
+				.block-outlook-slider-item_wrap
+					= image_tag "info-slide-1.jpg", :class => "block-outlook-img"
+					%span.outlook-arrows
+					%span.outlook-line_decor
+					.outlook-item-fone
+					.container.container-outlook
+						.outlook-text-wrap
+							%p.outlook-text
+								А может быть свет, депутаты, которых волнуют проблемы горожан мусор, рассортированный по контейнерам. Счастье, добро и мир.
 	.map-header-wrap
 		.container
 			.map-header
@@ -124,6 +139,9 @@
 						.popup_hint
 							%h3.popup_hint-title Муниципальное образование № 71
 							%p.popup_hint-text Если в данном муниципалитете появятся независимые кандидаты, будут отремонтированы дороги и очищены залежи мусора во дворах. Переулки наполнятся светом и добром. Заброшенный пустырь будет преобразован в многопрофильную спортивную площадку.
+							%p.popup_hint-text 
+								Знаешь муниципальный округ лучше нас? Напиши нам письмо на 
+								%a.popup_hint-link{href: "#"} info@fog.ru
 				.col-md-6
 					.map-block-wrap
 						.candidate-scale_wrap
@@ -183,12 +201,10 @@
 			%h2.subscription-title
 				Хочешь всегда знать что происходит рядом с тобой? 
 				Подпишись на новости своего муниципалитета.
-			.subscription-wrap_input.clearfix
-				%div.input_wrap.input_disabled.input_send
-					%input.form_inp{placeholder: 'E-mail', type: "text"}
-				%label.form_login-send
-					%input.inp_submit{type: "submit"}
-					%span.link_button Отправить
+			.form-group.submit-group.form-center
+				.input_wrap
+					%input#inputWarning1.form-control{placeholder: 'E-mail', type: "text"}
+				%button.btn.btn-default.link_button{type: "submit"} Отправить
 	.developments
 		.container
 			%h5.developments-title
@@ -278,53 +294,58 @@
 						%br
 						муниципальные депутаты —
 					%a.superman-link{href: "#"} почитай ответы на основные вопросы
+			.subscription-title_wrap
+				%h3.subscription-title Каждый может стать героем
+				%h3.subscription-title.title-blue Заполни минианкету
+				%br
 			%form.form_login.form-pos.form-center{action: "#"}
 				%div
-					%h3.subscription-title Каждый может стать героем
-					%h3.subscription-title.title-blue Заполни минианкету
-					%br
 					%ul.form-style_list
 						%li
-							%div.input_wrap.input_disabled
-								%input.form_inp{type: "text"}
-								%span.form_inp-text 
-									Имя
-									%span.form_inp-star
-								%span.form-hint_text Имя состоит из букв
+							.form-group
+								.input_wrap
+									%input#disabledTextInput.form-control{type: "text"}
+									%span.form_inp-text.form_inp-default
+										Имя
+										%span.form_inp-star
+									%span.form-hint_text Имя состоит из букв
 						%li
-							%div.input_wrap.input_disabled
-								%input.form_inp{type: "text"}
-								%span.form_inp-text 
-									Фамилия
-									%span.form_inp-star
-								%span.form-hint_text Имя состоит из букв
+							.form-group
+								.input_wrap
+									%input#disabledTextInput.form-control{type: "text"}
+									%span.form_inp-text.form_inp-default
+										Фамилия
+										%span.form_inp-star
+									%span.form-hint_text Имя состоит из букв
 						%li
-							%div.input_wrap.input_disabled
-								%input.form_inp{type: "text"}
-								%span.form_inp-text 
-									Дата рождения
-									%span.form_inp-star
-								%span.form-hint_text Имя состоит из букв
+							.form-group
+								.input_wrap
+									%input#disabledTextInput.form-control{type: "text"}
+									%span.form_inp-text.form_inp-default
+										Дата рождения
+										%span.form_inp-star
+									%span.form-hint_text Имя состоит из букв
 						%li
-							%div.input_wrap.input_disabled
-								%input.form_inp{type: "text"}
-								%span.form_inp-text 
-									Телефон
-									%span.form_inp-star
-								%span.form-hint_text Имя состоит из букв
+							.form-group
+								.input_wrap
+									%input#disabledTextInput.form-control{type: "text"}
+									%span.form_inp-text.form_inp-default
+										Телефон
+										%span.form_inp-star
+									%span.form-hint_text Имя состоит из букв
 						%li
-							%div.input_wrap.input_disabled
-								%input.form_inp{type: "text"}
-								%span.form_inp-text 
-									E-mail
-									%span.form_inp-star
-								%span.form-hint_text Имя состоит из букв
+							.form-group
+								.input_wrap
+									%input#disabledTextInput.form-control{type: "text"}
+									%span.form_inp-text.form_inp-default
+										E-mail
+										%span.form_inp-star
+									%span.form-hint_text Имя состоит из букв
 						%li
-							%div.input_wrap.input_disabled
-								%input.form_inp{type: "text"}
-								%span.form_inp-text 
-									Логин Вконтакте
-								%span.form-hint_text Имя состоит из букв
+							.form-group
+								.input_wrap
+									%input#disabledTextInput.form-control{placeholder: "Логин Вконтакте", type: "text"}
+									%span.form_inp-text.form_inp-default
 					%dl.check-box_list
 						%dt.title-form_small Я готов:
 						%dd.check-box_item

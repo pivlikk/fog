@@ -10,7 +10,7 @@
 			%li.active
 				%span.link_ico
 				= link_to 'О нас', '#', class:"link"
-		%ul.wrap_link-button.link-button-left
+		%ul.wrap_link-button.link-button-left.link-button-pos
 			%li
 				= link_to 'Узнать больше', '#', class:"link_button"
 				= link_to 'Стать кандидатом', '#', class:"link_button link_button-blue"
@@ -225,48 +225,53 @@
 		%a.help_proj-link{href: "#"} Заполни минианкету
 	%form.form_login.form-pos{action: "#"}
 		%div
+			
+			.form-group
+				.input_wrap
+					%input#disabledTextInput.form-control{type: "text"}
+					%span.form_inp-text.form_inp-default
+						Имя
+						%span.form_inp-star
+					%span.form-hint_text Имя состоит из букв
+			.form-group.has-success
+				.input_wrap
+					%input#inputSuccess1.form-control{type: "text"}
+					%span.form_inp-text 
+						Василий
+					%span.form-hint_text Имя состоит из букв
+			.form-group.has-error
+				.input_wrap
+					%input#inputWarning1.form-control{type: "text"}
+					%span.form_inp-text 
+						111
+				%label.control-label{for: "inputWarning1"} Имя состоит из букв
+			.form-group.has-error.submit-group
+				.input_wrap
+					%input#inputWarning1.form-control{type: "text"}
+					%span.form_inp-text 
+						111
+				%button.btn.btn-default.link_button{type: "submit"} Отправить
+				%label.control-label{for: "inputWarning1"} Введите e-mail
+			.form-group.has-error.submit-group
+				.input_wrap
+					%input#inputWarning1.form-control{type: "text"}
+					%span.form_inp-text 
+						111
+				%button.btn.btn-default.link_button{type: "submit"} Отправить
+				%label.control-label{for: "inputWarning1"} Введите e-mail
 			%ul.form-style_list
 				%li
-					%div.input_wrap.input_disabled
-						%input.form_inp{type: "text"}
-						%span.form_inp-text 
-							Имя
-							%span.form_inp-star
-						%span.form-hint_text Имя состоит из букв
+					.input-group.find-block_wrap
+						%input.form-control.find-block{placeholder: "Введите адрес, чтобы найти муниципалитет", type: "text"}
+						%span.input-group-btn
+							%button.btn.btn-default{type: "button"} Найти
 				%li
-					%div.input_wrap.input_completed
-						%input.form_inp{type: "text"}
-						%span.form_inp-text 
-							Василий
-							%span.form_inp-star
-						%span.form-hint_text Имя состоит из букв
-				%li
-					%div.input_wrap.input_error
-						%input.form_inp{type: "text"}
-						%span.form_inp-text 
-							111
-							%span.form_inp-star
-						%span.form-hint_text Имя состоит из букв
-				%li.clearfix
-					%div.input_wrap.input_error.input_send
-						%input.form_inp{type: "text"}
-						%span.form_inp-text 
-							dfv
-							%span.form_inp-star
-					%label.form_login-send
-						%input.inp_submit{type: "submit"}
-						%span.link_button Отправить
-					.clear
-					.form-hint_text Введите e-mail
-				%li
-					.find-block_wrap
-						%input.find-block{placeholder: "Введите адрес, чтобы найти муниципалитет", type: "text"}
-						%span.find-block_finder Найти
-				%li
-					.find-block_wrap
-						%input.find-block{placeholder: "Введите адрес, чтобы найти муниципалитет", value: "Димитрова ул. 65", type: "text"}
-							%span.find-block-ico_close.active
-						%span.find-block_finder Найти
+					.input-group.find-block_wrap
+						%input.form-control.find-block{placeholder: "Введите адрес, чтобы найти муниципалитет", value: "Димитрова ул. 65", type: "text"}
+						%span.find-block-ico_close.active
+						%span.input-group-btn
+							%button.btn.btn-default{type: "button"} Найти
+
 	.block_news.block_news-left
 		= image_tag "styles-inf.jpg", :class => "block_news-img"
 		%h4.block_news-title
@@ -275,7 +280,7 @@
 		%a.block_news-data_link{href: "#"} 24 апреля 2014
 		%p.block_news-text Принято постановление о проведении месячника чистоты на территории всех муниципальных образований
 	.block_popup-wrap.block_popup-wrap_left
-		.popup_hint
+		.popup_hint.popup_hint-show
 			%h3.popup_hint-title Муниципальное образование № 71
 			%p.popup_hint-text Если в данном муниципалитете появятся независимые кандидаты, будут отремонтированы дороги и очищены залежи мусора во дворах. Переулки наполнятся светом и добром. Заброшенный пустырь будет преобразован в многопрофильную спортивную площадку.
 		.popup_hint-arrow.popup_hint-arrow-indent
@@ -283,7 +288,7 @@
 			%span.popup_hint-arrow_img
 			%h5.popup_hint-arrow_title ФРУНЗЕНСКИЙ РАЙОН
 			%span.popup_hint-arrow_text Муниципальное образование № 71
-		.popover.top
+		.popover.top.popover-pos
 			%span.popup_hint-arrow_close
 			.arrow
 			%h3.popover-title ФРУНЗЕНСКИЙ РАЙОН

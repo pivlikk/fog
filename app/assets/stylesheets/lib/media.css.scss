@@ -2,7 +2,7 @@
     .container {
         width: 978px;
         &.container-big {
-            width: 1180px;
+            width: 1220px;
         }
     }
 }
@@ -44,3 +44,26 @@
         }
     }
 }
+@media (max-width: 856px) {
+    .block-outlook {
+        &.block-outlook_blue {
+            .outlook-text-wrap {
+                left: 10%;
+            }
+        }
+    }
+}
+@media (max-width: 780px) {
+    .block-outlook {
+        &.block-outlook_blue {
+            .outlook-text-wrap {
+                left: 15%;
+            }
+        }
+    }
+}
+// @media (max-width: 650px) {
+//     .about_list-text {
+//         display: block;
+//     }
+// }

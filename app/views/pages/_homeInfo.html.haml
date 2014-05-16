@@ -1,106 +1,109 @@
 #mainarea
 	%header#header
-		.container
-			.logo-wrap.clearfix
-				%a.logo-link{href: "#"}
-				%span.text-decor Объединение гражданских  проектов с политическими  партиями
-			%ul.nav.navbar-nav.navbar-right
-				%li
-					= link_to 'События', '#', class:"link"
-				%li
-					= link_to 'О Коалиции', '#', class:"link"
-				%li.active
-					= link_to 'Вопросы и ответы', '#', class:"link"
+		.container.container_nopadding
+			.row.row-nomargin
+				.logo-wrap.clearfix
+					%a.logo-link{href: "#"}
+					%span.text-decor Объединение гражданских  проектов с политическими  партиями
+				%ul.reset_style.nav.nav-menu.navbar-nav.navbar-right
+					%li
+						= link_to 'События', '#', class:"link"
+					%li
+						= link_to 'О Коалиции', '#', class:"link"
+					%li.active
+						= link_to 'Вопросы и ответы', '#', class:"link"
 	.slider
 		%span.slider-button_decor
-		.container.container-pos
-			%h2.slider-title Миру нужны герои
-			%p.slider-text Город накрыла тьма. Влюбленным негде целоваться все лавочки сломаны. Для велосипедистов не осталось дорожек и они вынуждены передвигаться по поребрикам. Спасти город можешь только ты!  
-			%p.slider-text Победить зло городе очень просто, достаточно начать со своего двора. Силам добра нужна твоя помощь! Регистрируйся и становись волонтером.
-			= link_to 'Узнать больше', '#', class:"link_button"
-			%a.arrow.arrow_prev
-			%a.arrow.arrow_next
-			%ul.ico_list.clearfix
-				%li
-					%a.ico-item.ico-yard{href: "#"}
-						%span.ico-img
-						%br
-						%span.ico-text Двор
-				%li
-					%a.ico-item.ico-square{href: "#"}
-						%span.ico-img
-						%br
-						%span.ico-text Сквер
-				%li
-					%a.ico-item.ico-garbage{href: "#"}
-						%span.ico-img
-						%br
-						%span.ico-text Мусор
-				%li
-					%a.ico-item.ico-home{href: "#"}
-						%span.ico-img
-						%br
-						%span.ico-text Дом
-				%li
-					%a.ico-item.ico-become_hero.active{href: "#"}
-						%span.ico-img
-						%br
-						%span.ico-text.ico-text_small Стань Героем
-				%li
-					%a.ico-item.ico-small_business{href: "#"}
-						%span.ico-img
-						%br
-						%span.ico-text.ico-text_small Малый бизнес
-				%li
-					%a.ico-item.ico-bicycle{href: "#"}
-						%span.ico-img
-						%br
-						%span.ico-text Велосипедизация
-				%li
-					%a.ico-item.ico-honesty_authorities{href: "#"}
-						%span.ico-img
-						%br
-						%span.ico-text.ico-text_small Честность властей
-				%li
-					%a.ico-item.ico-your_problem{href: "#"}
-						%span.ico-img
-						%br
-						%span.ico-text.ico-text_small Твоя проблема
+		.container.container_nopadding.container-pos
+			.row.row-nomargin
+				%h2.slider-title Миру нужны герои
+				%p.slider-text Город накрыла тьма. Влюбленным негде целоваться все лавочки сломаны. Для велосипедистов не осталось дорожек и они вынуждены передвигаться по поребрикам. Спасти город можешь только ты!  
+				%p.slider-text Победить зло городе очень просто, достаточно начать со своего двора. Силам добра нужна твоя помощь! Регистрируйся и становись волонтером.
+				%button.link_button.btn.btn-primary.btn-lg.learn_more{type: "button"} Узнать больше
+				%a.sprite.i-arrow.arrow_prev
+				%a.sprite.i-arrow.arrow_next
+				%ul.reset_style.ico_list.clearfix
+					%li
+						%a.ico-item.ico-yard{href: "#"}
+							%span.sprite.i-yard
+							%br
+							%span.ico-text Двор
+					%li
+						%a.ico-item.ico-square{href: "#"}
+							%span.sprite.i-square
+							%br
+							%span.ico-text Сквер
+					%li
+						%a.ico-item.ico-garbage{href: "#"}
+							%span.sprite.i-garbage
+							%br
+							%span.ico-text Мусор
+					%li
+						%a.ico-item.ico-home{href: "#"}
+							%span.sprite.i-home
+							%br
+							%span.ico-text Дом
+					%li
+						%a.ico-item.ico-become_hero.active{href: "#"}
+							%span.sprite.i-become_hero
+							%br
+							%span.ico-text.ico-text_small Стань Героем
+					%li
+						%a.ico-item.ico-small_business{href: "#"}
+							%span.sprite.i-small_business
+							%br
+							%span.ico-text.ico-text_small Малый бизнес
+					%li
+						%a.ico-item.ico-bicycle{href: "#"}
+							%span.sprite.i-bicycle
+							%br
+							%span.ico-text Велосипедизация
+					%li
+						%a.ico-item.ico-honesty_authorities{href: "#"}
+							%span.sprite.i-honesty_authorities
+							%br
+							%span.ico-text.ico-text_small Честность властей
+					%li
+						%a.ico-item.ico-your_problem{href: "#"}
+							%span.sprite.i-your_problem
+							%br
+							%span.ico-text.ico-text_small Твоя проблема
 	.block-about
-		.container
-			.col-md-6
-				%h3.about-title О коалиции
-				%p.about-text 
-					Он вспомнил и сообразил всё о Дунечке, и сердце его замерло. Он сорвался с места и побежал. Человек остановился на пороге, посмотрел молча на Раскольникова и ступил шаг в комнату. 
-				%p.about-text 
-					Она крепко пожала руку князю, приветливо и ласково улыбнулась ему и вышла. На Ганю она не посмотрела. Но только это и успел выговорить, онемев под ужасным взглядом Аглаи. В этом взгляде выразилось столько страдания и в то же время бесконечной ненависти, что он всплеснул руками, вскрикнул и бросился к ней, но уже было поздно! Она не перенесла даже и мгновения его колебания, закрыла руками лицо, вскрикнула: «Ах, боже мой!» — и бросилась вон из комнаты, за ней Рогожин, чтоб отомкнуть ей задвижку у дверей на улицу.
-			.col-md-6.clearfix
-				.block-about_hint
-					%div.about-price 
-						$44,4
-						%div.about-price_text млрд
-					%p.about_hint-text
-						Такую сумму потеряли за один день 300 богатейших людей планеты из-за обвала котировок на мировых биржах, произошедшего на фоне обострения политической ситуации в Крыму.
-						%span.about_hint-ico_more-wrap
-							%span.about_hint-ico_more
-					%span.about_hint-decor.about_hint-decor_top
-					%span.about_hint-decor.about_hint-decor_bottom
-		.container
+		.container.container_nopadding
+			.row.row-nomargin
+				.col-md-6.col_nopadding
+					%h3.about-title О коалиции
+					%p.about-text 
+						Он вспомнил и сообразил всё о Дунечке, и сердце его замерло. Он сорвался с места и побежал. Человек остановился на пороге, посмотрел молча на Раскольникова и ступил шаг в комнату. 
+					%p.about-text 
+						Она крепко пожала руку князю, приветливо и ласково улыбнулась ему и вышла. На Ганю она не посмотрела. Но только это и успел выговорить, онемев под ужасным взглядом Аглаи. В этом взгляде выразилось столько страдания и в то же время бесконечной ненависти, что он всплеснул руками, вскрикнул и бросился к ней, но уже было поздно! Она не перенесла даже и мгновения его колебания, закрыла руками лицо, вскрикнула: «Ах, боже мой!» — и бросилась вон из комнаты, за ней Рогожин, чтоб отомкнуть ей задвижку у дверей на улицу.
+				.col-md-6.col_nopadding.clearfix
+					.block-about_hint
+						%div.about-price 
+							$44,4
+							%div.about-price_text млрд
+						%p.about_hint-text
+							Такую сумму потеряли за один день 300 богатейших людей планеты из-за обвала котировок на мировых биржах, произошедшего на фоне обострения политической ситуации в Крыму.
+							%span.about_hint-ico_more-wrap
+								%span.sprite.link_load-more
+						%span.about_hint-decor.about_hint-decor_top
+						%span.about_hint-decor.about_hint-decor_bottom
+		.container.container_nopadding
 			%h2.title
 				Местное самоуправление
 				%span.title-relative
 					сейчас
-					%span.title-relative-arrow
+					%span.sprite.title-relative-arrow
 				и как
 				%span.title-relative.title-relative-none
 					может быть
-					%span.title-relative-arrow
+					%span.sprite.title-relative-arrow
 	.block-outlook.block-outlook_blue
-		%ul.block-outlook-slider
+		%ul.reset_style.block-outlook-slider
 			%li.active
 				.block-outlook-slider-item_wrap
 					= image_tag "info-slide-2.jpg", :class => "block-outlook-img"
-					%span.outlook-arrows
+					%span.sprite.i-outlook-arrows
 					%span.outlook-line_decor
 					.outlook-item-fone
 					.container.container-outlook
@@ -110,7 +113,7 @@
 			%li
 				.block-outlook-slider-item_wrap
 					= image_tag "info-slide-1.jpg", :class => "block-outlook-img"
-					%span.outlook-arrows
+					%span.sprite.i-outlook-arrows
 					%span.outlook-line_decor
 					.outlook-item-fone
 					.container.container-outlook
@@ -118,23 +121,24 @@
 							%p.outlook-text
 								А может быть свет, депутаты, которых волнуют проблемы горожан мусор, рассортированный по контейнерам. Счастье, добро и мир.
 	.map-header-wrap
-		.container
-			.map-header
-				%h2.title-map
-					Карта муниципалитетов Санкт-Петербурга
-				%p.map-text.map-text-wrap
-					Чтобы узнать информацию о своем округе и ознакомиться с кандидатами в депутаты муниципального собрания, выберите район и муниципалитет на карте или введите адрес в поле поиска.
-				%span.map-header_decor
+		.container.container_nopadding
+			.row.row-nomargin
+				.map-header
+					%h2.title-map
+						Карта муниципалитетов Санкт-Петербурга
+					%p.map-text.map-text-wrap
+						Чтобы узнать информацию о своем округе и ознакомиться с кандидатами в депутаты муниципального собрания, выберите район и муниципалитет на карте или введите адрес в поле поиска.
+					%span.map-header_decor
 	.map-body-wrap
 		%span.map-header-bottom_decor
 		.map-body-wrap_bg
-		.container.container-pos
-			.row
-				.col-md-6
+		.container.container_nopadding.container-pos
+			.row.row-nomargin
+				.col-md-6.col_nopadding
 					.map-block-wrap
 						.find-block_wrap.active
-							%input.find-block{placeholder: "Введите адрес, чтобы найти муниципалитет", value: "Димитрова ул. 65", type: "text"}
-								%span.find-block-ico_close.active
+							%input.inp_outlinenone.find-block{placeholder: "Введите адрес, чтобы найти муниципалитет", value: "Димитрова ул. 65", type: "text"}
+								%span.sprite.i-find-block_close.active
 							%span.find-block_finder Найти
 						.popup_hint
 							%h3.popup_hint-title Муниципальное образование № 71
@@ -142,152 +146,160 @@
 							%p.popup_hint-text 
 								Знаешь муниципальный округ лучше нас? Напиши нам письмо на 
 								%a.popup_hint-link{href: "#"} info@fog.ru
-				.col-md-6
+				.col-md-6.col_nopadding
 					.map-block-wrap
 						.candidate-scale_wrap
 							.candidate_head.clearfix
-								%span.candidate-ico
-								%p.candidate_head-text Шкала количества кандидатов
-								%span.candidate-ico.candidate-ico_four
+								%span.sprite.i-candidate
+								%p.candidate_head-text Количества кандидатов
+								%span.sprite.i-candidate.i-candidate-four
 							.candidate_head-decor
 						.candidate_wrap
 							.candidate_body
 								%h5.candidate_body-title
 									Кандидаты в депутаты  муниципального собрания 
 									%span.candidate_list-count (17)
-								%ul.candidate_list.clearfix
+								%ul.reset_style.candidate_list.clearfix
 									%li.clearfix
-										%span.candidate_list-ico
+										%span.sprite.i-candidate-list
 										%span.candidate_list-text Партия «Зеленые»
 									%li.clearfix
-										%span.candidate_list-ico
+										%span.sprite.i-candidate-list
 										%span.candidate_list-text Общественное движение «Светофор»
 									%li.clearfix
-										%span.candidate_list-ico
+										%span.sprite.i-candidate-list
 										%span.candidate_list-text Независимый кандидат
 									%li.clearfix
-										%span.candidate_list-ico
+										%span.sprite.i-candidate-list
 										%span.candidate_list-text Партия «Сёстры»
 									%li.clearfix
-										%span.candidate_list-ico
+										%span.sprite.i-candidate-list
 										%span.candidate_list-text Партия «Синие  ведерки»
 									%li.clearfix
-										%span.candidate_list-ico
+										%span.sprite.i-candidate-list
 										%span.candidate_list-text Общественное движение «Мусоровывоз»
 									%li.clearfix
-										%span.candidate_list-ico
+										%span.sprite.i-candidate-list
 										%span.candidate_list-text Независимый кандидат
 									%li.clearfix
-										%span.candidate_list-ico
+										%span.sprite.i-candidate-list
 										%span.candidate_list-text Партия «Лунные дети»
 									%li.clearfix
-										%span.candidate_list-ico
+										%span.sprite.i-candidate-list
 										%span.candidate_list-text Независимый кандидат
 									%li.clearfix
-										%span.candidate_list-ico
+										%span.sprite.i-candidate-list
 										%span.candidate_list-text Партия «Одномандат- ный округ»
-								%a.link_button.link_button-blue{href: "#"} Стать кандидатом
+								%a.link_button.link_button-blue.link_button-indent_top{href: "#"} Стать кандидатом
 								%span.candidate-decor
 							.candidate-arrow_wrap
-								%span.candidate-arrow_link
+								%span.sprite.candidate-arrow_link
 			.popover.popup_hint-arrow-position.top
-				%span.popup_hint-arrow_close
-				.arrow
+				%span.sprite.popup_hint-arrow_close
+				.sprite.arrow
 				%h3.popover-title ФРУНЗЕНСКИЙ РАЙОН
 				.popover-content
 					%p Муниципальное образование № 71
 	.subscription
-		.container
-			%h2.subscription-title
-				Хочешь всегда знать что происходит рядом с тобой? 
-				Подпишись на новости своего муниципалитета.
-			.form-group.submit-group.form-center
-				.input_wrap
-					%input#inputWarning1.form-control{placeholder: 'E-mail', type: "text"}
-				%button.btn.btn-default.link_button{type: "submit"} Отправить
+		.container.container_nopadding
+			.row.row-nomargin
+				%h2.subscription-title
+					Хочешь всегда знать что происходит рядом с тобой? 
+					Подпишись на новости своего муниципалитета.
+			.row.row-nomargin
+				.form-group.submit-group.form-center
+					.input_wrap
+						%input.inp_outlinenone#inputWarning1.form-control{placeholder: 'E-mail', type: "text"}
+					%button.btn.btn-default.link_button{type: "submit"} Отправить
 	.developments
-		.container
+		.container.container_nopadding
 			%h5.developments-title
-				%span.developments-title_ico
+				%span.sprite.i-developments-title
 				%span.developments-title_text События муниципалитета
-			.row.developments-list
+			.row.row-nomargin.developments-list
 				.col-xs-6.col-md-3.col-sm-6
 					.block_news
 						= image_tag "styles-inf.jpg", :class => "block_news-img"
 						%h4.block_news-title
-							%span.block_news-title_text Весенний субботник
-							%span.block_news-title_ico
+							%a{href: "#"}
+								%span.block_news-title_text Весенний субботник
+								%span.sprite.i-block_news-title
 						%a.block_news-data_link{href: "#"} 24 апреля 2014
 						%p.block_news-text Принято постановление о проведении месячника чистоты на территории всех муниципальных образований
 				.col-xs-6.col-md-3.col-sm-6
 					.block_news
 						= image_tag "styles-inf-1.jpg", :class => "block_news-img"
 						%h4.block_news-title
-							%span.block_news-title_text 
-								Велосипедный  
-								%br
-								пробег
-							%span.block_news-title_ico
+							%a{href: "#"}
+								%span.block_news-title_text 
+									Велосипедный  
+									%br
+									пробег
+								%span.sprite.i-block_news-title
 						%a.block_news-data_link{href: "#"} 1 мая 2014
 						%p.block_news-text Ежегодный велопробег по улицам Питера.
 				.col-xs-6.col-md-3.col-sm-6
 					.block_news
 						= image_tag "styles-inf-2.jpg", :class => "block_news-img"
 						%h4.block_news-title
-							%span.block_news-title_text Акция «Помоги  бездомному»
-							%span.block_news-title_ico
+							%a{href: "#"}
+								%span.block_news-title_text Акция «Помоги  бездомному»
+								%span.sprite.i-block_news-title
 						%a.block_news-data_link{href: "#"} 1 апреля 2014
 						%p.block_news-text Раздачи еды и тёплой одежды  в Санкт-Петербурге! Присоединяйтесь!
 				.col-xs-6.col-md-3.col-sm-6
 					.block_news
 						= image_tag "styles-inf-3.jpg", :class => "block_news-img"
 						%h4.block_news-title
-							%span.block_news-title_text Акция «Посади  дерево»
-							%span.block_news-title_ico
+							%a{href: "#"}
+								%span.block_news-title_text Акция «Посади  дерево»
+								%span.sprite.i-block_news-title
 						%a.block_news-data_link{href: "#"} 24 апреля 2014
 						%p.block_news-text Посади дерево — социальный проект по озеленению города.
-			.info_wrap.info_wrap-indent
-				%span.info-ico
-				%span.info-text Знаете событие, которого тут нет? Напишите нам на 
-				%a.info-link{href: "#"} info@forceofgoodness.ru
+			.row.row-nomargin
+				.info_wrap.info_wrap-indent
+					%span.sprite.i-info
+					%span.info-text Знаете событие, которого тут нет? Напишите нам на 
+					%a.info-link{href: "#"} info@forceofgoodness.ru
 		%span.developments-decor
 	.soc-info
-		.container
-			.map-header
-				%h2.title-map
-					Остались вопросы?
-				%p.map-text
-					Но только что он вступил в столовую (еще через одну комнату от гостиной), с ним в дверях почти столкнулась выходившая Аглая. Она была одна.	Пристальный и беспокойный ее взгляд нетерпеливо устремился на Аглаю. Обе сели поодаль одна от другой: Аглая на диване в углу комнаты, Настасья Филипповна у окна. Князь и Рогожин не садились, да их и не пригласили садиться. Князь с недоумением и как бы с болью опять поглядел на Рогожина, но тот улыбался всё прежнею своею улыбкой. Молчание продолжалось еще несколько мгновений.
-				%span.map-header_decor
-			.row
+		.container.container_nopadding
+			.row.row-nomargin
+				.map-header
+					%h2.title-map
+						Остались вопросы?
+					%p.map-text
+						Но только что он вступил в столовую (еще через одну комнату от гостиной), с ним в дверях почти столкнулась выходившая Аглая. Она была одна.	Пристальный и беспокойный ее взгляд нетерпеливо устремился на Аглаю. Обе сели поодаль одна от другой: Аглая на диване в углу комнаты, Настасья Филипповна у окна. Князь и Рогожин не садились, да их и не пригласили садиться. Князь с недоумением и как бы с болью опять поглядел на Рогожина, но тот улыбался всё прежнею своею улыбкой. Молчание продолжалось еще несколько мгновений.
+					%span.map-header_decor
+			.row.row-nomargin
 				.col-xs-6.col-center
-					%ul.soc_list.clearfix
+					%ul.reset_style.soc_list.clearfix
 						%li
-							%a.soc-link.soc-fb{href: "#"}
+							%a.sprite.soc-link.i-soc-fb{href: "#"}
 						%li
-							%a.soc-link.soc-tw{href: "#"}
+							%a.sprite.soc-link.i-soc-tw.active{href: "#"}
 						%li
-							%a.soc-link.soc-vk{href: "#"}
+							%a.sprite.soc-link.i-soc-vk{href: "#"}				
 					.soc_list-text Рассказать о нас своим друзьям
 				.col-xs-6.col-center
-					%a.compete-ico{href: "#"}
+					%a.sprite.i-compete{href: "#"}
 					.soc_list-text 
 						Можно выбрать свое событие 
 						%a.block_news-data_link{href: "#"} тут
-			.row.superman-wrap
+			.row.row-nomargin.superman-wrap
 				.col-xs-6.col-center
-					%a.superman-ico{href: "#"}
+					%a.sprite.i-superman{href: "#"}
 					%br
 					%div.soc_list-text 
 						Готов сам менять города — 
 						%br становись депутатом
-					= link_to 'Стать кандидатом', '#', class:"link_button link_button-blue"
+					= link_to 'Стать кандидатом', '#', class:"link_button link_button-blue link_button-indent"
 					%div.soc-info_hint-text 
 						Не знаешь как это сделать – иди в 
 						%a.soc-info_hint-link{href: "#{}"} Школу депутатов
 						, там тебя научат
 				.col-xs-6.col-center
-					%a.superman-ico.man{href: "#"}
+					%a.sprite.i-superman.i-man{href: "#"}
 					%br
 					%div.soc_list-text 
 						Так и не понял кто такие 
@@ -298,92 +310,91 @@
 				%h3.subscription-title Каждый может стать героем
 				%h3.subscription-title.title-blue Заполни минианкету
 				%br
-			%form.form_login.form-pos.form-center{action: "#"}
-				%div
-					%ul.form-style_list
-						%li
-							.form-group
-								.input_wrap
-									%input#disabledTextInput.form-control{type: "text"}
-									%span.form_inp-text.form_inp-default
-										Имя
-										%span.form_inp-star
-									%span.form-hint_text Имя состоит из букв
-						%li
-							.form-group
-								.input_wrap
-									%input#disabledTextInput.form-control{type: "text"}
-									%span.form_inp-text.form_inp-default
-										Фамилия
-										%span.form_inp-star
-									%span.form-hint_text Имя состоит из букв
-						%li
-							.form-group
-								.input_wrap
-									%input#disabledTextInput.form-control{type: "text"}
-									%span.form_inp-text.form_inp-default
-										Дата рождения
-										%span.form_inp-star
-									%span.form-hint_text Имя состоит из букв
-						%li
-							.form-group
-								.input_wrap
-									%input#disabledTextInput.form-control{type: "text"}
-									%span.form_inp-text.form_inp-default
-										Телефон
-										%span.form_inp-star
-									%span.form-hint_text Имя состоит из букв
-						%li
-							.form-group
-								.input_wrap
-									%input#disabledTextInput.form-control{type: "text"}
-									%span.form_inp-text.form_inp-default
-										E-mail
-										%span.form_inp-star
-									%span.form-hint_text Имя состоит из букв
-						%li
-							.form-group
-								.input_wrap
-									%input#disabledTextInput.form-control{type: "text"}
-									%span.form_inp-text.form_inp-default
-										Логин Вконтакте
-									%span.form-hint_text Имя состоит из букв
-					%dl.check-box_list
-						%dt.title-form_small Я готов:
-						%dd.check-box_item
-							%label.check-box_item_wrap
-								%input.check-box_item_checkbox{:type => "checkbox"}
-								%span.check-box_item_ico_wrap
-									%span.check-box_item_ico
-								%span.check-box_item_text Поддержать материально
-								%span.clear
-						%dd.check-box_item
-							%label.check-box_item_wrap
-								%input.check-box_item_checkbox{:type => "checkbox"}
-								%span.check-box_item_ico_wrap
-									%span.check-box_item_ico
-								%span.check-box_item_text Стать волонтером
-								%span.clear
-						%dd.check-box_item
-							%label.check-box_item_wrap
-								%input.check-box_item_checkbox{:type => "checkbox"}
-								%span.check-box_item_ico_wrap
-									%span.check-box_item_ico
-								%span.check-box_item_text Продвигать проект в интернете
-								%span.clear
-						%dd.check-box_item
-							%label.check-box_item_wrap
-								%input.check-box_item_checkbox{:type => "checkbox"}
-								%span.check-box_item_ico_wrap
-									%span.check-box_item_ico
-								%span.check-box_item_text Участвовать в мероприятиях
-								%span.clear
-					.submit-wrap
-						%input.submit-input{:type => "submit"}
-						%a.submit-link.link_button{:href => "#"} Отправить
+			.row.row-nomargin
+				%form.form_login.form-pos.form-center{action: "#"}
+					%div
+						%ul.reset_style.form-style_list
+							%li
+								.form-group
+									.input_wrap
+										%input.inp_outlinenone#disabledTextInput.form-control{type: "text"}
+										%span.form_inp-text.form_inp-default
+											Имя
+											%span.sprite.i-form_inp-star
+										%span.form-hint_text Имя состоит из букв
+							%li
+								.form-group
+									.input_wrap
+										%input.inp_outlinenone#disabledTextInput.form-control{type: "text"}
+										%span.form_inp-text.form_inp-default
+											Фамилия
+											%span.sprite.i-form_inp-star
+										%span.form-hint_text Имя состоит из букв
+							%li
+								.form-group
+									.input_wrap
+										%input.inp_outlinenone#disabledTextInput.form-control{type: "text"}
+										%span.form_inp-text.form_inp-default
+											Дата рождения
+											%span.sprite.i-form_inp-star
+										%span.form-hint_text Имя состоит из букв
+							%li
+								.form-group
+									.input_wrap
+										%input.inp_outlinenone#disabledTextInput.form-control{type: "text"}
+										%span.form_inp-text.form_inp-default
+											Телефон
+											%span.sprite.i-form_inp-star
+										%span.form-hint_text Имя состоит из букв
+							%li
+								.form-group
+									.input_wrap
+										%input.inp_outlinenone#disabledTextInput.form-control{type: "text"}
+										%span.form_inp-text.form_inp-default
+											E-mail
+											%span.sprite.i-form_inp-star
+										%span.form-hint_text Имя состоит из букв
+							%li
+								.form-group
+									.input_wrap
+										%input.inp_outlinenone#disabledTextInput.form-control{placeholder: "Логин Вконтакте", type: "text"}
+										%span.form_inp-text.form_inp-default
+						%dl.check-box_list
+							%dt.title-form_small Я готов:
+							%dd.check-box_item
+								%label.check-box_item_wrap
+									%input.inp_outlinenone.check-box_item_checkbox{:type => "checkbox"}
+									%span.check-box_item_ico_wrap
+										%span.sprite.i-check-box_item
+									%span.check-box_item_text Поддержать материально
+									%span.clear
+							%dd.check-box_item
+								%label.check-box_item_wrap
+									%input.inp_outlinenone.check-box_item_checkbox{:type => "checkbox"}
+									%span.check-box_item_ico_wrap
+										%span.sprite.i-check-box_item
+									%span.check-box_item_text Стать волонтером
+									%span.clear
+							%dd.check-box_item
+								%label.check-box_item_wrap
+									%input.inp_outlinenone.check-box_item_checkbox{:type => "checkbox"}
+									%span.check-box_item_ico_wrap
+										%span.sprite.i-check-box_item
+									%span.check-box_item_text Продвигать проект в интернете
+									%span.clear
+							%dd.check-box_item
+								%label.check-box_item_wrap
+									%input.inp_outlinenone.check-box_item_checkbox{:type => "checkbox"}
+									%span.check-box_item_ico_wrap
+										%span.sprite.i-check-box_item
+									%span.check-box_item_text Участвовать в мероприятиях
+									%span.clear
+						.submit-wrap
+							%input.inp_outlinenone.submit-input{:type => "submit"}
+							%button.btn.btn-default.link_button.submit-link.link_button-weight{type: "submit"} Отправить
 	%footer#footer
-		.container
-			.row
+		.container.container_nopadding
+			.row.row-nomargin
 				.col-xs-6
 					%span.copyright © 2014 Общественное объединение «Силы Добра»
 				.col-xs-6.col-right

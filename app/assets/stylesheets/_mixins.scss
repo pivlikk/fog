@@ -55,3 +55,15 @@ $base-fontSize: 16px !default;
 	box-shadow:$top $left $blur $distance $color #{$inset};
 }
 
+@mixin sprite-ico($width, $height, $display, $verticalAlign, $backgroundPositionX, $backgroundPositionY) {
+	width: $width;
+	height: $height;
+	@if ($display != '') {
+		display: $display;
+	}
+	@if ($verticalAlign != '') {
+		vertical-align: $verticalAlign;
+	}
+	background-position: $backgroundPositionX $backgroundPositionY;
+}
+

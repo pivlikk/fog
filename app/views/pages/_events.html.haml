@@ -1,106 +1,114 @@
 #mainarea
 	%header#header.header-bg
-		.container
-			.logo-wrap.clearfix
-				%a.logo-link.logo-link-white{href: "#"}
-				%span.text-decor Объединение гражданских  проектов с политическими  партиями
-			%ul.nav.navbar-nav.navbar-right.navbar-inverse
-				%li.active
-					= link_to 'События', '#', class:"link"
-				%li
-					= link_to 'О Коалиции', '#', class:"link"
-				%li
-					= link_to 'Вопросы и ответы', '#', class:"link"
-	%body#body
+		.container.container_nopadding
+			.row.row-nomargin
+				.logo-wrap.clearfix
+					%a.logo-link.logo-link-white{href: "#"}
+					%span.text-decor Объединение гражданских  проектов с политическими  партиями
+				%ul.reset_style.nav.nav-menu.navbar-nav.navbar-right.navbar-inverse
+					%li.active
+						= link_to 'События', '#', class:"link"
+					%li
+						= link_to 'О Коалиции', '#', class:"link"
+					%li
+						= link_to 'Вопросы и ответы', '#', class:"link"
+	%section
 		.about-wrap
-			.container
-				.row.events-wrap
+			.container.container_nopadding
+				.row.row-nomargin.events-wrap
 					.col-md-4.col-indent
 						%h3.about-title.about-title_black События
-					.col-md-8
+					.col-md-8.col_nopadding
 						.info_wrap.info_wrap-indent
 							%span.info-text 
-								%span.info-text-ico
+								%span.sprite.i-info
 								Чтобы узнать о событиях в своем округе, выберите район и муниципалитет на карте или введите адрес в поле поиска
 			%span.about_wrap-decor
 		.sub_nav-wrap
-			.container
-				%ul.sub_nav.list-inline
-					%li
-						= link_to 'Все события', '#', class:"sub_nav-link"
-					%li
-						= link_to 'Помощь бездомным', '#', class:"sub_nav-link"
-					%li.active
-						= link_to 'Велосипедизация', '#', class:"sub_nav-link"
-					%li
-						= link_to 'Помощь природе', '#', class:"sub_nav-link"
-					%li
-						= link_to 'Уборка мусора', '#', class:"sub_nav-link"
+			.container.container_nopadding
+				.row.row-nomargin
+					%ul.reset_style.sub_nav.list-inline
+						%li
+							= link_to 'Все события', '#', class:"sub_nav-link"
+						%li
+							= link_to 'Помощь бездомным', '#', class:"sub_nav-link"
+						%li.active
+							= link_to 'Велосипедизация', '#', class:"sub_nav-link"
+						%li
+							= link_to 'Помощь природе', '#', class:"sub_nav-link"
+						%li
+							= link_to 'Уборка мусора', '#', class:"sub_nav-link"
 		.map-body-wrap
 			%span.map-header-bottom_decor
 			.map-body-wrap_bg
-			.container.container-pos
-				.row
-					.col-md-6
+			.container.container_nopadding.container-pos
+				.row.row-nomargin
+					.col-md-6.col_nopadding
 						.map-block-wrap
 							.input-group.find-block_wrap
-								%input.form-control.find-block{placeholder: "Введите адрес, чтобы найти муниципалитет", value: "улица Димитровская, 6", type: "text"}
-								%span.find-block-ico_close.active
+								%input.inp_outlinenone.form-control.find-block{placeholder: "Введите адрес, чтобы найти муниципалитет", value: "улица Димитровская, 6", type: "text"}
+								%span.sprite.i-find-block_close.active
 								%span.input-group-btn
 									%button.btn.btn-default{type: "button"} Найти
 
 							.popup_hint
 								%h3.popup_hint-title Муниципальное образование № 71
 								%p.popup_hint-text Если в данном муниципалитете появятся независимые кандидаты, будут отремонтированы дороги и очищены залежи мусора во дворах. Переулки наполнятся светом и добром. Заброшенный пустырь будет преобразован в многопрофильную спортивную площадку.
-					.col-md-6
-				.popup_hint-arrow.popup_hint-arrow-position
-					%span.popup_hint-arrow_close
-					%span.popup_hint-arrow_img
-					%h5.popup_hint-arrow_title ФРУНЗЕНСКИЙ РАЙОН
-					%span.popup_hint-arrow_text Муниципальное образование № 71
+					.col-md-6.col_nopadding
+						.popover.top.popup_hint-arrow-position
+							%span.sprite.popup_hint-arrow_close
+							.sprite.arrow
+							%h3.popover-title ФРУНЗЕНСКИЙ РАЙОН
+							.popover-content
+								%p Муниципальное образование № 71
 		.container.container-indent
-			.row.developments-list
+			.row.row-nomargin.developments-list
 				.col-xs-6.col-md-3.col-sm-6
 					.block_news
 						= image_tag "styles-inf-14.jpg", :class => "block_news-img"
 						%h4.block_news-title
-							%span.block_news-title_text Выборгский район за колёса
-							%span.block_news-title_ico
+							%a{href: "#"}
+								%span.block_news-title_text Выборгский район за колёса
+								%span.sprite.i-block_news-title
 						%a.block_news-data_link{href: "#"} 24 апреля 2014
 						%p.block_news-text Выборгский район собирает единомышленников.
 				.col-xs-6.col-md-3.col-sm-6
 					.block_news
 						= image_tag "styles-inf-1.jpg", :class => "block_news-img"
 						%h4.block_news-title
-							%span.block_news-title_text 
-								Велосипедный  
-								%br
-								пробег
-							%span.block_news-title_ico
+							%a{href: "#"}
+								%span.block_news-title_text 
+									Велосипедный  
+									%br
+									пробег
+								%span.sprite.i-block_news-title
 						%a.block_news-data_link{href: "#"} 1 мая 2014
 						%p.block_news-text Ежегодный велопробег по улицам Питера.
 				.col-xs-6.col-md-3.col-sm-6
 					.block_news
 						= image_tag "styles-inf-6.jpg", :class => "block_news-img"
 						%h4.block_news-title
-							%span.block_news-title_text Акция «Накачай  удачу»
-							%span.block_news-title_ico
+							%a{href: "#"}
+								%span.block_news-title_text Акция «Накачай  удачу»
+								%span.sprite.i-block_news-title
 						%a.block_news-data_link{href: "#"} 1 апреля 2014
 						%p.block_news-text Закачиваем воздух в шины и вперед! Привет весна!
 				.col-xs-6.col-md-3.col-sm-6
 					.block_news
 						= image_tag "styles-inf-15.jpg", :class => "block_news-img"
 						%h4.block_news-title
-							%span.block_news-title_text Адмиралтейский  район
-							%span.block_news-title_ico
+							%a{href: "#"}
+								%span.block_news-title_text Адмиралтейский  район
+								%span.sprite.i-block_news-title
 						%a.block_news-data_link{href: "#"} 24 апреля 2014
 						%p.block_news-text Приведи друга и получи еще одного бесплатно!
 				.col-xs-6.col-md-3.col-sm-6
 					.block_news
 						= image_tag "styles-inf-5.jpg", :class => "block_news-img"
 						%h4.block_news-title
-							%span.block_news-title_text Весенний субботник  на велосипедах
-							%span.block_news-title_ico
+							%a{href: "#"}
+								%span.block_news-title_text Весенний субботник  на велосипедах
+								%span.sprite.i-block_news-title
 						%a.block_news-data_link{href: "#"} 24 апреля 2014
 						%p.block_news-text
 							Метелки в руки, долой мусор! 
@@ -109,93 +117,102 @@
 					.block_news
 						= image_tag "styles-inf-1.jpg", :class => "block_news-img"
 						%h4.block_news-title
-							%span.block_news-title_text 
-								Велосипедный  
-								%br
-								пробег
-							%span.block_news-title_ico
+							%a{href: "#"}
+								%span.block_news-title_text 
+									Велосипедный  
+									%br
+									пробег
+								%span.sprite.i-block_news-title
 						%a.block_news-data_link{href: "#"} 1 мая 2014
 						%p.block_news-text Ежегодный велопробег по улицам Питера.
 			.map-header.title-small
-				%h2.title-map.title-small
+				%h2.title-map.title-small.title-pos
 					Прошедшие события
-					%a.events-arrow{href: "#"}
+					%a.sprite.events-arrow{href: "#"}
 				%span.map-header_decor
 			.past_events
-				.row.developments-list
+				.row.row-nomargin.developments-list
 					.col-xs-6.col-md-3.col-sm-6
 						.block_news
 							= image_tag "styles-inf-6.jpg", :class => "block_news-img"
 							%h4.block_news-title
-								%span.block_news-title_text Выборгский район за колёса
-								%span.block_news-title_ico
+								%a{href: "#"}
+									%span.block_news-title_text Выборгский район за колёса
+									%span.sprite.i-block_news-title
 							%a.block_news-data_link{href: "#"} 24 апреля 2014
 							%p.block_news-text Выборгский район собирает единомышленников.
 					.col-xs-6.col-md-3.col-sm-6
 						.block_news
 							= image_tag "styles-inf-7.jpg", :class => "block_news-img"
 							%h4.block_news-title
-								%span.block_news-title_text 
-									Велосипедный  
-									%br
-									пробег
-								%span.block_news-title_ico
+								%a{href: "#"}
+									%span.block_news-title_text 
+										Велосипедный  
+										%br
+										пробег
+									%span.sprite.i-block_news-title
 							%a.block_news-data_link{href: "#"} 1 мая 2014
 							%p.block_news-text Ежегодный велопробег по улицам Питера.
 					.col-xs-6.col-md-3.col-sm-6
 						.block_news
 							= image_tag "styles-inf-8.jpg", :class => "block_news-img"
 							%h4.block_news-title
-								%span.block_news-title_text Акция «Накачай  удачу»
-								%span.block_news-title_ico
+								%a{href: "#"}
+									%span.block_news-title_text Акция «Накачай  удачу»
+									%span.sprite.i-block_news-title
 							%a.block_news-data_link{href: "#"} 1 апреля 2014
 							%p.block_news-text Закачиваем воздух в шины и вперед! Привет весна!
 					.col-xs-6.col-md-3.col-sm-6
 						.block_news
 							= image_tag "styles-inf-9.jpg", :class => "block_news-img"
 							%h4.block_news-title
-								%span.block_news-title_text Адмиралтейский  район
-								%span.block_news-title_ico
+								%a{href: "#"}
+									%span.block_news-title_text Адмиралтейский  район
+									%span.sprite.i-block_news-title
 							%a.block_news-data_link{href: "#"} 24 апреля 2014
 							%p.block_news-text Приведи друга и получи еще одного бесплатно!
 					.col-xs-6.col-md-3.col-sm-6
 						.block_news
 							= image_tag "styles-inf-10.jpg", :class => "block_news-img"
 							%h4.block_news-title
-								%span.block_news-title_text Весенний субботник  на велосипедах
-								%span.block_news-title_ico
+								%a{href: "#"}
+									%span.block_news-title_text Весенний субботник  на велосипедах
+									%span.sprite.i-block_news-title
 							%a.block_news-data_link{href: "#"} 24 апреля 2014
 							%p.block_news-text Выборгский район собирает единомышленников.
 					.col-xs-6.col-md-3.col-sm-6
 						.block_news
 							= image_tag "styles-inf-11.jpg", :class => "block_news-img"
 							%h4.block_news-title
-								%span.block_news-title_text 
-									Велосипедный  
-									%br
-									пробег
-								%span.block_news-title_ico
+								%a{href: "#"}
+									%span.block_news-title_text 
+										Велосипедный  
+										%br
+										пробег
+									%span.sprite.i-block_news-title
 							%a.block_news-data_link{href: "#"} 1 мая 2014
 							%p.block_news-text Ежегодный велопробег по улицам Питера.
 					.col-xs-6.col-md-3.col-sm-6
 						.block_news
 							= image_tag "styles-inf-12.jpg", :class => "block_news-img"
 							%h4.block_news-title
-								%span.block_news-title_text Акция «Помоги  велосипедистам»
-								%span.block_news-title_ico
+								%a{href: "#"}
+									%span.block_news-title_text Акция «Помоги  велосипедистам»
+									%span.sprite.i-block_news-title
 							%a.block_news-data_link{href: "#"} 1 апреля 2014
 							%p.block_news-text Закачиваем воздух в шины и вперед! Привет весна!
 					.col-xs-6.col-md-3.col-sm-6
 						.block_news
 							= image_tag "styles-inf-13.jpg", :class => "block_news-img"
 							%h4.block_news-title
-								%span.block_news-title_text Акция «Полезные  колёса»
-								%span.block_news-title_ico
+								%a{href: "#"}
+									%span.block_news-title_text Акция «Полезные  колёса»
+									%span.sprite.i-block_news-title
 							%a.block_news-data_link{href: "#"} 24 апреля 2014
 							%p.block_news-text Приведи друга и получи еще одного бесплатно!
 	%footer#footer
-		.container
-			.row
+		.container.container_nopadding
+			.row.row-nomargin
 				.col-xs-6
 					%span.copyright © 2014 Общественное объединение «Силы Добра»
 				.col-xs-6.col-right

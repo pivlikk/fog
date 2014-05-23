@@ -1,0 +1,12 @@
+%header#header
+	.container
+		.logo-wrap.clearfix
+			%a.logo-link{href: "/"}
+			%span.text-decor Объединение гражданских  проектов с политическими  партиями
+		%ul.nav.navbar-nav.navbar-right
+			%li
+				= link_to 'События', events_path, class: "link"
+			%li
+				= link_to 'О Коалиции', about_path, class: "link"
+			%li.active
+				= link_to 'Вопросы и ответы', faq_path, class: "link"

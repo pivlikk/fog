@@ -22,7 +22,7 @@ gem 'mongoid_slug', '~> 3.2.0'
 gem 'mongoid-sadstory', :git => 'git://github.com/tih-ra/mongoid-sadstory.git'
 gem 'haml-rails'
 gem 'mongoid-grid_fs', github: 'ahoward/mongoid-grid_fs'
-#gem 'puma', '~> 2.7.1'
+gem 'puma', '~> 2.7.1'
 gem 'nprogress-rails'
 #gem "letter_opener", :group => :development
 gem 'jquery-ui-rails'
@@ -34,12 +34,12 @@ gem 'rails_12factor', group: :production
 gem 'bootstrap-sass', '~> 3.1.1'
 
 # AFTER MOVE FROM HEROKU!
-#group :development do
-#  gem 'capistrano', '~> 3.1'
-#  gem 'capistrano-rails', '~> 1.1'
-#  gem 'capistrano-rbenv', '~> 2.0.2'
-#  gem 'capistrano3-puma', github: "seuros/capistrano-puma"
-#end
+group :development do
+  gem 'capistrano', '~> 3.1'
+  gem 'capistrano-rails', '~> 1.1'
+  gem 'capistrano-rbenv', '~> 2.0.2'
+  gem 'capistrano3-puma', github: "seuros/capistrano-puma"
+end
 
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes

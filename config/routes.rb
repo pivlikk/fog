@@ -4,8 +4,9 @@ Fog::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
-
+  root 'welcome#index'
+  get 'faq' => 'welcome#faq'
+  get 'about' => 'welcome#about'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -15,6 +16,7 @@ Fog::Application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
   resources :pages
+  resources :events
   # Example resource route with options:
   #   resources :products do
   #     member do

@@ -12,4 +12,6 @@ class Candidate
   field :vk, type: String
   
   belongs_to :distinct
+  
+  
 end

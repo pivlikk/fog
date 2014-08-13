@@ -2,7 +2,7 @@ class Distinct
   include Mongoid::Document
   include Mongoid::Timestamps
     
-  field :name, type: String
+  field :title, type: String
   field :distinct_number, type: String
   field :email, type: String
   has_many :candidates

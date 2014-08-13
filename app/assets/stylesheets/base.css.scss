@@ -602,7 +602,7 @@ ul, ol {
 		.info-text-ico {
 			width: 20px;
 			height: 20px;
-			background: url("/assets/sprite.png") -800px -80px no-repeat;
+			background: url("sprite.png") -800px -80px no-repeat;
 			content: "";
 			display: block;
 			@include position-coord(absolute, '', '', '', -40px);
@@ -1571,13 +1571,13 @@ body {
 //start about
 .about-wrap {
 	position: relative;
-	background: url("/assets/developments-bg.png") repeat;
+	background: url("developments-bg.png") repeat;
 	.about_wrap-decor {
 		@include position-coord(absolute, '', '', -4px, 0);
 		display: inline-block;
 		width: 100%;
 		height: 4px;
-		background: url("/assets/about-decor.png") repeat-x;
+		background: url("about-decor.png") repeat-x;
 		z-index: 10;
 	}
 }

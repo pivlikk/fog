@@ -1,237 +1,101 @@
 #mainarea
-	= #render "header"
-	.slider
-		%span.slider-button_decor
-		.container.container-pos
-			%h2.slider-title Миру нужны герои
-			%p.slider-text Город накрыла тьма. Влюбленным негде целоваться все лавочки сломаны. Для велосипедистов не осталось дорожек и они вынуждены передвигаться по поребрикам. Спасти город можешь только ты!
-			%p.slider-text Победить зло городе очень просто, достаточно начать со своего двора. Силам добра нужна твоя помощь! Регистрируйся и становись волонтером.
-			= link_to 'Узнать больше', '#', class:"link_button"
-			%a.arrow.arrow_prev
-			%a.arrow.arrow_next
-			%ul.ico_list.clearfix
-				%li
-					%a.ico-item.ico-yard{href: "#"}
-						%span.ico-img
-						%br
-						%span.ico-text Двор
-				%li
-					%a.ico-item.ico-square{href: "#"}
-						%span.ico-img
-						%br
-						%span.ico-text Сквер
-				%li
-					%a.ico-item.ico-garbage{href: "#"}
-						%span.ico-img
-						%br
-						%span.ico-text Мусор
-				%li
-					%a.ico-item.ico-home{href: "#"}
-						%span.ico-img
-						%br
-						%span.ico-text Дом
-				%li
-					%a.ico-item.ico-become_hero.active{href: "#"}
-						%span.ico-img
-						%br
-						%span.ico-text.ico-text_small Стань Героем
-				%li
-					%a.ico-item.ico-small_business{href: "#"}
-						%span.ico-img
-						%br
-						%span.ico-text.ico-text_small Малый бизнес
-				%li
-					%a.ico-item.ico-bicycle{href: "#"}
-						%span.ico-img
-						%br
-						%span.ico-text Велосипедизация
-				%li
-					%a.ico-item.ico-honesty_authorities{href: "#"}
-						%span.ico-img
-						%br
-						%span.ico-text.ico-text_small Честность властей
-				%li
-					%a.ico-item.ico-your_problem{href: "#"}
-						%span.ico-img
-						%br
-						%span.ico-text.ico-text_small Твоя проблема
-	.block-about
-		.container
-			.col-md-6
-				%h3.about-title Кто такой муниципальный депутат и зачем он нужен?
-				%p.about-text
-					Он вспомнил и сообразил всё о Дунечке, и сердце его замерло. Он сорвался с места и побежал. Человек остановился на пороге, посмотрел молча на Раскольникова и ступил шаг в комнату.
-				%p.about-text
-					Она крепко пожала руку князю, приветливо и ласково улыбнулась ему и вышла. На Ганю она не посмотрела. Но только это и успел выговорить, онемев под ужасным взглядом Аглаи. В этом взгляде выразилось столько страдания и в то же время бесконечной ненависти, что он всплеснул руками, вскрикнул и бросился к ней, но уже было поздно! Она не перенесла даже и мгновения его колебания, закрыла руками лицо, вскрикнула: «Ах, боже мой!» — и бросилась вон из комнаты, за ней Рогожин, чтоб отомкнуть ей задвижку у дверей на улицу.
-			.col-md-6.clearfix
-				.block-about_hint
-					%div.about-price
-						$44,4
-						%div.about-price_text млрд
-					%p.about_hint-text
-						Такую сумму потеряли за один день 300 богатейших людей планеты из-за обвала котировок на мировых биржах, произошедшего на фоне обострения политической ситуации в Крыму.
-						%span.about_hint-ico_more-wrap
-							%span.about_hint-ico_more
-					%span.about_hint-decor.about_hint-decor_top
-					%span.about_hint-decor.about_hint-decor_bottom
-		.container-title
-			%h2.title
-				Местное самоуправление
-				%span.title-relative.title-relative-none
-					сейчас
-					%span.title-relative-arrow
-				и как
-				%span.title-relative
-					может быть
-					%span.title-relative-arrow
-	.block-outlook
-		%ul.block-outlook-slider
-			%li
-				.block-outlook-slider-item_wrap
-					= image_tag "info-slide-2.jpg", :class => "block-outlook-img"
-					%span.outlook-arrows
-					%span.outlook-line_decor
-					.outlook-item-fone
-					.container.container-outlook
-						.outlook-text-wrap
-							%p.outlook-text
-								А может быть свет, депутаты, которых волнуют проблемы горожан мусор, рассортированный по контейнерам. Счастье, добро и мир.
-			%li.active
-				.block-outlook-slider-item_wrap
-					= image_tag "info-slide-1.jpg", :class => "block-outlook-img"
-					%span.outlook-arrows
-					%span.outlook-line_decor
-					.outlook-item-fone
-					.container.container-outlook
-						.outlook-text-wrap
-							%p.outlook-text
-								А может быть свет, депутаты, которых волнуют проблемы горожан мусор, рассортированный по контейнерам. Счастье, добро и мир.
-	//.map-header-wrap
-	.grey-block
-		.container
-			.map-header
-				%h2.title-map.grey
-					За кого голосовать 14 сентября?
-				%p.map-text.map-text-wrap
-					Чтобы узнать информацию о своем округе и ознакомиться с кандидатами в депутаты муниципального собрания, выберите район и муниципалитет на карте или введите адрес в поле поиска.
-				%span.map-header_decor
-			%form
-				.form-group.submit-group.form-center
-					.input_wrap
-						%input#inputWarning.form-control.bg{"placeholder" => "Адрес, по которому проживаете", "type" => "text"}
-					%button.btn.btn-default.link_button{type: "submit"} Отправить
-	.container-big
-		.map-header
-			%h2.title-map
-				Ваш округ:
-				%span.color Коломна
-		.a
-			%a.color-a{"href" => "#"} Задать вопрос команде
-
-		.col-md-2.col-md-offset-1.comand-block
-			.description
-				= image_tag "img.png"
-				%p
-					%b Иванов Андрей Захарович
-				%p 27 лет
-				%p Выдвинут: Партия синих шапок
-				%p +89 234 45 76
-				%p ivanov@mail.ru
-				%a{"href" => "#"}
-					= image_tag "header/facebook-small.png"
-				%a{"href" => "#"}
-					= image_tag "header/twitter-small.png"
-				%a{"href" => "#"}
-					= image_tag "header/vk-small.png"
-
-		.col-md-2.comand-block
-			.description
-				= image_tag "img.png"
-				%p
-					%b Иванов Андрей Захарович
-				%p 27 лет
-				%p Выдвинут: Партия синих шапок
-				%p +89 234 45 76
-				%p ivanov@mail.ru
-				%a{"href" => "#"}
-					= image_tag "header/facebook-small.png"
-				%a{"href" => "#"}
-					= image_tag "header/twitter-small.png"
-				%a{"href" => "#"}
-					= image_tag "header/vk-small.png"
-		.col-md-2.comand-block
-			.description
-				= image_tag "img.png"
-				%p
-					%b Иванов Андрей Захарович
-				%p 27 лет
-				%p Выдвинут: Партия синих шапок
-				%p +89 234 45 76
-				%p ivanov@mail.ru
-				%a{"href" => "#"}
-					= image_tag "header/facebook-small.png"
-				%a{"href" => "#"}
-					= image_tag "header/twitter-small.png"
-				%a{"href" => "#"}
-					= image_tag "header/vk-small.png"
-		.col-md-2.comand-block
-			.description
-				= image_tag "img.png"
-				%p
-					%b Иванов Андрей Захарович
-				%p 27 лет
-				%p Выдвинут: Партия синих шапок
-				%p +89 234 45 76
-				%p ivanov@mail.ru
-				%a{"href" => "#"}
-					= image_tag "header/facebook-small.png"
-				%a{"href" => "#"}
-					= image_tag "header/twitter-small.png"
-				%a{"href" => "#"}
-					= image_tag "header/vk-small.png"
-		.col-md-2.comand-block
-			.description
-				= image_tag "img.png"
-				%p
-					%b Иванов Андрей Захарович
-				%p 27 лет
-				%p Выдвинут: Партия синих шапок
-				%p +89 234 45 76
-				%p ivanov@mail.ru
-				%a{"href" => "#"}
-					= image_tag "header/facebook-small.png"
-				%a{"href" => "#"}
-					= image_tag "header/twitter-small.png"
-				%a{"href" => "#"}
-					= image_tag "header/vk-small.png"
-	.container
-		.margin
-			.col-md-6.col-md-offset-3
-				%button.btn.link_button.settled{type: "button"} Распечатать список кандидатов
-			.col-md-6.col-md-offset-3.padding
-				%button.btn.btn-lg.link_button.settled{type: "button"} Поделиться списком в соцсети
-		.margin
-			.col-md-9.col-md-offset-2
-				.block-description
-					%h3 Программа кандидатов
-					%p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+  = #render "header"
+  = render "slider"
+  .block-about
+    .container
+      .col-md-6
+        %h3.about-title Кто такой муниципальный депутат и зачем он нужен?
+        %p.about-text
+          Он вспомнил и сообразил всё о Дунечке, и сердце его замерло. Он сорвался с места и побежал. Человек остановился на пороге, посмотрел молча на Раскольникова и ступил шаг в комнату.
+        %p.about-text
+          Она крепко пожала руку князю, приветливо и ласково улыбнулась ему и вышла. На Ганю она не посмотрела. Но только это и успел выговорить, онемев под ужасным взглядом Аглаи. В этом взгляде выразилось столько страдания и в то же время бесконечной ненависти, что он всплеснул руками, вскрикнул и бросился к ней, но уже было поздно! Она не перенесла даже и мгновения его колебания, закрыла руками лицо, вскрикнула: «Ах, боже мой!» — и бросилась вон из комнаты, за ней Рогожин, чтоб отомкнуть ей задвижку у дверей на улицу.
+      .col-md-6.clearfix
+        .block-about_hint
+          %div.about-price
+            $44,4
+            %div.about-price_text млрд
+          %p.about_hint-text
+            Такую сумму потеряли за один день 300 богатейших людей планеты из-за обвала котировок на мировых биржах, произошедшего на фоне обострения политической ситуации в Крыму.
+            %span.about_hint-ico_more-wrap
+              %span.about_hint-ico_more
+          %span.about_hint-decor.about_hint-decor_top
+          %span.about_hint-decor.about_hint-decor_bottom
+    .container-title
+      %h2.title
+        Местное самоуправление
+        %span.title-relative.title-relative-none
+          сейчас
+          %span.title-relative-arrow
+        и как
+        %span.title-relative
+          может быть
+          %span.title-relative-arrow
+  .block-outlook
+    %ul.block-outlook-slider
+      %li
+        .block-outlook-slider-item_wrap
+          = image_tag "info-slide-2.jpg", :class => "block-outlook-img"
+          %span.outlook-arrows
+          %span.outlook-line_decor
+          .outlook-item-fone
+          .container.container-outlook
+            .outlook-text-wrap
+              %p.outlook-text
+                А может быть свет, депутаты, которых волнуют проблемы горожан мусор, рассортированный по контейнерам. Счастье, добро и мир.
+      %li.active
+        .block-outlook-slider-item_wrap
+          = image_tag "info-slide-1.jpg", :class => "block-outlook-img"
+          %span.outlook-arrows
+          %span.outlook-line_decor
+          .outlook-item-fone
+          .container.container-outlook
+            .outlook-text-wrap
+              %p.outlook-text
+                А может быть свет, депутаты, которых волнуют проблемы горожан мусор, рассортированный по контейнерам. Счастье, добро и мир.
+  //.map-header-wrap
+  .grey-block
+    .container
+      .map-header
+        %h2.title-map.grey
+          За кого голосовать 14 сентября?
+        %p.map-text.map-text-wrap
+          Чтобы узнать информацию о своем округе и ознакомиться с кандидатами в депутаты муниципального собрания, выберите район и муниципалитет на карте или введите адрес в поле поиска.
+        %span.map-header_decor
+      = form_tag '/search', method: :post, remote: true do
+        .form-group.submit-group.form-center
+          .input_wrap
+            %input#inputWarning.form-control.bg{"placeholder" => "Адрес, по которому проживаете", "type" => "text", :name => "search"}
+          %button.btn.btn-default.link_button{type: "submit"} Отправить
+  #candidates.container-big
+    = render "welcome/candidates"
+  .container
+    .margin
+      .col-md-6.col-md-offset-3
+        %button.btn.link_button.settled{type: "button"} Распечатать список кандидатов
+      .col-md-6.col-md-offset-3.padding
+        %button.btn.btn-lg.link_button.settled{type: "button"} Поделиться списком в соцсети
+    .margin
+      .col-md-9.col-md-offset-2
+        .block-description
+          %h3 Программа кандидатов
+          %p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
 
-	%footer
-		.container
-			.left-point
-			.center
-				.social
-					.image
-						%a{"href" => "#"}
-							= image_tag "header/facebook-big.png"
-					.image
-						%a{"href" => "#"}
-							= image_tag "header/twitter-big.png"
-					.image
-						%a{"href" => "#"}
-							= image_tag "header/vk-big.png"
-				.block-description
-					%h3 Раскзать о нас своим друзьям
-					%p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-			.right-point
+  %footer
+    .container
+      .left-point
+      .center
+        .social
+          .image
+            %a{"href" => "#"}
+              = image_tag "header/facebook-big.png"
+          .image
+            %a{"href" => "#"}
+              = image_tag "header/twitter-big.png"
+          .image
+            %a{"href" => "#"}
+              = image_tag "header/vk-big.png"
+        .block-description
+          %h3 Раскзать о нас своим друзьям
+          %p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+      .right-point

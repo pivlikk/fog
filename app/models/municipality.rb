@@ -4,6 +4,7 @@ class Municipality
     
   field :title, type: String
   has_many :distincts, :dependent => :destroy
+  has_many :areas, :dependent => :destroy
   field :coordinates, type: String
   field :vk_group, type: String
 end

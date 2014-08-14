@@ -8,6 +8,7 @@ Fog::Application.routes.draw do
   root 'welcome#index'
   get 'faq' => 'welcome#faq'
   get 'about' => 'welcome#about'
+  post 'search' => 'welcome#search'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

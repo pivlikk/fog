@@ -1,0 +1,34 @@
+- if @show_error
+  %center
+    %h2 Уточните пожалуйста параметры поиска
+- else
+  - if @no_candidates
+    %center
+      %h2 По вашему адресу не зарегистрировано кандидатов
+  - unless @candidates.empty?
+    .map-header
+      %h2.title-map
+        Ваш округ:
+        %span#municipality_title.color Коломна
+    .a
+      %a.color-a{"href" => "#"} Задать вопрос команде
+  .col-md-10.col-md-offset-2
+    .row
+      - @candidates.each do |c|
+        .col-md-2.comand-block
+          .description
+            = image_tag "img.png"
+            %p
+              %b= c.full_name
+            %p= c.birthday
+            %p 
+              Выдвинут:
+              = c.organization
+            %p= c.phone
+            %p= c.email
+            %a{"href" => c.facebook}
+              = image_tag "header/facebook-small.png"
+            %a{"href" => c.twitter}
+              = image_tag "header/twitter-small.png"
+            %a{"href" => c.vk}
+              = image_tag "header/vk-small.png"

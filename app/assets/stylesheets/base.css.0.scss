@@ -167,9 +167,8 @@ ul, ol {
 	color: $color-white;
 	display: inline-block;
 	text-align: center;
-    width: 130px;
 	.ico-text {
-		font-size: (13px / $base-fontSize) + 0em;
+		font-size: (15px / $base-fontSize) + 0em;
 		line-height: (19px / 15px) + 0em;
 		text-align: center;
 		display: block;
@@ -2115,8 +2114,7 @@ footer
 {
   width: 100%;
   border-top: 1px dotted #2E2F30;
-  overflow: hidden;
-  //height: 420px;
+  height: 420px;
 
   .left-point
   {
@@ -2130,12 +2128,15 @@ footer
 
   .center
   {
+    width: 750px;
+    float: left;
+    min-height: 300px;
     margin: 50px auto;
   }
 
   .right-point
   {
-    background: url(asset-path('header/right-big.png')) no-repeat;
+    background: url('header/right-big.png') no-repeat;
     width: 114px;
     height: 99px;
     float: right;
@@ -2147,7 +2148,7 @@ footer
   {
     width: 450px;
     height: 100px;
-    margin: 0 0 0 50px;
+    margin: 0 0 0 150px;
 
     .image
     {
@@ -2168,7 +2169,7 @@ footer
     width: 500px;
     text-align: center;
     font-family: 'Tahoma';
-    margin: 30px 0 0 50px;
+    margin: 30px 0 0 150px;
 
     h3
     {
@@ -2182,90 +2183,6 @@ footer
       font-size: 1em;
       color: #000;
     }
-  }
-
-}
-
-.background
-{
-  background: url(asset-path('header/header-bg.png')) no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 620px;
-}
-
-/*-Carousel-*/
-.carousel
-{
-  //width: 100%;
-  //height: 600px;
-
-  .arrow-position
-  {
-    margin-top: 200px;
-  }
-}
-
-.carousel-inner
-{
-  //height: 550px;
-}
-
-.carousel-inner-footer
-{
-  height: 300px;
-}
-
-.carousel-caption
-{
-  height: 550px;
-}
-
-.carousel-caption-footer
-{
-  height: 300px;
-}
-
-.item
-{
-  width: 100%;
-  height: 550px;
-}
-
-.item-footer
-{
-  width: 750px;
-  height: 300px;
-}
-
-.carousel-indicators
-{
-  position: absolute;
-  top: 93%;
-  left: 50%;
-  z-index: 15;
-  width: 100%;
-  padding-left: 0;
-  margin-left: -50%;
-  text-align: center;
-
-  .active
-  {
-    background: transparent;
-    width: 130px;
-  }
-}
-
-.carousel-control
-{
-  &.no-shadow
-  {
-    text-shadow: none !important;
-  }
-
-  &.no-bg
-  {
-    background: none;
   }
 
 }

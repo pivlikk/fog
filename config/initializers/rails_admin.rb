@@ -1,3 +1,4 @@
+#encoding: utf-8
 RailsAdmin.config do |config|
 
   ### Popular gems integration
@@ -15,22 +16,31 @@ RailsAdmin.config do |config|
   # config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0
 
   ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
-  
   config.model 'Area' do
+    label "Участок"
+    label_plural "Участки"
     list do
       field :area_number
+      field :municipality
+      field :distinct
       field :including_addresses
     end
   end
   
   config.model 'Distinct' do
+    label "Округ"
+    label_plural "Округа"
     list do
       field :title
+      field :municipality
       field :distinct_number
+      
     end
   end
   
   config.model 'Municipality' do
+    label "Муниципалитет"
+    label_plural "Муниципалитеты"
     list do
       field :title
       field :vk_group
@@ -38,8 +48,11 @@ RailsAdmin.config do |config|
   end
   
   config.model 'Candidate' do
+    label "Кандидат"
+    label_plural "Кандидаты"
     list do
       field :full_name
+      field :distinct
       field :birthday
       field :organization
       field :email

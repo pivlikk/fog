@@ -6,4 +6,6 @@
 #= require bootstrap
 #= require base
 #= require_tree ./lib
+#= require hogan.js
+#= require bootstrap3-typeahead/bootstrap3-typeahead
 #= require_self

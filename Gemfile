@@ -44,7 +44,7 @@ group :development do
   gem 'capistrano-rbenv', '~> 2.0.2'
   gem 'capistrano3-puma', github: "seuros/capistrano-puma"
 end
-
+gem 'hogan_assets'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby

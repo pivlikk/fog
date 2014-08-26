@@ -64,7 +64,9 @@
       = form_tag '/search', method: :post, remote: true do
         .form-group.submit-group.form-center
           .input_wrap
+            
             %input#inputWarning.form-control.bg{"placeholder" => "Адрес, по которому проживаете", "type" => "text", :name => "search"}
+            #map-canvas{:style => "display: none;"}
           %button.btn.btn-default.link_button{type: "submit"} Отправить
   #candidates.container-big
     = render "welcome/candidates"

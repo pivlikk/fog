@@ -8,4 +8,5 @@
 #= require_tree ./lib
 #= require hogan.js
 #= require bootstrap3-typeahead/bootstrap3-typeahead
+#= require typeahead.js/dist/bloodhound
 #= require_self

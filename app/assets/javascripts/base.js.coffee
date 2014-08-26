@@ -41,6 +41,7 @@ ready = ->
           clickable: false
         )
         markers.push marker
+        
         bounds.extend place.geometry.location
         i++
       map.fitBounds bounds

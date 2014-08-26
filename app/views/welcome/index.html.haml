@@ -6,7 +6,7 @@
       .col-md-6
         %h3.about-title Кто такой муниципальный депутат и зачем он нужен?
         %p.about-text
-          Он вспомнил и сообразил всё о Дунечке, и сердце его замерло. Он сорвался с места и побежал. Человек остановился на пороге, посмотрел молча на Раскольникова и ступил шаг в комнату.
+          Он вспомнил и сообразил всё о Дунечке, и сердце его замерло. Он сорвался с места и побежал. Человек остановился на пороге, посмотрел молча на Раскольникова и ступил шаг в комнату. 
         %p.about-text
           Она крепко пожала руку князю, приветливо и ласково улыбнулась ему и вышла. На Ганю она не посмотрела. Но только это и успел выговорить, онемев под ужасным взглядом Аглаи. В этом взгляде выразилось столько страдания и в то же время бесконечной ненависти, что он всплеснул руками, вскрикнул и бросился к ней, но уже было поздно! Она не перенесла даже и мгновения его колебания, закрыла руками лицо, вскрикнула: «Ах, боже мой!» — и бросилась вон из комнаты, за ней Рогожин, чтоб отомкнуть ей задвижку у дверей на улицу.
       .col-md-6.clearfix
@@ -25,29 +25,15 @@
         Местное самоуправление
         %span.title-relative.title-relative-none
           сейчас
-          %span.title-relative-arrow
         и как
         %span.title-relative
           может быть
-          %span.title-relative-arrow
   .block-outlook
     %ul.block-outlook-slider
-      %li
-        .block-outlook-slider-item_wrap
-          = image_tag "info-slide-2.jpg", :class => "block-outlook-img"
-          %span.outlook-arrows
-          %span.outlook-line_decor
-          .outlook-item-fone
-          .container.container-outlook
-            .outlook-text-wrap
-              %p.outlook-text
-                А может быть свет, депутаты, которых волнуют проблемы горожан мусор, рассортированный по контейнерам. Счастье, добро и мир.
+
       %li.active
         .block-outlook-slider-item_wrap
           = image_tag "info-slide-1.jpg", :class => "block-outlook-img"
-          %span.outlook-arrows
-          %span.outlook-line_decor
-          .outlook-item-fone
           .container.container-outlook
             .outlook-text-wrap
               %p.outlook-text
@@ -60,7 +46,6 @@
           За кого голосовать 14 сентября?
         %p.map-text.map-text-wrap
           Чтобы узнать информацию о своем округе и ознакомиться с кандидатами в депутаты муниципального собрания, выберите район и муниципалитет на карте или введите адрес в поле поиска.
-        %span.map-header_decor
       = form_tag '/search', method: :post, remote: true do
         .form-group.submit-group.form-center
           .input_wrap
@@ -76,16 +61,11 @@
         %button#testjson.btn.link_button.settled{type: "button"} Распечатать список кандидатов
       .col-md-6.col-md-offset-3.padding
         %button.btn.btn-lg.link_button.settled{type: "button"} Поделиться списком в соцсети
-    .margin
-      .col-md-9.col-md-offset-2
-        .block-description
-          %h3 Программа кандидатов
-          %p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
-
+  %br
+  %br
   %footer
     .container
-      .left-point
       .center
         %center
           .social
@@ -100,5 +80,4 @@
                 = image_tag "header/vk-big.png"
           .block-description
             %h3 Раскзать о нас своим друзьям
-            %p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-      .right-point
+            %p Это очень важно, потому что в округе и ознакомиться с кандидатами в депутаты муниципального собрания, выберите район и муниципалитет на карте или введите адрес в поле поиска.

@@ -1,6 +1,6 @@
 #encoding: utf-8
 class WelcomeController < ApplicationController
-  before_action :setup_search, :only => [:search, :share, :print]
+  before_action :setup_search, :only => [:search, :share_link, :print]
   def index
     @candidates = []
     @info = []
@@ -19,12 +19,16 @@ class WelcomeController < ApplicationController
   end
   
   def share
+    @candidates = Candidate.wgere(:distinct_id.in => params[:distinct])
+    @distincts = Distinct.where(:id.in => params[:distinct])
+    @municipality = Municipality.find(params[:municipality_id]).title
     @small = @distincts.length < 4
     render :layout => "share"
   end 
   
   def share_link
-    @kit = IMGKit.new("http://fog.app.mo2014.ru/share?name=#{params[:name]}&street=#{params[:street]}")
+    
+    @kit = IMGKit.new("http://localhost:3004/share?distincts=#{@distincts.map(&:_id)}&municipality=#{@municipality_id}")
     send_data(@kit.to_jpg, :type => "image/jpeg", :disposition => 'inline')
   end 
   
@@ -58,6 +62,7 @@ class WelcomeController < ApplicationController
     if !municipalities.empty?
       municipality = municipalities.first
       @municipality = municipality.title
+      @municipality_id = municipality.id
       
       search_street = params[:street].split(", ").last rescue ""
       area = municipality.areas.full_text_search(search_street, match: :all).where(:distinct_id.exists => true)

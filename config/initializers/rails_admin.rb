@@ -51,13 +51,31 @@ RailsAdmin.config do |config|
     label "Кандидат"
     label_plural "Кандидаты"
     list do
+      field :full_name do
+        label "ФИО"
+      end
+      field :distinct do
+        label "Округ"
+      end
+      field :municipality do
+        label "Муниципалитет"
+      end
+      
+      
+    end
+    
+    edit do
       field :full_name
-      field :distinct
       field :birthday
       field :organization
       field :email
-      
-      
+      field :phone
+      field :twitter
+      field :facebook
+      field :vk
+      field :distinct do
+        partial "edit_candidate_distincts"
+      end
     end
   end
   

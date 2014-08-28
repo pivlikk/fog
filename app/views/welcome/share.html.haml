@@ -1,0 +1,27 @@
+%center
+  .main-container{:class => @small ? "small" : ""}
+    .title 
+      %h1 Выборы 14 сентября
+    .dist
+      %h2= @municipality
+    - unless @small
+      - @distincts.each_slice(2) do |group|
+        .left
+          - group.each do |d|
+            %h2
+              Округ
+              = d.title
+            - d.candidates.each do |c|
+              %span.candidate= c.full_name
+    - else
+      .center
+        - @distincts.each do |d|
+          %h2
+            Округ
+            = d.title
+          - d.candidates.each do |c|
+            %span.candidate= c.full_name
+    .clear
+    .footer
+      %h2 Узнай своих кандидатов на mo2014.ru
+      

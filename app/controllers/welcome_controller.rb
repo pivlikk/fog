@@ -1,5 +1,6 @@
 #encoding: utf-8
 class WelcomeController < ApplicationController
+  before_action :setup_search, :only => [:search, :share]
   def index
     @candidates = []
     @info = []
@@ -13,9 +14,38 @@ class WelcomeController < ApplicationController
     @super_info = @info.shuffle.first
   end
 
+  def share
+    @small = @distincts.length < 4
+    render :layout => "share"
+  end 
+  
+  def share_link
+    @kit = IMGKit.new("http://fog.app.mo2014.ru/share?name=#{params[:name]}&street=#{params[:street]}")
+    send_data(@kit.to_jpg, :type => "image/jpeg", :disposition => 'inline')
+  end 
   
   def search
 
+  end
+
+  def search_old
+    @candidates = []
+    @show_error = false
+    @no_candidates = false
+    area = Area.full_text_search(params[:search], match: :all)
+    if !area.empty? and area.first.municipality and params[:search].length > 6
+      @municipality = area.first.municipality.title
+      @candidates = Candidate.where(:distinct_id.in => area.first.municipality.distincts.map(&:_id))
+    else
+      @show_error = true
+    end
+    if @candidates.empty?
+      @no_candidates = true
+    end
+  end
+  
+  private
+  def setup_search
     @candidates = []
     @show_error = false
     @no_candidates = false
@@ -37,22 +67,6 @@ class WelcomeController < ApplicationController
       end
       
       @candidates = Candidate.where(:distinct_id.in => @distincts.map(&:_id))
-    else
-      @show_error = true
-    end
-    if @candidates.empty?
-      @no_candidates = true
-    end
-
-  end
-  def search_old
-    @candidates = []
-    @show_error = false
-    @no_candidates = false
-    area = Area.full_text_search(params[:search], match: :all)
-    if !area.empty? and area.first.municipality and params[:search].length > 6
-      @municipality = area.first.municipality.title
-      @candidates = Candidate.where(:distinct_id.in => area.first.municipality.distincts.map(&:_id))
     else
       @show_error = true
     end

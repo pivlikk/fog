@@ -10,6 +10,8 @@ Fog::Application.routes.draw do
   get 'faq' => 'welcome#faq'
   get 'about' => 'welcome#about'
   post 'search' => 'welcome#search'
+  get 'share' => 'welcome#share'
+  get 'share_link' => 'welcome#share_link'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

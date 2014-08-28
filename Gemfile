@@ -15,6 +15,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem "rails-jquery-fileupload", git: 'git://github.com/DragosIorgulescu/rails-jquery-fileupload.git'
 gem 'devise'
 gem 'rails_admin'
+gem 'imgkit'
 gem 'rails_admin-i18n'
 gem 'rails_admin_selectize', github: 'glyph-fr/rails_admin_selectize'
 gem "font-awesome-rails"

@@ -13,28 +13,31 @@
           %span#municipality_title.color Коломна
       - @distincts.each do |d|
         - unless d.candidates.empty?
-          %h2.distinct-title.color-a
-            Округ:
-            = d.title
-          .col-md-10.col-md-offset-2
-            .row
-              - d.candidates.each do |c|
-                .col-md-2.comand-block
-                  .description
-                    = image_tag "img.png"
-                    %p
-                      %b= c.full_name
-                    %p= c.birthday
-                    - unless c.organization.blank?
-                      %p 
-                        Выдвинут:
-                        = c.organization
-                    %p= c.phone
-                    %p= c.email
-                  
-                    %a{"href" => c.facebook}= image_tag "header/facebook-small.png" unless c.facebook.blank?
-                    %a{"href" => c.twitter}= image_tag "header/twitter-small.png" unless c.twitter.blank?
-                    %a{"href" => c.vk}= image_tag "header/vk-small.png" unless c.vk.blank?
+          .row
+            .col-md-12
+              %h2.distinct-title.color-a
+                Округ:
+                = d.title
+          .col-md-10.col-md-offset-1
+            - d.candidates.each do |c|
+              .comand-block
+                %center
+                  = image_tag "img.png"
+                  %p
+                    %br
+                    %br
+                    %b= c.full_name
+                  %p= c.birthday
+                  - unless c.organization.blank?
+                    %p 
+                      Выдвинут:
+                      = c.organization
+                  %p= c.phone
+                  %p= c.email
+              
+                  %a{"href" => c.facebook}= image_tag "header/facebook-small.png" unless c.facebook.blank?
+                  %a{"href" => c.twitter}= image_tag "header/twitter-small.png" unless c.twitter.blank?
+                  %a{"href" => c.vk}= image_tag "header/vk-small.png" unless c.vk.blank?
 - unless @candidates.empty?
   .container
     .margin

@@ -1,4 +1,17 @@
+window.Hlp = {}
+@Hlp.Load =
+  reloadLinkMore: ->
+    $(".about_hint-ico_more").click ->
+      $.ajax
+        type: "get"
+        dataType: 'script'
+        url: "/"
+        success: (data, textStatus, jqXHR) ->
 ready = ->
+  $(".outlook-arrows").click ->
+    $("#slide_1").toggleClass("active")
+    $("#slide_2").toggleClass("active")
+  Hlp.Load.reloadLinkMore()
   $("#inputWarning").keypress ->
     $("#searchButton").find('i').show()
     $("#searchButton").find('span').hide()

@@ -1,0 +1,10 @@
+.block-about_hint
+  %div.about-price{:style => "font-size: #{@super_info.font_size} !important"}
+    = @super_info.number
+    %div.about-price_text= @super_info.subnumber
+  %p.about_hint-text
+    = @super_info.text
+    %span.about_hint-ico_more-wrap
+      %span.about_hint-ico_more
+  %span.about_hint-decor.about_hint-decor_top
+  %span.about_hint-decor.about_hint-decor_bottom

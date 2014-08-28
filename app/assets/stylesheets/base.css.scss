@@ -5,6 +5,9 @@
 .wrap_style {
 	padding: 10px 0;
 }
+.about_hint-ico_more {
+  cursor: pointer;
+}
 body {
 	font-size: $base-fontSize;
 }
@@ -1233,7 +1236,13 @@ ul, ol {
 		display: none;
 		width: 45px;
 		height: 45px;
-		@include position-coord(absolute, 50%, '', '', -22px);
+		&.b {
+      @include position-coord(absolute, 50%, '', '', -22px);
+    }
+		&.a {
+      @include position-coord(absolute, 50%, -22px, '', '');
+    }
+    
 		margin-top: -22px;
 		background: url(asset-path("sprite.png")) -920px -240px no-repeat;
 		z-index: 15;
@@ -1242,7 +1251,13 @@ ul, ol {
 		display: none;
 		width: 86px;
 		height: 100%;
-		@include position-coord(absolute, 0, '', '', -43px);
+		&.b {
+      @include position-coord(absolute, 0, '', '', -43px);
+    }
+		&.a {
+      @include position-coord(absolute, 0, -43px, '', '');
+    }
+    
 		background: url(asset-path("outlook-decor.png")) repeat-y;
 		z-index: 10;
 	}
@@ -1253,6 +1268,10 @@ ul, ol {
 		width: 16%;
 		float: left;
 		position: relative;
+    -webkit-transition-timing-function: ease-out;
+    -moz-transition-timing-function: ease-out;
+    -webkit-transition-duration: 250ms;
+    -moz-transition-duration: 250ms;
 		.outlook-item-fone {
 			background-color: $color-black;
 			opacity: 0.5;
@@ -1262,9 +1281,14 @@ ul, ol {
 			position: absolute;
 			top: 0;
 			left: 0;
+      
 		}
 		&.active {
-			width: 100%;
+			width: 84%;
+      -webkit-transition-timing-function: ease-out;
+      -moz-transition-timing-function: ease-out;
+      -webkit-transition-duration: 250ms;
+      -moz-transition-duration: 250ms;
 			&:after {
 				position: relative;
 				width: 100%;
@@ -2073,7 +2097,8 @@ span
 
 .comand-block
 {
-  width: 225px;
+  width: 25%;
+  float: left;
   height: 300px;
 }
 

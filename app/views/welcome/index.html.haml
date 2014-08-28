@@ -10,17 +10,8 @@
 
         %p.about-text
           К ним можно и нужно обращаться по любым вопросам - заделать яму на дороге, поставить скамейку или остановить незаконную стройку - это в их власти. Они могут и должны помогать людям составлять различные заявления в прокуратуру, суд, администрацию города. Но закрытость муниципалитетов и плохая информированность населения приводит к тому, что к ним никто никогда не ходит, а зря, ведь они работают для вас. 
-      .col-md-6.clearfix
-        .block-about_hint
-          %div.about-price
-            1 500
-            //%div.about-price_text млрд
-          %p.about_hint-text
-            столько независимых кандидатов в муниципальные депутаты не пустили на выборы
-            %span.about_hint-ico_more-wrap
-              %span.about_hint-ico_more
-          %span.about_hint-decor.about_hint-decor_top
-          %span.about_hint-decor.about_hint-decor_bottom
+      .col-md-6#infoblock.clearfix= render "infoblock"
+        
     .container-title
       %h2.title
         Местное самоуправление
@@ -31,14 +22,26 @@
           может быть
   .block-outlook
     %ul.block-outlook-slider
-
-      %li.active
+      %li#slide_1
         .block-outlook-slider-item_wrap
-          = image_tag "info-slide-1.jpg", :class => "block-outlook-img"
+          = image_tag "info-slide-2.jpg", :class => "block-outlook-img"
+          %span.outlook-arrows.a
+          %span.outlook-line_decor.a
+          .outlook-item-fone
           .container.container-outlook
             .outlook-text-wrap
               %p.outlook-text
                 А может быть свет, депутаты, которых волнуют проблемы горожан мусор, рассортированный по контейнерам. Счастье, добро и мир.
+
+      %li#slide_2.active
+        .block-outlook-slider-item_wrap
+          = image_tag "info-slide-1.jpg", :class => "block-outlook-img"
+          %span.outlook-arrows.b
+          %span.outlook-line_decor.b
+          .outlook-item-fone
+            .container.container-outlook
+              .outlook-text-wrap
+                %p.outlook-text
   //.map-header-wrap
   .grey-block
     .container
@@ -48,6 +51,7 @@
         %p.map-text.map-text-wrap
           Чтобы узнать информацию о своем округе и ознакомиться с кандидатами в депутаты муниципального собрания, выберите район и муниципалитет на карте или введите адрес в поле поиска.
       .div{:style => "position:relative; bottom: 50px"}
+        %a{:mark => "search_form", :name => "search_form"}
         .form-group.submit-group.form-center
           .input_wrap
             

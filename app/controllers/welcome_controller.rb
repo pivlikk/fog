@@ -1,7 +1,19 @@
+#encoding: utf-8
 class WelcomeController < ApplicationController
   def index
     @candidates = []
+    @info = []
+    @info << OpenStruct.new(:number => "10 800 000", :subnumber => "", :text => "столько МО остров Декабристов украло денег на благоустройстве.", :font_size => "5em")
+    @info << OpenStruct.new(:number => "100 000 000", :subnumber => "рублей", :text => "таков средний бюджет одного муниципалитета в год ", :font_size => "5em")
+    @info << OpenStruct.new(:number => "5 000 000", :subnumber => "", :text => "столько зарабатывает официально глава МО за пять лет.", :font_size => "5em")
+    @info << OpenStruct.new(:number => "1 500", :subnumber => "", :text => "столько независимых кандидатов в муниципальные депутаты не пустили на выборы", :font_size => "5em")
+    @info << OpenStruct.new(:number => "5", :subnumber => "лет", :text => "аков срок тюремного заключения, предусмотренный для тех, кто фальсифицирует выборы", :font_size => "5em")
+    @info << OpenStruct.new(:number => "Бесконечность", :subnumber => "", :text => "столько времени муниципалы будут воровать, если их не сменить", :font_size => "3em")
+    
+    @super_info = @info.shuffle.first
   end
+
+  
   def search
 
     @candidates = []

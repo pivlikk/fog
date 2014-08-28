@@ -2319,4 +2319,8 @@ footer
 }
 #searchButton {
   width: 176px;
+  &:disabled {
+    background: #eee !important;
+    opacity: 1 !important;
+  }
 }

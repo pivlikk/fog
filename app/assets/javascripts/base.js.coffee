@@ -15,6 +15,8 @@ ready = ->
   $("#inputWarning").keypress ->
     $("#searchButton").find('i').show()
     $("#searchButton").find('span').hide()
+    $("#searchButton").attr('disabled', 'disabled')
+    
   initialize = ->
     maxZoomLevel = 17
     minZoomLevel = 9
@@ -30,6 +32,10 @@ ready = ->
     ctaLayer = new google.maps.KmlLayer(url: "http://fog.app.mo2014.ru/mo_spb.kml")
     ctaLayer.setMap map
     
+    $("#inputWarning").blur ->
+      google.maps.event.trigger( input, 'focus')
+      google.maps.event.trigger( input, 'keydown', {keyCode:13})
+      
     google.maps.event.addListener ctaLayer, "click", (kmlEvent) ->
       name = kmlEvent.featureData.name
       street = $("#inputWarning").val()
@@ -39,9 +45,12 @@ ready = ->
     google.maps.event.addListener searchBox, "places_changed", ->
       
       console.log ctaLayer.getMetadata()
+      setTimeout (->
+        $("#searchButton").find('i').hide()
+        $("#searchButton").find('span').show()
+        $("#searchButton").removeAttr('disabled', 'disabled')
+      ), 500
       
-      $("#searchButton").find('i').hide()
-      $("#searchButton").find('span').show()
       
       places = searchBox.getPlaces()
       i = 0

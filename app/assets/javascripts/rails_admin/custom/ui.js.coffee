@@ -1,8 +1,9 @@
 #= require select2
 #= require_self
-$ ->
-  distincts = $('#candidate_distinct_id').html()
+$(document).ready ->
   
+  
+  distincts = $('#candidate_distinct_id').html()
   $('#candidate_municipality_id').change ->
     mu = $('#candidate_municipality_id :selected').text()
     options = $(distincts).filter("optgroup[label='#{mu}']").html()

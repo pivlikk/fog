@@ -19,8 +19,8 @@ class WelcomeController < ApplicationController
   end
   
   def share
-    @candidates = Candidate.wgere(:distinct_id.in => params[:distinct])
-    @distincts = Distinct.where(:id.in => params[:distinct])
+    @candidates = Candidate.where(:distinct_id.in => params[:distinct].split(", "))
+    @distincts = Distinct.where(:id.in => params[:distinct].split(", "))
     @municipality = Municipality.find(params[:municipality_id]).title
     @small = @distincts.length < 4
     render :layout => "share"
@@ -28,7 +28,7 @@ class WelcomeController < ApplicationController
   
   def share_link
     
-    @kit = IMGKit.new("http://fog.app.mo2014.ru/share?distincts=#{@distincts.map(&:_id)}&municipality=#{@municipality_id}")
+    @kit = IMGKit.new("http://fog.app.mo2014.ru/share?distincts=#{@distincts.map(&:id).join(', ')}&municipality=#{@municipality_id}")
     send_data(@kit.to_jpg, :type => "image/jpeg", :disposition => 'inline')
   end 
   

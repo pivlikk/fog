@@ -28,7 +28,7 @@ class WelcomeController < ApplicationController
   
   def share_link
     
-    @kit = IMGKit.new("http://localhost:3004/share?distincts=#{@distincts.map(&:_id)}&municipality=#{@municipality_id}")
+    @kit = IMGKit.new("http://fog.app.mo2014.ru/share?distincts=#{@distincts.map(&:_id)}&municipality=#{@municipality_id}")
     send_data(@kit.to_jpg, :type => "image/jpeg", :disposition => 'inline')
   end 
   

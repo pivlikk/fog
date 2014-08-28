@@ -1,6 +1,6 @@
 #encoding: utf-8
 class WelcomeController < ApplicationController
-  before_action :setup_search, :only => [:search, :share]
+  before_action :setup_search, :only => [:search, :share, :print]
   def index
     @candidates = []
     @info = []
@@ -13,7 +13,11 @@ class WelcomeController < ApplicationController
     
     @super_info = @info.shuffle.first
   end
-
+  
+  def print
+    render :layout => "share"
+  end
+  
   def share
     @small = @distincts.length < 4
     render :layout => "share"

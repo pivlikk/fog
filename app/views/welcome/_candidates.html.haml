@@ -42,6 +42,6 @@
   .container
     .margin
       .col-md-6.col-md-offset-3
-        %button#testjson.btn.link_button.settled{type: "button"} Распечатать список кандидатов
+        %button#testjson.btn.link_button.settled.print{type: "button", "data-url" => "/print?name=#{params[:name]}&street=#{params[:street]}"} Распечатать список кандидатов
       .col-md-6.col-md-offset-3.padding
         %button.btn.btn-lg.link_button.settled{type: "button", "data-name" => params[:name], "data-street" => params[:street]} Поделиться списком в соцсети

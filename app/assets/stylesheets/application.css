@@ -15,4 +15,5 @@
  *= require nprogress
  *= require nprogress-bootstrap
  *= require_tree ./lib
+ *= require font-awesome
  */

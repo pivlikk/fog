@@ -16,6 +16,11 @@ gem "rails-jquery-fileupload", git: 'git://github.com/DragosIorgulescu/rails-jqu
 gem 'devise'
 gem 'rails_admin'
 gem 'rails_admin-i18n'
+gem 'rails_admin_selectize', github: 'glyph-fr/rails_admin_selectize'
+gem "font-awesome-rails"
+
+gem 'select2-rails'
+gem 'rails_admin_select2', git: 'git://github.com/dieunb/rails_admin_select2.git'
  
 #gem 'rest-client'
 gem 'bson_ext'

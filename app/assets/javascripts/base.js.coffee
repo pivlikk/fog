@@ -1,5 +1,7 @@
 ready = ->
-
+  $("#inputWarning").keypress ->
+    $("#searchButton").find('i').show()
+    $("#searchButton").find('span').hide()
   initialize = ->
     maxZoomLevel = 17
     minZoomLevel = 9
@@ -12,7 +14,22 @@ ready = ->
     map.fitBounds defaultBounds
     input = (document.getElementById("inputWarning"))
     searchBox = new google.maps.places.SearchBox((input))
+    ctaLayer = new google.maps.KmlLayer(url: "http://fog.app.mo2014.ru/mo_spb.kml")
+    ctaLayer.setMap map
+    
+    google.maps.event.addListener ctaLayer, "click", (kmlEvent) ->
+      name = kmlEvent.featureData.name
+      street = $("#inputWarning").val()
+      
+      $.post("/search", "name=#{name}&street=#{street}")
+    
     google.maps.event.addListener searchBox, "places_changed", ->
+      
+      console.log ctaLayer.getMetadata()
+      
+      $("#searchButton").find('i').hide()
+      $("#searchButton").find('span').show()
+      
       places = searchBox.getPlaces()
       i = 0
       marker = undefined
@@ -46,16 +63,17 @@ ready = ->
         i++
       map.fitBounds bounds
       return
-
+    
+    
     google.maps.event.addListener map, "bounds_changed", ->
+      
       bounds = map.getBounds()
       searchBox.setBounds bounds
       map.setZoom maxZoomLevel  if map.getZoom() > maxZoomLevel
       map.setZoom minZoomLevel  if map.getZoom() < minZoomLevel
       return
 
-    ctaLayer = new google.maps.KmlLayer(url: "http://prostovybory.com/maps/kml/MO_SPB.kml")
-    ctaLayer.setMap map
+    
     return
   google.maps.event.addDomListener window, "load", initialize
   ###################

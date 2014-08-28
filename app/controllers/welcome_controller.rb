@@ -19,8 +19,8 @@ class WelcomeController < ApplicationController
   end
   
   def share
-    @candidates = Candidate.where(:distinct_id.in => params[:distincts].split(", "))
-    @distincts = Distinct.where(:id.in => params[:distincts].split(", "))
+    @candidates = Candidate.where(:distinct_id => params[:distincts].split(", "))
+    @distincts = Distinct.where(:id => params[:distincts].split(", "))
     @municipality = Municipality.find(params[:municipality_id]).title
     @small = @distincts.length < 4
     render :layout => "share"

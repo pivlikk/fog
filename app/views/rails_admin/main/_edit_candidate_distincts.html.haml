@@ -1,1 +1,4 @@
+%label Муниципалитет
+= form.collection_select :municipality_id, Municipality.all, :id, :title, :prompt => "Выбор Муниципалитета"
+%label Округ
 = form.grouped_collection_select(:distinct_id, Municipality.all, :distincts, :title, :id, :title)

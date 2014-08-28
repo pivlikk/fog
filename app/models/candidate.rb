@@ -11,6 +11,7 @@ class Candidate
   field :facebook, type: String
   field :vk, type: String
   
+  belongs_to :municipality
   belongs_to :distinct
   
   rails_admin do

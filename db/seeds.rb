@@ -135,7 +135,7 @@ Municipality.where(:title =>"Нарвский").first_or_create( coordinates: "3
 #    Area.where(:including_addresses => address).first_or_create(:municipality_id => founded_municipality.first.id, :area_number => number)
 #  end
 #end
-
+=begin
 Distinct.destroy_all
 
 CSV.foreach("runner/area.csv") do |row|
@@ -163,13 +163,17 @@ CSV.foreach("runner/area.csv") do |row|
   end
 
 end
-
+=end
 
 Candidate.destroy_all
 CSV.foreach("runner/c1.csv") do |row|
   candidate = row.to_a[3]
   municipality = row.to_a[1]
   founded_municipality = Municipality.where(:title => municipality)
-  distinct = Distinct.where(:title => row.to_a[2]).first_or_create(:municipality_id => founded_municipality.empty? ? nil : founded_municipality.first.id)
+  unless founded_municipality.empty?
+    founded_municipality.first.distincts.where(:title => row.to_a[2]).first_or_create(:municipality_id => founded_municipality.first.id)
+  else
+    distinct = Distinct.where(:title => row.to_a[2]).first_or_create(:municipality_id => nil )
+  end
   Candidate.where(:full_name => candidate).first_or_create(:distinct_id => distinct.id)
 end

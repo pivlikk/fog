@@ -20,7 +20,7 @@ class WelcomeController < ApplicationController
   end 
   
   def share_link
-    @kit = IMGKit.new("http://fog.app.mo2014.ru/share?name=#{params[:name]}&street=#{params[:street]}")
+    @kit = IMGKit.new("http://fog.app.mo2014.ru/share?name=№54&street=Шотмана%2022")
     send_data(@kit.to_jpg, :type => "image/jpeg", :disposition => 'inline')
   end 
   

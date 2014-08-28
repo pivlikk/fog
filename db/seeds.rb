@@ -175,5 +175,5 @@ CSV.foreach("runner/c1.csv") do |row|
   else
     distinct = Distinct.where(:title => row.to_a[2]).first_or_create(:municipality_id => nil )
   end
-  Candidate.where(:full_name => candidate).first_or_create(:distinct_id => distinct.id)
+  Candidate.where(:full_name => candidate).first_or_create(:distinct_id => distinct.id, :municipality_id => founded_municipality.empty? ? nil : founded_municipality.first.id)
 end

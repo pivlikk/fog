@@ -4,8 +4,8 @@ window.Hlp = {}
     $(".share").ShareLink
       title: "Силы добра"
       text: ""
-      image: $("#share_url").data("shareurl")
-      url: $("#share_url").data("shareurl")
+      image: encodeURIComponent($("#share_url").data("shareurl"))
+      url: encodeURIComponent($("#share_url").data("shareurl"))
       
   reloadLinkMore: ->
     $(".about_hint-ico_more").click ->

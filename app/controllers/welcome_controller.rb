@@ -32,7 +32,7 @@ class WelcomeController < ApplicationController
     blob = @kit.to_img(:jpg)
     image = MiniMagick::Image.read(blob)
     image.trim
-    send_data(image.write("share.jpg"), :type => "image/jpeg", :disposition => 'inline')
+    send_data(image, :type => "image/jpeg", :disposition => 'inline')
   end 
   
   def search

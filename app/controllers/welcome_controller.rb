@@ -18,6 +18,7 @@ class WelcomeController < ApplicationController
   end
   
   
+  
   def share
     
     @candidates = Candidate.where(:distinct_id.in => params[:distincts].split(", "))
@@ -29,7 +30,10 @@ class WelcomeController < ApplicationController
   
   def share_link
     @kit = IMGKit.new("http://fog.app.mo2014.ru/share?distincts=#{@distincts.map(&:id).join(', ')}&municipality_id=#{@municipality_id}")
-    send_data(@kit.to_jpg, :type => "image/jpeg", :disposition => 'inline')
+    image = MiniMagick::Image.open(@kit.to_jpg)
+    image.trim
+    send_data(image.to_blob, :type => 'image/jpg', :disposition => 'inline')
+    #send_data(@kit.to_jpg, :type => "image/jpeg", :disposition => 'inline')
   end 
   
   def search

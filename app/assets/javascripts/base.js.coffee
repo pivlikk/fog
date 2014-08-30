@@ -5,7 +5,7 @@ window.Hlp = {}
       title: "Силы добра"
       text: ""
       image: $("#share_url").data("shareurl")
-      url: window.location.href
+      url: $("#share_url").data("shareurl")
       
   reloadLinkMore: ->
     $(".about_hint-ico_more").click ->

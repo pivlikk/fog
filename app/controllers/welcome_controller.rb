@@ -29,10 +29,7 @@ class WelcomeController < ApplicationController
   
   def share_link
     @kit = IMGKit.new("http://fog.app.mo2014.ru/share?distincts=#{@distincts.map(&:id).join(', ')}&municipality_id=#{@municipality_id}")
-    blob = @kit.to_img(:jpg)
-    image = MiniMagick::Image.read(blob)
-    image.trim
-    send_data(image, :type => "image/jpeg", :disposition => 'inline')
+    send_data(@kit.to_jpg, :type => "image/jpeg", :disposition => 'inline')
   end 
   
   def search

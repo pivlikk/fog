@@ -1,0 +1,16 @@
+#shareModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
+  .modal-dialog.modal-xs
+    .modal-content
+      .modal-body.darker-bg{:style => "height: 115px"}
+        %center
+          .social_modal
+            .sm
+              %a.s_facebook.share{"href" => ""}
+                = image_tag "header/facebook-big.png"
+            .sm
+              %a.s_twitter.share{"href" => ""}
+                = image_tag "header/twitter-big.png"
+            .sm
+              %a.s_vk.share{"href" => ""}
+                = image_tag "header/vk-big.png"
+          

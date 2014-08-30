@@ -1,3 +1,5 @@
 $('#candidates').html('<%= escape_javascript(render("welcome/candidates"))%>')
 $('#municipality_title').text('<%= @municipality %>')
+Hlp.Load.socialShare()
 $('.print').printPage()
+$("#loader").hide()

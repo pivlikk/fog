@@ -82,14 +82,16 @@
         %center
           .social
             .image
-              %a{"href" => "#"}
+              %a.share_main.s_facebook{"href" => "#"}
                 = image_tag "header/facebook-big.png"
             .image
-              %a{"href" => "#"}
+              %a.share_main.s_twitter{"href" => "#"}
                 = image_tag "header/twitter-big.png"
             .image
-              %a{"href" => "#"}
+              %a.share_main.s_vk{"href" => "#"}
                 = image_tag "header/vk-big.png"
           .block-description
             %h3 Расскажи о нас в социальных сетях!
             %p Помоги своим друзьям и знакомых определиться с выбором. 
+#loader
+  %i.fa.fa-circle-o-notch.fa-spin

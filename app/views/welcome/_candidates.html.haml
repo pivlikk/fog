@@ -45,4 +45,5 @@
       .col-md-6.col-md-offset-3
         %button#testjson.btn.link_button.settled.print{type: "button", "data-url" => "/print?name=#{params[:name]}&street=#{params[:street]}"} Распечатать список кандидатов
       .col-md-6.col-md-offset-3.padding
-        %button.btn.btn-lg.link_button.settled{type: "button", "data-name" => params[:name], "data-street" => params[:street]} Поделиться списком в соцсети
+        %button#share_url.btn.btn-lg.link_button.settled{type: "button", "data-shareurl" => "http://fog.app.mo2014.ru/share_link?name=#{params[:name]}&street=#{params[:street]}", "data-street" => params[:street], "data-toggle" => "modal", "data-target" => "#shareModal" } Поделиться списком в соцсети
+= render "share_modal"

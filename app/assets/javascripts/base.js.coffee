@@ -1,5 +1,12 @@
 window.Hlp = {}
 @Hlp.Load =
+  socialShare: ->
+    $(".share").ShareLink
+      title: "Силы добра"
+      text: ""
+      image: $("#share_url").data("shareurl")
+      url: window.location.href
+      
   reloadLinkMore: ->
     $(".about_hint-ico_more").click ->
       $.ajax
@@ -8,6 +15,14 @@ window.Hlp = {}
         url: "/"
         success: (data, textStatus, jqXHR) ->
 ready = ->
+  
+  
+  $(".share_main").ShareLink
+    title: "Силы добра"
+    text: "За кого голосовать 14 сентября?  Узнай своих кандидатов на mo2014.ru"
+    image: ""
+    url: window.location.href
+       
   $(".outlook-arrows").click ->
     $("#slide_1").toggleClass("active")
     $("#slide_2").toggleClass("active")
@@ -37,6 +52,7 @@ ready = ->
       google.maps.event.trigger( input, 'keydown', {keyCode:13})
       
     google.maps.event.addListener ctaLayer, "click", (kmlEvent) ->
+      $("#loader").show()
       name = kmlEvent.featureData.name
       street = $("#inputWarning").val()
       

@@ -5,6 +5,23 @@
 .wrap_style {
 	padding: 10px 0;
 }
+#loader {
+  z-index: 232398293;
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+  display: none;
+  i {
+    color: #fff;
+    font-size: 80px;
+    margin-top: 20%;
+    position: fixed;
+  }
+}
 .about_hint-ico_more {
   cursor: pointer;
 }
@@ -2096,7 +2113,15 @@ span
     color: #f9b32a;
   }
 }
-
+.social_modal {
+  width: 100%;
+  .sm {
+    width: 25%;
+    height: 50px;
+    float: inherit;
+    display: inline-block;;
+  }
+}
 .comand-block
 {
   width: 19%;

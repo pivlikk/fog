@@ -1,15 +1,14 @@
 #encoding: utf-8
 class WelcomeController < ApplicationController
-  before_action :setup_search, :only => [:search, :share_link, :print]
+  before_action :setup_search, :only => [:search, :share_link, :print, :fshare]
   def index
     @candidates = []
     @info = []
-    @info << OpenStruct.new(:number => "10 800 000", :subnumber => "", :text => "столько МО остров Декабристов украло денег на благоустройстве.", :font_size => "5em")
-    @info << OpenStruct.new(:number => "100 000 000", :subnumber => "рублей", :text => "таков средний бюджет одного муниципалитета в год ", :font_size => "5em")
-    @info << OpenStruct.new(:number => "5 000 000", :subnumber => "", :text => "столько зарабатывает официально глава МО за пять лет.", :font_size => "5em")
-    @info << OpenStruct.new(:number => "1 500", :subnumber => "", :text => "столько независимых кандидатов в муниципальные депутаты не пустили на выборы", :font_size => "5em")
-    @info << OpenStruct.new(:number => "5", :subnumber => "лет", :text => "аков срок тюремного заключения, предусмотренный для тех, кто фальсифицирует выборы", :font_size => "5em")
-    @info << OpenStruct.new(:number => "Бесконечность", :subnumber => "", :text => "столько времени муниципалы будут воровать, если их не сменить", :font_size => "3em")
+    @info << OpenStruct.new(:number => "10 800 000", :subnumber => "", :text => "рублей  украли на благоустройстве в МО Остров Декабристов в 2013 году.", :font_size => "5em")
+    @info << OpenStruct.new(:number => "5 000 000", :subnumber => "", :text => "рублей зарабатывает глава муниципалитета за пять лет.", :font_size => "5em")
+    @info << OpenStruct.new(:number => "1 500", :subnumber => "", :text => "независимых кандидатов не пустили на выборы, используя различные махинации.", :font_size => "5em")
+    @info << OpenStruct.new(:number => "5", :subnumber => "лет", :text => "тюремного заключения грозит тем, кто фальсифицирует выборы.", :font_size => "5em")
+    @info << OpenStruct.new(:number => "Бесконечность", :subnumber => "", :text => "Столько времени муниципалы будут воровать, если мы не научимся их контролировать и не изберем достойных. ", :font_size => "3em")
     
     @super_info = @info.shuffle.first
   end
@@ -18,18 +17,22 @@ class WelcomeController < ApplicationController
     render :layout => "share"
   end
   
+  
   def share
-    @candidates = Candidate.where(:distinct_id => params[:distincts].split(", "))
-    @distincts = Distinct.where(:id => params[:distincts].split(", "))
+    
+    @candidates = Candidate.where(:distinct_id.in => params[:distincts].split(", "))
+    @distincts = Distinct.where(:id.in => params[:distincts].split(", "))
     @municipality = Municipality.find(params[:municipality_id]).title
     @small = @distincts.length < 4
     render :layout => "share"
   end 
   
   def share_link
-    
     @kit = IMGKit.new("http://fog.app.mo2014.ru/share?distincts=#{@distincts.map(&:id).join(', ')}&municipality_id=#{@municipality_id}")
-    send_data(@kit.to_jpg, :type => "image/jpeg", :disposition => 'inline')
+    blob = @kit.to_img(:jpg)
+    image = MiniMagick::Image.read(blob)
+    image.trim
+    send_data(image.write("share.jpg"), :type => "image/jpeg", :disposition => 'inline')
   end 
   
   def search

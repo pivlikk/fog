@@ -32,8 +32,17 @@ class WelcomeController < ApplicationController
     @kit = IMGKit.new("http://fog.app.mo2014.ru/share?distincts=#{@distincts.map(&:id).join(', ')}&municipality_id=#{@municipality_id}")
     image = MiniMagick::Image.read(@kit.to_jpg)
     image.trim
-    send_data(image.to_blob, :type => 'image/jpg', :disposition => 'inline')
-    #send_data(@kit.to_jpg, :type => "image/jpeg", :disposition => 'inline')
+
+    file_name = (0...7).map { ('a'..'z').to_a[rand(26)] }.join+".jpg"
+    #send_data(image.to_blob, :type => 'image/jpg', :disposition => 'inline')
+    file = Rails.root.join('public','uploads', file_name) 
+    
+    File.open(file, "wb") do |f|
+          f.write(image)
+    end
+    
+    #@file_url = "http://fog.app.mo2014.ru/uploads/#{file_name}"
+    render :text => "http://fog.app.mo2014.ru/uploads/#{file_name}"
   end 
   
   def search

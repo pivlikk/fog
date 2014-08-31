@@ -67,12 +67,14 @@ RailsAdmin.config do |config|
     edit do
       field :full_name
       field :birthday
+      field :avatar
       field :organization
       field :email
       field :phone
       field :twitter
       field :facebook
       field :vk
+      
       field :distinct do
         partial "edit_candidate_distincts"
       end

@@ -204,7 +204,7 @@ ul, ol {
 		display: block;
 		text-decoration: none;
 		&.ico-text_small {
-			width: 72px;
+			//width: 72px;
 		}
 	}
 	&:hover {
@@ -465,10 +465,15 @@ ul, ol {
 	}
 	&:hover {
 		.title-relative-none {
-			border-bottom: none;
-			cursor: default;
+			//border-bottom: none;
+			cursor: pointer;
 		}
 	}
+}
+.candidate_avatar {
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
 }
 .candidate-scale_wrap {
 	width: 308px;
@@ -611,6 +616,9 @@ ul, ol {
 	&.active {
 		background-position: -920px -160px;
 	}
+}
+.show_slide_1, .show_slide_2 {
+  cursor: pointer;
 }
 .info_wrap {
 	&.info_wrap-indent {

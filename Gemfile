@@ -25,7 +25,7 @@ gem 'rails_admin_select2', git: 'git://github.com/dieunb/rails_admin_select2.git
  
 #gem 'rest-client'
 gem 'bson_ext'
-#gem 'mechanize'
+gem 'mechanize'
 gem 'mini_magick'
 gem 'mongoid', git: 'git://github.com/mongoid/mongoid.git'
 gem 'mongoid_slug', '~> 3.2.0'

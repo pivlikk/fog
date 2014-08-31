@@ -1,5 +1,22 @@
 window.Hlp = {}
 @Hlp.Load =
+  shareLink: ->
+    $("#share_url").click ->
+      $("#loader").show()
+      $.ajax
+        type: "get"
+        #dataType: 'script'
+        url: $("#share_url").data("shareurl")
+        success: (data, textStatus, jqXHR) ->
+          $("#shareModal").modal('show')
+          $(".share").ShareLink
+            title: "Силы добра"
+            text: ""
+            image: data
+            url: data
+          $("#loader").hide()
+          
+      
   socialShare: ->
     $(".share").ShareLink
       title: "Силы добра"
@@ -26,6 +43,14 @@ ready = ->
   $(".outlook-arrows").click ->
     $("#slide_1").toggleClass("active")
     $("#slide_2").toggleClass("active")
+  $(".show_slide_2").click ->
+    $("#slide_1").removeClass("active")
+    $("#slide_2").addClass("active")
+
+  $(".show_slide_1").click ->
+    $("#slide_2").removeClass("active")
+    $("#slide_1").addClass("active")
+  
   Hlp.Load.reloadLinkMore()
   $("#inputWarning").keypress ->
     $("#searchButton").find('i').show()
@@ -48,9 +73,10 @@ ready = ->
     ctaLayer.setMap map
     
     $("#inputWarning").blur ->
-      google.maps.event.trigger( input, 'focus')
-      google.maps.event.trigger( input, 'keydown', {keyCode:13})
-      
+      setTimeout (->
+        google.maps.event.trigger( input, 'focus')
+        google.maps.event.trigger( input, 'keydown', {keyCode:13})
+      ), 500
     google.maps.event.addListener ctaLayer, "click", (kmlEvent) ->
       $("#loader").show()
       name = kmlEvent.featureData.name

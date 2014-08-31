@@ -42,7 +42,7 @@ class WelcomeController < ApplicationController
     end
     
     #@file_url = "http://fog.app.mo2014.ru/uploads/#{file_name}"
-    render :text => "http://fog.app.mo2014.ru/uploads/#{file_name}"
+    render :text => "http://mo2014.ru/uploads/#{file_name}"
   end 
   
   def search

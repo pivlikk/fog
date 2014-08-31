@@ -166,14 +166,96 @@ end
 =end
 
 Candidate.destroy_all
+Distinct.destroy_all
+Municipality.destroy_all
+
+CSV.foreach("runner/area1.csv") do |row|
+  municipality = row.to_a[0]
+  distincts = row.to_a[1]
+  areas = row.to_a[2]
+  
+  founded_municipality = Municipality.where(:title => municipality).first_or_create
+
+  if distincts
+
+      distincts.split(", ").each do |d|
+      
+        new_distinct = Distinct.where(:title => d).first_or_create(:municipality_id => founded_municipality.id, :distinct_number => d.to_i)
+        if areas
+          areas.split(", ").each do |a|
+            Area.where(:area_number => a.to_i).first.update_attributes(:distinct_id => new_distinct.id, :municipality_id => founded_municipality.id ) rescue nil
+          end
+        end
+      end
+
+
+  end
+
+end
+
 CSV.foreach("runner/c1.csv") do |row|
   candidate = row.to_a[3]
   municipality = row.to_a[1]
-  founded_municipality = Municipality.where(:title => municipality)
-  unless founded_municipality.empty?
-    distinct = founded_municipality.first.distincts.where(:title => row.to_a[2]).first_or_create(:municipality_id => founded_municipality.first.id)
-  else
-    distinct = Distinct.where(:title => row.to_a[2]).first_or_create(:municipality_id => nil )
+  founded_municipality = Municipality.where(:title => municipality).first_or_create
+
+  distinct = founded_municipality.distincts.where(:title => row.to_a[2]).first_or_create(:municipality_id => founded_municipality.id)
+
+  Candidate.create(:full_name => candidate, :distinct_id => distinct.id, :municipality_id => founded_municipality.id)
+end
+
+
+Candidate.where(:full_name => "Рабош Габриэль Владимирович").first.update_attributes(:vk =>  "http://vk.com/id206891687")
+Candidate.where(:full_name => "Рыжкова Екатерина Александровна").first.update_attributes(:vk =>  "https://vk.com/kattterina86")
+Candidate.where(:full_name => "Швец Павел Евгеньевич").first.update_attributes(:vk =>  "https://vk.com/shvetspavel")
+Candidate.where(:full_name => "Гусев Дмитрий Германович").first.update_attributes(:vk =>  "https://vk.com/good3376")
+Candidate.where(:full_name => "Головач Александр Александрович").first.update_attributes(:vk =>  "https://vk.com/golovach_alexander")
+Candidate.where(:full_name => "Волохонский Владимир Львович").first.update_attributes(:vk =>  "https://vk.com/volokhonsky")
+Candidate.where(:full_name => "Телитченко Павел Алексеевич").first.update_attributes(:vk =>  "https://vk.com/id68528")
+Candidate.where(:full_name => "Кузин Сергей Владимирович").first.update_attributes(:vk =>  "https://vk.com/id359775")
+Candidate.where(:full_name => "Барановский Евгений Петрович").first.update_attributes(:vk =>  "https://vk.com/ebaranovsky")
+Candidate.where(:full_name => "Касаткин Алексей Викторович").first.update_attributes(:vk =>  "https://vk.com/kasatkin62")
+Candidate.where(:full_name => "Горожанко Федор Константинович").first.update_attributes(:vk =>  "https://vk.com/goodfed")
+Candidate.where(:full_name => "Кондратьев Михаил Васильевич").first.update_attributes(:vk =>  "https://vk.com/mvkondr")
+Candidate.where(:full_name => "Бабушкин Сергей Сергеевич").first.update_attributes(:vk =>  "https://vk.com/valkman")
+Candidate.where(:full_name => "Литвин Богдан Геннадьевич").first.update_attributes(:vk =>  " https://vk.com/id3416896")
+Candidate.where(:full_name => "Грязневич Наталья Владимировна").first.update_attributes(:vk =>  "https://vk.com/natalia.graz")
+Candidate.where(:full_name => "Кен Даниил Олегович").first.update_attributes(:vk =>  "https://vk.com/daniilken")
+Candidate.where(:full_name => "Дмитриев Лев Михайлович").first.update_attributes(:vk =>  "https://vk.com/vint67")
+Candidate.where(:full_name => "Самасадкин Сергей Викторович").first.update_attributes(:vk =>  "https://vk.com/id115333221")
+Candidate.where(:full_name => "Беляев Александр Михайлович").first.update_attributes(:vk =>  "https://vk.com/id636")
+Candidate.where(:full_name => "Голоктеев Константин Николаевич").first.update_attributes(:vk =>  "https://vk.com/kgolokte")
+Candidate.where(:full_name => "Львов Илья Александрович").first.update_attributes(:vk =>  "https://vk.com/lvov_ilya")
+Candidate.where(:full_name => "Николаев Юрий Владимирович").first.update_attributes(:vk =>  "http://vk.com/u_v_nikolaev")
+Candidate.where(:full_name => "Воробьев Виктор Викторович").first.update_attributes(:vk =>  "https://vk.com/arvidsever")
+Candidate.where(:full_name => "Алимова Екатерина Леонидовна").first.update_attributes(:vk =>  "http://vk.com/ekaterina.alimova")
+Candidate.where(:full_name => "Горбацевич Антон Николаевич").first.update_attributes(:vk =>  "http://vk.com/angorbatsevich")
+Candidate.where(:full_name => "Мережко Юрий Игоревич").first.update_attributes(:vk =>  "http://vk.com/yoorashka")
+Candidate.where(:full_name => "Гущина Ольга Николаевна").first.update_attributes(:vk =>  "http://vk.com/olia_gushchina")
+Candidate.where(:full_name => "Артеменко Николай Андреевич").first.update_attributes(:vk =>  "http://vk.com/artemenko_nikolay")
+Candidate.where(:full_name => "Исаковский Сергей Анатольевич").first.update_attributes(:vk =>  "http://vk.com/id66100")
+Candidate.where(:full_name => "Волков Николай Борисович").first.update_attributes(:vk =>  "http://vk.com/volkov24")
+Candidate.where(:full_name => "Пышкин Валентин Валентинович").first.update_attributes(:vk =>  "http://vk.com/id167046305")
+Candidate.where(:full_name => "Пецикян Самвел Оганесович").first.update_attributes(:vk =>  "http://vk.com/samvelpt")
+Candidate.where(:full_name => "Проворов Алексей Евгеньевич").first.update_attributes(:vk =>  "http://vk.com/alex.provorov")
+Candidate.where(:full_name => "Пивоваров Андрей Сергеевич").first.update_attributes(:vk =>  "https://vk.com/brewerov")
+Candidate.where(:full_name => "Роскин Михаил Дмитриевич").first.update_attributes(:vk =>  "http://vk.com/roskin_m")
+Candidate.where(:full_name => "Гаринова Карина Алексеевна").first.update_attributes(:vk =>  "http://vk.com/id885243")
+Candidate.where(:full_name => "Минаков Александр Сергеевич").first.update_attributes(:vk =>  "http://vk.com/minakovas")
+Candidate.where(:full_name => "Костылева Полина Владимировна").first.update_attributes(:vk =>  "http://vk.com/id65948907")
+Candidate.where(:full_name => "Вигандт Александр Олегович").first.update_attributes(:vk =>  "http://vk.com/id1131235")
+Candidate.where(:full_name => "Алимова Юлия Леонидовна").first.update_attributes(:vk =>  "http://vk.com/julia.l.alimova")
+Candidate.where(:full_name => "Шуршев Александр Олегович").first.update_attributes(:vk =>  "https://vk.com/shurshev")
+Candidate.where(:full_name => "Артюшина Екатерина Александровна").first.update_attributes(:vk =>  "http://vk.com/id138860")
+Candidate.where(:full_name => "Летюхин Иван Дмитриевич").first.update_attributes(:vk =>  "http://vk.com/id1695")
+Candidate.where(:full_name => "Циркунов Андрей Павлович").first.update_attributes(:vk =>  "http://vk.com/zirkunov")
+Candidate.where(:full_name => "Трошин Сергей Александрович").first.update_attributes(:vk =>  "http://vk.com/serg_troshin")
+Candidate.where(:full_name => "Давыдов Андрей Владимирович").first.update_attributes(:vk =>  "https://vk.com/av_davydov")
+Candidate.where(:full_name => "Анисимов Дмитрий Игоревич").first.update_attributes(:vk =>  "https://vk.com/d.anisimov")
+Candidate.where(:full_name => "Ермышев Дмитрий Геннадьевич").first.update_attributes(:vk =>  "https://vk.com/id291259")
+Candidate.where(:full_name => "Виниченко Сергей Александрович").first.update_attributes(:vk =>  "https://vk.com/s.vinnichenko")
+Candidate.where(:full_name => "Замараева Анна Сергеевна").first.update_attributes(:vk =>  "https://vk.com/azamaraeva")
+Candidate.where(:vk.exists => true).each do |c|
+  unless c.vk.blank?
+    c.getAvatar()
   end
-  Candidate.where(:full_name => candidate).first_or_create(:distinct_id => distinct.id, :municipality_id => founded_municipality.empty? ? nil : founded_municipality.first.id)
 end

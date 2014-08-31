@@ -10,8 +10,8 @@ window.Hlp = {}
         success: (data, textStatus, jqXHR) ->
           $("#shareModal").modal('show')
           $(".share").ShareLink
-            title: "Силы добра"
-            text: ""
+            title: "Мунвыборы-2014"
+            text: "<img src='#{data}' />"
             image: data
             url: data
           $("#loader").hide()
@@ -19,7 +19,7 @@ window.Hlp = {}
       
   socialShare: ->
     $(".share").ShareLink
-      title: "Силы добра"
+      title: "Мунвыборы-2014"
       text: ""
       image: encodeURIComponent($("#share_url").data("shareurl"))
       url: encodeURIComponent($("#share_url").data("shareurl"))
@@ -35,7 +35,7 @@ ready = ->
   
   
   $(".share_main").ShareLink
-    title: "Силы добра"
+    title: "Мунвыборы-2014"
     text: "За кого голосовать 14 сентября?  Узнай своих кандидатов на mo2014.ru"
     image: ""
     url: window.location.href

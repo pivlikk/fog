@@ -26,7 +26,7 @@
                     - if c.avatar.blank?
                       = image_tag "img.png"
                     - else
-                      = image_tag c.avatar, :class => "candidate_avatar"
+                      .candidate_avatar{:style => "background-image: url(#{c.avatar});"}
                     %p{:style => "max-height: 157px"}
                       %br
                       %br

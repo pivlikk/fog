@@ -38,7 +38,7 @@ class WelcomeController < ApplicationController
     file = Rails.root.join('public','uploads', file_name) 
     
     File.open(file, "wb") do |f|
-          f.write(image)
+        f.write(image.to_blob)
     end
     
     #@file_url = "http://fog.app.mo2014.ru/uploads/#{file_name}"

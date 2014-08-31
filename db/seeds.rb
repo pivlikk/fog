@@ -217,7 +217,7 @@ Candidate.where(:full_name => "Касаткин Алексей Викторов�
 Candidate.where(:full_name => "Горожанко Федор Константинович").first.update_attributes(:vk =>  "https://vk.com/goodfed")
 Candidate.where(:full_name => "Кондратьев Михаил Васильевич").first.update_attributes(:vk =>  "https://vk.com/mvkondr")
 Candidate.where(:full_name => "Бабушкин Сергей Сергеевич").first.update_attributes(:vk =>  "https://vk.com/valkman")
-Candidate.where(:full_name => "Литвин Богдан Геннадьевич").first.update_attributes(:vk =>  " https://vk.com/id3416896")
+#Candidate.where(:full_name => "Литвин Богдан Геннадьевич").first.update_attributes(:vk =>  "https://vk.com/id3416896")
 Candidate.where(:full_name => "Грязневич Наталья Владимировна").first.update_attributes(:vk =>  "https://vk.com/natalia.graz")
 Candidate.where(:full_name => "Кен Даниил Олегович").first.update_attributes(:vk =>  "https://vk.com/daniilken")
 Candidate.where(:full_name => "Дмитриев Лев Михайлович").first.update_attributes(:vk =>  "https://vk.com/vint67")
@@ -254,6 +254,7 @@ Candidate.where(:full_name => "Анисимов Дмитрий Игоревич"
 Candidate.where(:full_name => "Ермышев Дмитрий Геннадьевич").first.update_attributes(:vk =>  "https://vk.com/id291259")
 Candidate.where(:full_name => "Виниченко Сергей Александрович").first.update_attributes(:vk =>  "https://vk.com/s.vinnichenko")
 Candidate.where(:full_name => "Замараева Анна Сергеевна").first.update_attributes(:vk =>  "https://vk.com/azamaraeva")
+
 Candidate.where(:vk.exists => true).each do |c|
   unless c.vk.blank?
     c.getAvatar()

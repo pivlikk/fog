@@ -27,7 +27,7 @@
                       = image_tag "img.png"
                     - else
                       = image_tag c.avatar, :class => "candidate_avatar"
-                    %p
+                    %p{:style => "max-height: 157px"}
                       %br
                       %br
                       %b= c.full_name

@@ -52,7 +52,7 @@ set :pty, true
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
-
+set :linked_dirs, %w{public/uploads}
 
 namespace :deploy do
 

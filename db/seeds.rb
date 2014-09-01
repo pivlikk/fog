@@ -173,7 +173,6 @@ CSV.foreach("runner/area1.csv") do |row|
   municipality = row.to_a[0]
   distincts = row.to_a[1]
   areas = row.to_a[2]
-  
   founded_municipality = Municipality.where(:title => municipality).first_or_create
 
   if distincts
@@ -183,7 +182,9 @@ CSV.foreach("runner/area1.csv") do |row|
         new_distinct = Distinct.where(:title => d).first_or_create(:municipality_id => founded_municipality.id, :distinct_number => d.to_i)
         if areas
           areas.split(", ").each do |a|
-            Area.where(:area_number => a.to_i).first.update_attributes(:distinct_id => new_distinct.id, :municipality_id => founded_municipality.id ) rescue nil
+            Area.where(:area_number => a.to_i).each do |ar|
+              ar.update_attributes(:distinct_id => new_distinct.id, :municipality_id => founded_municipality.id ) rescue nil
+            end
           end
         end
       end

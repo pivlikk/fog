@@ -164,7 +164,7 @@ CSV.foreach("runner/area.csv") do |row|
 
 end
 =end
-=begin
+
 Candidate.destroy_all
 Distinct.destroy_all
 Municipality.destroy_all
@@ -179,7 +179,7 @@ CSV.foreach("runner/area1.csv") do |row|
 
       distincts.split(", ").each do |d|
       
-        new_distinct = Distinct.where(:title => d).first_or_create(:municipality_id => founded_municipality.id, :distinct_number => d.to_i)
+        new_distinct = founded_municipality.distincts.where(:title => d).first_or_create(:municipality_id => founded_municipality.id, :distinct_number => d.to_i)
         if areas
           areas.split(", ").each do |a|
             Area.where(:area_number => a.to_i).each do |ar|
@@ -261,7 +261,7 @@ Candidate.where(:vk.exists => true).each do |c|
     c.getAvatar()
   end
 end
-=end
+
 
 CSV.foreach("runner/s.csv") do |row|
   municipality = row.to_a[0]

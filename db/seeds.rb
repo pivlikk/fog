@@ -164,7 +164,7 @@ CSV.foreach("runner/area.csv") do |row|
 
 end
 =end
-
+=begin
 Candidate.destroy_all
 Distinct.destroy_all
 Municipality.destroy_all
@@ -260,4 +260,10 @@ Candidate.where(:vk.exists => true).each do |c|
   unless c.vk.blank?
     c.getAvatar()
   end
+end
+=end
+
+CSV.foreach("runner/s.csv") do |row|
+  municipality = row.to_a[0]
+  Municipality.where(:title => municipality).first_or_create
 end

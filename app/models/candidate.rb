@@ -17,7 +17,9 @@ class Candidate
   
   def self.setAllAvatart
     Candidate.where(:vk.exists => true).each do |c|
-      c.getAvatar()
+      unless c.vk.blank?
+        c.getAvatar()
+      end
     end
   end
   
@@ -26,8 +28,10 @@ class Candidate
     agent.user_agent_alias = 'Mac Safari'
     new_avatar = ""
     begin
-      agent.get(self.vk)
-      new_avatar = agent.page.search("#page_avatar img").attr("src").text
+      #agent.get(self.vk)
+      agent.get("http://api.vk.com/method/users.get?user_ids=#{self.vk.split("/").last}&fields=photo_max")
+      new_avatar = JSON.parse(agent.page.body)["response"][0]["photo_max"]
+      #agent.page.search("#page_avatar img").attr("src").text
     rescue Mechanize::ResponseReadError => e
       e.force_parse
     end

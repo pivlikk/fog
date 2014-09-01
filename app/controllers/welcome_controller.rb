@@ -78,7 +78,8 @@ class WelcomeController < ApplicationController
       @municipality_id = municipality.id
       array  = ["улица", "проулок", "площадь", "проспект"]
       search_street = params[:street].split(", ").last.split.delete_if{|x| array.include?(x.downcase)}.join(' ') rescue ""
-      area = municipality.areas.full_text_search(search_street, match: :all).where(:distinct_id.exists => true)
+      
+      area = municipality.areas.full_text_search(search_street, match: :all, minimum_word_size: 1).where(:distinct_id.exists => true)
 
       if !area.empty?
           @distincts = Distinct.where(:id.in => area.map(&:distinct_id))

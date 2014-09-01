@@ -58,7 +58,7 @@ ready = ->
     $("#searchButton").attr('disabled', 'disabled')
     
   initialize = ->
-    maxZoomLevel = 17
+    maxZoomLevel = 25
     minZoomLevel = 9
     markers = []
     map = new google.maps.Map(document.getElementById("map-canvas"),

@@ -4,8 +4,8 @@ class WelcomeController < ApplicationController
   def index
     @candidates = []
     @info = []
-    @info << OpenStruct.new(:number => "10 800 000", :subnumber => "", :text => "рублей  украли на благоустройстве в МО Остров Декабристов в 2013 году.", :font_size => "5em")
-    @info << OpenStruct.new(:number => "5 000 000", :subnumber => "", :text => "рублей зарабатывает глава муниципалитета за пять лет.", :font_size => "5em")
+    @info << OpenStruct.new(:number => "10 800 000", :subnumber => "", :text => "рублей  украли на благоустройстве в МО Остров Декабристов в 2013 году.", :font_size => "3em")
+    @info << OpenStruct.new(:number => "5 000 000", :subnumber => "", :text => "рублей зарабатывает глава муниципалитета за пять лет.", :font_size => "3em")
     @info << OpenStruct.new(:number => "1 500", :subnumber => "", :text => "независимых кандидатов не пустили на выборы, используя различные махинации.", :font_size => "5em")
     @info << OpenStruct.new(:number => "5", :subnumber => "лет", :text => "тюремного заключения грозит тем, кто фальсифицирует выборы.", :font_size => "5em")
     @info << OpenStruct.new(:number => "Бесконечность", :subnumber => "", :text => "Столько времени муниципалы будут воровать, если мы не научимся их контролировать и не изберем достойных. ", :font_size => "3em")

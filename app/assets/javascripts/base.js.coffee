@@ -52,10 +52,13 @@ ready = ->
     $("#slide_1").addClass("active")
   
   Hlp.Load.reloadLinkMore()
-  $("#inputWarning").keypress ->
+  $("#inputWarning").keypress (e)->
+    
     $("#searchButton").find('i').show()
     $("#searchButton").find('span').hide()
     $("#searchButton").attr('disabled', 'disabled')
+    if e.which is 44
+      return false
     
   initialize = ->
     maxZoomLevel = 25

@@ -20,7 +20,7 @@ window.Hlp = {}
   socialShare: ->
     $(".share").ShareLink
       title: "Мунвыборы-2014"
-      text: ""
+      text: "Я узнал - за кого буду голосовать на муниципальных выборах на mo2014.ru"
       image: encodeURIComponent($("#share_url").data("shareurl"))
       url: encodeURIComponent($("#share_url").data("shareurl"))
       

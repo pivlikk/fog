@@ -14,20 +14,20 @@ class Area
   search_in :including_addresses
   
   def self.correcting_address address
-    address = address.gsub(/к.(\d+)/i, ' к\1')
-    address = address.gsub(/к.\s+(\d+)/i, ' к\1')
-    address = address.gsub(/к\s+(\d+)/i, ' к\1')
-    address = address.gsub(/кор\s+(\d+)/i, ' к\1')
-    address = address.gsub(/кор.(\d+)/i, ' к\1')
-    address = address.gsub(/кор(\d+)/i, ' к\1')
-    address = address.gsub(/корп(\d+)/i, ' к\1')
-    address = address.gsub(/корп.(\d+)/i, ' к\1')
-    address = address.gsub(/корп.\s+(\d+)/i, ' к\1')
-    address = address.gsub(/корп\s+(\d+)/i, ' к\1')
-    address = address.gsub(/корпус\s+(\d+)/i, ' к\1')
-    address = address.gsub(/корпус(\d+)/i, ' к\1')
-    address = address.gsub(/корпус.(\d+)/i, ' к\1')
-    address = address.gsub(/корпус.\s+(\d+)/i, ' к\1')
+    address = address.gsub(/ к.(\d+)/i, ' к\1')
+    address = address.gsub(/ к.\s+(\d+)/i, ' к\1')
+    address = address.gsub(/ к\s+(\d+)/i, ' к\1')
+    address = address.gsub(/ кор\s+(\d+)/i, ' к\1')
+    address = address.gsub(/ кор.(\d+)/i, ' к\1')
+    address = address.gsub(/ кор(\d+)/i, ' к\1')
+    address = address.gsub(/ корп(\d+)/i, ' к\1')
+    address = address.gsub(/ корп.(\d+)/i, ' к\1')
+    address = address.gsub(/ корп.\s+(\d+)/i, ' к\1')
+    address = address.gsub(/ корп\s+(\d+)/i, ' к\1')
+    address = address.gsub(/ корпус\s+(\d+)/i, ' к\1')
+    address = address.gsub(/ корпус(\d+)/i, ' к\1')
+    address = address.gsub(/ корпус.(\d+)/i, ' к\1')
+    address = address.gsub(/ корпус.\s+(\d+)/i, ' к\1')
     address
   end
   

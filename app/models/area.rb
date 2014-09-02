@@ -30,4 +30,13 @@ class Area
     address = address.gsub(/корпус.\s+(\d+)/i, ' к\1')
     address
   end
+  
+  def self.fix_address
+    Area.all.each do |a|
+      if a.including_addresses =~ /(\d)(к\d)/i
+        addr = a.including_addresses.gsub(/(\d)(к\d)/i, '\1 \2')
+        a.update_attributes(:including_addresses => addr)
+      end
+    end
+  end
 end

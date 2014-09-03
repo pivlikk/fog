@@ -1,3 +1,4 @@
+#
 window.Hlp = {}
 @Hlp.Load =
   shareLink: ->
@@ -19,7 +20,10 @@ window.Hlp = {}
             text: "Я узнал - за кого буду голосовать на муниципальных выборах"
             image: data
             url: data
+         
           $("#loader").hide()
+          try
+            yaCounter26034489.reachGoal "list_share"
           
       
   socialShare: ->
@@ -40,6 +44,9 @@ ready = ->
   
   if !!navigator.userAgent.match(/firefox/i)
     $("#searchButton").css("margin-top", "-40px")
+  $(".share_main").click ->
+    try
+      yaCounter26034489.reachGoal "site_share"
   $(".share_main").ShareLink
     title: "Мунвыборы-2014"
     text: "За кого голосовать 14 сентября?  Узнай своих кандидатов на mo2014.ru"

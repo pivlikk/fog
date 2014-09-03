@@ -10,7 +10,6 @@
       .map-header
         %h2.title-map
           Ваш муниципалитет:
-          = @search_street
           %span#municipality_title.color Коломна
       - @distincts.each do |d|
         - unless d.candidates.empty?

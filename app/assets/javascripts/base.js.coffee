@@ -33,7 +33,8 @@ window.Hlp = {}
         success: (data, textStatus, jqXHR) ->
 ready = ->
   
-  
+  if !!navigator.userAgent.match(/firefox/i)
+    $("#searchButton").css("margin-top", "-40px")
   $(".share_main").ShareLink
     title: "Мунвыборы-2014"
     text: "За кого голосовать 14 сентября?  Узнай своих кандидатов на mo2014.ru"
@@ -144,57 +145,7 @@ ready = ->
     return
   google.maps.event.addDomListener window, "load", initialize
   ###################
-  $("#testjson").click ->
-    $.get("http://maps.googleapis.com/maps/api/geocode/json",
-      address: "гаг"
-      sensor: false
-      language: 'ru'
-      components: 'country:ru|administrative_area:Sankt-Petersburg'
-    ).done (data) ->
-      console.log data
-      return
-  
-  states = new Bloodhound(
-    datumTokenizer: Bloodhound.tokenizers.obj.whitespace("value")
-    queryTokenizer: Bloodhound.tokenizers.whitespace
-  
-    local: $.map(states, (state) ->
-      value: state
-    )
-  )
 
-  states.initialize()
-  $("#bloodhound .typeahead").typeahead
-    hint: true
-    highlight: true
-    minLength: 1
-  ,
-    name: "states"
-    displayKey: "value"
-  
-    # `ttAdapter` wraps the suggestion engine in an adapter that
-    # is compatible with the typeahead jQuery plugin
-    source: states.ttAdapter()
-  
-  
-    
-  $("#inputWarning1").typeahead
-    limit: 1000
-    delay: 1500
-    source: (query, process) ->
-      $.get "http://maps.googleapis.com/maps/api/geocode/json",
-        address: query
-        sensor: false
-        language: 'ru'
-        components: 'country:ru|administrative_area:Sankt-Petersburg'
-      , (data) ->
-        console.log data
-        resultList = data.results.map((item) ->
-          (item.address_components[1].long_name+" "+item.address_components[0].long_name).toString()
-        )
-        console.log resultList
-        process resultList
-      
  
 
 $(document).ready(ready)

@@ -63,10 +63,10 @@
         %a{:mark => "search_form", :name => "search_form"}
         .form-group.submit-group.form-center
           .input_wrap
-            %input#inputWarning.form-control.bg{"placeholder" => "Улица и дом в котором вы живаете", "type" => "text", :name => "search"}
+            %input#inputWarning.form-control.bg{"placeholder" => "Улица и дом, в котором вы живете", "type" => "text", :name => "search"}
             
           
-          %button#searchButton.btn.btn-default.link_button{type: "submit", :style => "position: relative;"}
+          #searchButton.btn.btn-default.link_button{type: "submit", :style => "position: relative;"}
             %i.fa.fa-circle-o-notch.fa-spin{:style => "display: none"}
             %span Отправить
             #map-canvas

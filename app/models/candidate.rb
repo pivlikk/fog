@@ -25,18 +25,22 @@ class Candidate
   
     
   def avatar
-    agent = Mechanize.new
-    agent.user_agent_alias = 'Mac Safari'
-    new_avatar = nil
-    begin
-      #agent.get(self.vk)
-      agent.get("http://api.vk.com/method/users.get?user_ids=#{self.vk.split("/").last}&fields=photo_max")
-      new_avatar = JSON.parse(agent.page.body)["response"][0]["photo_max"] rescue nil
-      #agent.page.search("#page_avatar img").attr("src").text
-    rescue Mechanize::ResponseReadError => e
-      e.force_parse
+    if self.vk.blank? or self.vk.length < 2
+      return nil
+    else
+      agent = Mechanize.new
+      agent.user_agent_alias = 'Mac Safari'
+      new_avatar = nil
+      begin
+        #agent.get(self.vk)
+        agent.get("http://api.vk.com/method/users.get?user_ids=#{self.vk.split("/").last}&fields=photo_max")
+        new_avatar = JSON.parse(agent.page.body)["response"][0]["photo_max"] rescue nil
+        #agent.page.search("#page_avatar img").attr("src").text
+      rescue Mechanize::ResponseReadError => e
+        e.force_parse
+      end
+      new_avatar
     end
-    new_avatar
     
   end
   

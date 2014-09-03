@@ -31,10 +31,10 @@ class Area
     address = address.gsub(/ корпус.(\d+)/i, ' к\1')
     address = address.gsub(/ корпус.\s+(\d+)/i, ' к\1')
     
-    address = address.gsub(/наб./i, ' ')
-    address = address.gsub(/набережная/i, ' ')
-    address = address.gsub(/набережная./i, ' ')
-    address = address.gsub(/наб/i, ' ')
+    address = address.gsub(/наб.$/i, ' ')
+    address = address.gsub(/Набережная/i, ' ')
+    address = address.gsub(/Набережная./i, ' ')
+    address = address.gsub(/наб$/i, ' ')
     address
   end
   

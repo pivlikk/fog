@@ -33,7 +33,7 @@ class Area
     address
   end
   
-  def seld.separate_address
+  def self.separate_address
     addr_s = self.including_addresses.split(",")
     self.update_attributes(:street => addr_s[0])
     self.update_attributes(:home_numbers => addr_s[1..10]) unless addr_s[1..10].nil?

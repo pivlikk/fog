@@ -10,7 +10,7 @@ class Candidate
   field :twitter, type: String
   field :facebook, type: String
   field :vk, type: String
-  field :avatar, type: String
+  #field :avatar, type: String
   
   belongs_to :municipality
   belongs_to :distinct
@@ -21,6 +21,23 @@ class Candidate
         c.getAvatar()
       end
     end
+  end
+  
+    
+  def avatar
+    agent = Mechanize.new
+    agent.user_agent_alias = 'Mac Safari'
+    new_avatar = nil
+    begin
+      #agent.get(self.vk)
+      agent.get("http://api.vk.com/method/users.get?user_ids=#{self.vk.split("/").last}&fields=photo_max")
+      new_avatar = JSON.parse(agent.page.body)["response"][0]["photo_max"] rescue nil
+      #agent.page.search("#page_avatar img").attr("src").text
+    rescue Mechanize::ResponseReadError => e
+      e.force_parse
+    end
+    new_avatar
+    
   end
   
   def getAvatar

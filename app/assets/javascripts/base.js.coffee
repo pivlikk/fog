@@ -14,6 +14,11 @@ window.Hlp = {}
             text: "<img src='#{data}' />"
             image: data
             url: data
+          $(".share_tw").ShareLink
+            title: "Мунвыборы-2014"
+            text: "Я узнал - за кого буду голосовать на муниципальных выборах"
+            image: data
+            url: data
           $("#loader").hide()
           
       

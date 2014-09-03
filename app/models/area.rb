@@ -35,6 +35,10 @@ class Area
     address = address.gsub(/Набережная/i, ' ')
     address = address.gsub(/Набережная./i, ' ')
     address = address.gsub(/наб$/i, ' ')
+    address = address.gsub(/наб.$/i, ' ')
+    address = address.gsub(/канала/i, ' ')
+    address = address.gsub(/канал$/i, ' ')
+    address = address.gsub(/кан.$/i, ' ')
     address
   end
   

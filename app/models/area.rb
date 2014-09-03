@@ -8,6 +8,8 @@ class Area
   field :area_number, type: String
   field :voting_address, type: String
   field :including_addresses, type: String
+  field :street, type: String
+  field :home_numbers, type: String
   
   belongs_to :municipality
   belongs_to :distinct
@@ -29,6 +31,12 @@ class Area
     address = address.gsub(/ корпус.(\d+)/i, ' к\1')
     address = address.gsub(/ корпус.\s+(\d+)/i, ' к\1')
     address
+  end
+  
+  def seld.separate_address
+    addr_s = self.including_addresses.split(",")
+    self.update_attributes(:street => addr_s[0])
+    self.update_attributes(:home_numbers => addr_s[1..10]) unless addr_s[1..10].nil?
   end
   
   def self.fix_address

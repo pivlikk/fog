@@ -24,6 +24,8 @@ RailsAdmin.config do |config|
       field :municipality
       field :distinct
       field :including_addresses
+      field :street
+      field :home_numbers
     end
   end
   

@@ -63,7 +63,9 @@
         %a{:mark => "search_form", :name => "search_form"}
         .form-group.submit-group.form-center
           .input_wrap
+            %label.opera{:style => "text-align: left; font-size: 9px; color: #aaa; display: none;"} Поиск может работать некорректно, если у вас в браузере активирован AdBlock или вы пользуетесь Internet Explorer. Если что-то пошло не так, пожалуйста, используйте Google Chrome.
             %input#inputWarning.form-control.bg{"placeholder" => "Улица и дом, в котором вы живете", "type" => "text", :name => "search"}
+            
             
           
           #searchButton.btn.btn-default.link_button{type: "submit", :style => "position: relative;"}

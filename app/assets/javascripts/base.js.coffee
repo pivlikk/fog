@@ -42,6 +42,8 @@ window.Hlp = {}
         success: (data, textStatus, jqXHR) ->
 ready = ->
   
+  if !!navigator.userAgent.match(/opera/i)
+    $(".opera").show()
   if !!navigator.userAgent.match(/firefox/i)
     $("#searchButton").css("margin-top", "-40px")
   $(".share_main").click ->

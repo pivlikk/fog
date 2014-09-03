@@ -76,7 +76,7 @@ class WelcomeController < ApplicationController
       municipality = municipalities.first
       @municipality = municipality.title
       @municipality_id = municipality.id
-      array  = ["улица", "проулок", "площадь", "проспект", "дом", "д.", "д", "переулок"]
+      array  = ["улица", "проулок", "площадь", "проспект", "дом", "д.", "д", "переулок", "ул.", "Перергоф", "набережная"]
       tmp_search_street = params[:street].split(", ").last.split.delete_if{|x| array.include?(x.downcase)}.join(' ') rescue ""
       search_street = Area.correcting_address(tmp_search_street)
       @search_street = search_street

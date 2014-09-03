@@ -34,9 +34,11 @@ class Area
   end
   
   def self.separate_address
-    addr_s = self.including_addresses.split(",")
-    self.update_attributes(:street => addr_s[0])
-    self.update_attributes(:home_numbers => addr_s[1..10]) unless addr_s[1..10].nil?
+    Area.all.each do |a|
+      addr_s = a.including_addresses.split(",")
+      a.update_attributes(:street => addr_s[0])
+      a.update_attributes(:home_numbers => addr_s[1..10]) unless addr_s[1..10].nil?
+    end
   end
   
   def self.fix_address

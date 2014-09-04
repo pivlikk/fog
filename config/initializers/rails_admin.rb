@@ -69,7 +69,6 @@ RailsAdmin.config do |config|
     edit do
       field :full_name
       field :birthday
-      field :avatar
       field :organization
       field :email
       field :phone

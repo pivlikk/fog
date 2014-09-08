@@ -25,6 +25,8 @@ class Candidate
   
     
   def avatar
+    return nil
+=begin
     if self.vk.blank? or self.vk.length < 2
       return nil
     else
@@ -41,7 +43,7 @@ class Candidate
       end
       new_avatar
     end
-    
+=end   
   end
   
   def getAvatar
